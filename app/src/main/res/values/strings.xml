@@ -25,4 +25,6 @@
     <string name="autor_es" tools:ignore="Typos">Autor(es):</string>
     <string name="cap_tulos">Capítulos:</string>
     <string name="significado">Significado:</string>
+    <string name="url3">https://www.youtube.com/watch?v=0LeV257fZ70</string>
+    <string name="video_background">Video background - Walk by Faith 1080p Full HD</string>
 </resources>

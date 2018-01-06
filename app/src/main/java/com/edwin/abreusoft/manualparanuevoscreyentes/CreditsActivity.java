@@ -29,12 +29,13 @@ public class CreditsActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.icon_url2:
                 openUrlInBrowser(getResources().getString(R.string.url2));
                 break;
+            case R.id.image_url:
+                openUrlInBrowser(getResources().getString(R.string.url3));
         }
     }
 
     private void openUrlInBrowser(String url) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-        browserIntent.setData(Uri.parse(url));
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
     }
 }
