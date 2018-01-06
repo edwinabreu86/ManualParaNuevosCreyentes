@@ -63,7 +63,7 @@ public class BooksFragment extends Fragment {
 
         BooksAdapter adapter = new BooksAdapter(getActivity(), booksList);
 
-        ListView listView = (ListView) view.findViewById(R.id.list_view);
+        ListView listView = view.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
         return view;

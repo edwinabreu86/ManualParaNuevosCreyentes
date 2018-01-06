@@ -38,7 +38,7 @@ public class TextFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_text, container, false);
         onCreate(getArguments());
 
-        TextView contentView = (TextView) rootView.findViewById(R.id.content_view);
+        TextView contentView = rootView.findViewById(R.id.content_view);
         contentView.setText(content);
 
         return rootView;

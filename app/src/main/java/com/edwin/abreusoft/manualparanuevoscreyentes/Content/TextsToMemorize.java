@@ -2,10 +2,10 @@ package com.edwin.abreusoft.manualparanuevoscreyentes.Content;
 
 public class TextsToMemorize {
 
-    public static String[] textRef =
+    public static final String[] textRef =
             {"1-Timoteo capítulo 3 versos 16", "2 Timoteo 3-16", "2 Pedro1-21"};
 
-    public static String[] textContent =
+    public static final String[] textContent =
         {"E indiscutiblemente, grande es el misterio de la piedad: \n" +
         "Dios fue manifestado en carne, \n" +
         "Justificado en el Espíritu, \n" +

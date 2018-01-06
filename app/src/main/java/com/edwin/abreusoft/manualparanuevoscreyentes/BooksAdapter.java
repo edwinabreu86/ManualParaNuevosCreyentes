@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BooksAdapter extends ArrayAdapter<BookItem> {
 
-    public BooksAdapter(@NonNull Context context, @NonNull List<BookItem> books) {
+    BooksAdapter(@NonNull Context context, @NonNull List<BookItem> books) {
         super(context, 0, books);
     }
 
@@ -28,15 +28,15 @@ public class BooksAdapter extends ArrayAdapter<BookItem> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.book_item, parent, false);
         }
 
-        holder.bookName = (TextView) convertView.findViewById(R.id.book_name);
-        holder.bookAuthors = (TextView) convertView.findViewById(R.id.book_authors);
-        holder.bookChapters = (TextView) convertView.findViewById(R.id.book_chapters);
-        holder.bookMeaning = (TextView) convertView.findViewById(R.id.book_meaning);
+        holder.bookName = convertView.findViewById(R.id.book_name);
+        holder.bookAuthors = convertView.findViewById(R.id.book_authors);
+        holder.bookChapters = convertView.findViewById(R.id.book_chapters);
+        holder.bookMeaning = convertView.findViewById(R.id.book_meaning);
 
         assert item != null;
         holder.bookName.setText(item.getName());
         holder.bookAuthors.setText(item.getAuthors());
-        holder.bookChapters.setText(""+ item.getChapters());
+        holder.bookChapters.setText(String.valueOf(item.getChapters()));
         holder.bookMeaning.setText(item.getMeaning());
 
         return convertView;

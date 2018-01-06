@@ -9,34 +9,25 @@ import android.widget.TextView;
 
 public class CreditsActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView iconUrl1;
-    private TextView iconUrl2;
-
-    String url1;
-    String url2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
-        iconUrl1 = (TextView) findViewById(R.id.icon_url1);
-        iconUrl2 = (TextView) findViewById(R.id.icon_url2);
+        TextView iconUrl1 = findViewById(R.id.icon_url1);
+        TextView iconUrl2 = findViewById(R.id.icon_url2);
         iconUrl1.setOnClickListener(this);
         iconUrl2.setOnClickListener(this);
-
-        url1 = getResources().getString(R.string.url1);
-        url2 = getResources().getString(R.string.url2);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.icon_url1:
-                openUrlInBrowser(url1);
+                openUrlInBrowser(getResources().getString(R.string.url1));
                 break;
             case R.id.icon_url2:
-                openUrlInBrowser(url2);
+                openUrlInBrowser(getResources().getString(R.string.url2));
                 break;
         }
     }

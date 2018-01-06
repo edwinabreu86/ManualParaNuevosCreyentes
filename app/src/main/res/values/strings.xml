@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Manual para nuevos creyentes</string>
     <string name="navigation_drawen_open">Drawer open</string>
     <string name="navigation_drawer_close">Drawer close</string>
@@ -15,10 +15,14 @@
     <string name="pastor_carlos_gomez">Pastor Carlos Gómez</string>
     <string name="sections">Secciones</string>
     <string name="others">Otros</string>
-    <string name="icon_credits">Iconos creados por "https://www.flaticon.com/authors/smashicons". www.flaticon.com tiene licencia de "http://creativecommons.org/licenses/by/3.0/" </string>
     <string name="url1">https://www.flaticon.com/authors/smashicons</string>
     <string name="url2">http://creativecommons.org/licenses/by/3.0/</string>
     <string name="icons_by">Iconos creados por:</string>
     <string name="license">www.flaticon.com tiene licencia de:</string>
     <string name="app_rating">Evaluar aplicación</string>
+    <string name="content_desc">app_icon</string>
+    <string name="nombre">Nombre:</string>
+    <string name="autor_es" tools:ignore="Typos">Autor(es):</string>
+    <string name="cap_tulos">Capítulos:</string>
+    <string name="significado">Significado:</string>
 </resources>

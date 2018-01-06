@@ -56,7 +56,7 @@ public class ItemsFragment extends Fragment {
 
         ItemAdapter adapter = new ItemAdapter(getActivity(), itemsList);
 
-        ListView listView = (ListView) view.findViewById(R.id.list_view);
+        ListView listView = view.findViewById(R.id.list_view);
         listView.setAdapter(adapter);
 
         return view;

@@ -2,20 +2,20 @@ package com.edwin.abreusoft.manualparanuevoscreyentes.Content;
 
 public class Books {
 
-    public static String[]bNames = {"Génesis", "Éxodo", "Levítico", "Números", "Deuteronomio", "Josué", "Jueces", "Rut", "Samuel 1", "Samuel 2",
+    public static final String[]bNames = {"Génesis", "Éxodo", "Levítico", "Números", "Deuteronomio", "Josué", "Jueces", "Rut", "Samuel 1", "Samuel 2",
             "Reyes 1", "Reyes 2", "Crónicas 1", "Crónicas 2", "Esdras", "Nehemías", "Ester", "Job", "Salmos", "Proverbios",
             "Eclesiastés", "El Cantar de los Cantares", "Isaías", "Jeremías", "Lamentaciones", "Ezequiel", "Daniel", "Oseas", "Joel", "Amós", "Abdías",
             "Jonás", "Miqueas", "Nahúm", "Habacuc", "Sofonías", "Ageo", "Zacarías", "Malaquías"};
 
-    public static String[] bAuthors = {"Moisés", "Moisés", "Moisés", "Moisés", "Moisés", "Josué", "Samuel", "Samuel", "Samuel, Gad y Natán", "Gad y Natán",
+    public static final String[] bAuthors = {"Moisés", "Moisés", "Moisés", "Moisés", "Moisés", "Josué", "Samuel", "Samuel", "Samuel, Gad y Natán", "Gad y Natán",
             "Jeremías", "Jeremías", "Esdras", "Esdras", "Esdras", "Nehemías", "Mardoqueo", "Moisés", "David y otros", "Salomón, Agur y Lemuel",
             "Salomón", "Salomón", "Isaías", "Jeremías", "Jeremías", "Ezequiel", "Daniel", "Oseas", "Joel", "Amós", "Abdías",
             "Jonás", "Miqueas", "Nahúm", "Habacuc","Sofonías", "Ageo", "Zacarías", "Malaquías"};
 
-    public static int[] bChapters = {50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31,
+    public static final int[] bChapters = {50, 40, 27, 36, 34, 24, 21, 4, 31, 24, 22, 25, 29, 36, 10, 13, 10, 42, 150, 31,
             12, 8, 66, 52, 5, 48, 12, 14, 3, 9, 1, 4, 7, 3, 3, 3, 2, 14, 4};
 
-    public static String[] bMeanings = {"nacimiento o comienzos", "salida", "Libro de la ley", "En el desierto", "Segunda Ley", "Jehová Salva", "Persona que tiene autoridad y potestad para juzgar",
+    public static final String[] bMeanings = {"nacimiento o comienzos", "salida", "Libro de la ley", "En el desierto", "Segunda Ley", "Jehová Salva", "Persona que tiene autoridad y potestad para juzgar",
             "La Compañera fiel", "Escuchado por Dios", "Escuchado por Dios", "El que decide con énfasis en la superioridad intelectual", "El que decide con énfasis en la superioridad intelectual",
             "Los añales de los días", "Los añales de los días", "Significado: El que Dios ayuda", "Jehová a consolado", "Estrella, astro", "El perseguido o Aborrecido", "Alabanzas al Rey",
             "Escritos Sapiensales", "Asambleísta o Congregista", "Canto de amor que representa la belleza de una relación humana como símbolo de amor divino", "La principal profecía de condena y consolación mesiánica",

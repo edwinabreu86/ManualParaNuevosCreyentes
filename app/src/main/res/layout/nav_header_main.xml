@@ -7,8 +7,7 @@
     android:orientation="horizontal"
     android:gravity="center_vertical"
     android:background="@drawable/faith_background"
-    android:padding="@dimen/activity_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    android:padding="@dimen/activity_margin">
 
     <ImageView
         android:id="@+id/imageView"

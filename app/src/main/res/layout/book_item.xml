@@ -11,33 +11,34 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingRight="@dimen/item_padding">
+        android:paddingStart="@dimen/item_padding"
+        android:paddingEnd="@dimen/item_padding">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre:"
+            android:text="@string/nombre"
             android:textColor="@color/primary_text"
             android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Autor(es):"
+            android:text="@string/autor_es"
             android:textColor="@color/primary_text"
             android:textSize="14sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Capítulos:"
+            android:text="@string/cap_tulos"
             android:textColor="@color/primary_text"
             android:textSize="14sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Significado:"
+            android:text="@string/significado"
             android:textColor="@color/primary_text"
             android:textSize="14sp"/>
 

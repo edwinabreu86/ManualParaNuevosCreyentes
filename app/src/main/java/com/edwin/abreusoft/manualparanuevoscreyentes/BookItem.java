@@ -2,12 +2,12 @@ package com.edwin.abreusoft.manualparanuevoscreyentes;
 
 public class BookItem {
 
-    private String name;
-    private String authors;
-    private int chapters;
-    private String meaning;
+    private final String name;
+    private final String authors;
+    private final int chapters;
+    private final String meaning;
 
-    public BookItem(String name, String authors, int chapters, String meaning) {
+    BookItem(String name, String authors, int chapters, String meaning) {
         this.name = name;
         this.authors = authors;
         this.chapters = chapters;
@@ -18,15 +18,15 @@ public class BookItem {
         return name;
     }
 
-    public String getAuthors() {
+    String getAuthors() {
         return authors;
     }
 
-    public int getChapters() {
+    int getChapters() {
         return chapters;
     }
 
-    public String getMeaning() {
+    String getMeaning() {
         return meaning;
     }
 }

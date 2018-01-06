@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        if(drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragmentList(R.string.first_steps, QuestionsAndAnswers.questions, QuestionsAndAnswers.answers);
                 break;
             case R.id.nav_bible_books:
-                changeFragmentBooks(R.string.bible_books, Books.bNames, Books.bAuthors, Books.bChapters, Books.bMeanings);
+                changeFragmentBooks();
                 break;
             case R.id.nav_memorizing_texts:
                 changeFragmentList(R.string.memorizing_texts, TextsToMemorize.textRef, TextsToMemorize.textContent);
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_exit:
                 finish();
         }
-        
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -116,13 +116,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void changeFragmentBooks(int titleRef, String[] bNames, String[] bAuthors, int[] bChapters, String[] bMeanings) {
-        String title = getResources().getString(titleRef);
+    private void changeFragmentBooks() {
+        String title = getResources().getString(R.string.bible_books);
 
         toolbar.setTitle(title);
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
-                .replace(R.id.container, BooksFragment.newInstance(bNames, bAuthors, bChapters, bMeanings))
+                .replace(R.id.container,
+                        BooksFragment.newInstance(Books.bNames, Books.bAuthors, Books.bChapters, Books.bMeanings))
                 .commit();
     }
 
