@@ -1,8 +1,13 @@
 package com.edwin.abreusoft.manualparanuevoscreyentes;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
@@ -29,16 +34,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawen_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         changeFragmentText(R.string.app_name, Paragraphs.intrContent);
@@ -54,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -78,6 +84,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_new_disciples:
                 changeFragmentText(R.string.new_disciples, Paragraphs.newDiscContent);
                 break;
+            case R.id.nav_app_rating:
+                rateApp(getApplicationContext());
+                break;
             case R.id.nav_credits:
                 Intent intent = new Intent(this, CreditsActivity.class);
                 startActivity(intent);
@@ -88,6 +97,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void rateApp(Context context) {
+        Uri uri = Uri.parse("market://details?id=" + context.getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        // To count with Play market backstack, After pressing back button,
+        // to taken back to our application, we need to add following flags to intent.
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
+        }
     }
 
     private void changeFragmentBooks(int titleRef, String[] bNames, String[] bAuthors, int[] bChapters, String[] bMeanings) {

@@ -1,4 +1,4 @@
-<menu xmlns:tools="http://schemas.android.com/tools"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="@string/sections">
@@ -29,6 +29,9 @@
 
     <item android:title="@string/others">
         <menu>
+            <item
+                android:id="@+id/nav_app_rating"
+                android:title="@string/app_rating" />
             <item
                 android:id="@+id/nav_credits"
                 android:title="@string/credits" />
