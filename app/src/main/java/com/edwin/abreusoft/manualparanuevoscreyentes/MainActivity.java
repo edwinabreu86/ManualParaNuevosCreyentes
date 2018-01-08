@@ -18,6 +18,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        changeFragmentText(R.string.app_name, getResources().getString(R.string.pastor));
+        changeFragmentList(R.string.first_steps, QuestionsAndAnswers.QUESTIONS, QuestionsAndAnswers.ANSWERS);
 
         prefs = getPreferences(Context.MODE_PRIVATE);
     }
@@ -106,18 +107,40 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_app_rating:
+                rateApp(getApplicationContext());
+                return true;
+            case R.id.menu_credits:
+                Intent intent = new Intent(this, CreditsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.menu_exit:
+                finish();
+                return true;
+        }
+
+        return false;
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.nav_introduction:
-                changeFragmentText(R.string.introduction, Paragraphs.INTR_CONTENT);
-                break;
             case R.id.nav_gratitude:
                 changeFragmentText(R.string.gratitude, Paragraphs.GRAT_CONTENT);
                 break;
             case R.id.nav_first_steps:
-                changeFragmentList(R.string.first_steps, QuestionsAndAnswers.questions, QuestionsAndAnswers.answers);
+                changeFragmentList(R.string.first_steps, QuestionsAndAnswers.QUESTIONS, QuestionsAndAnswers.ANSWERS);
                 break;
             case R.id.nav_bible_books:
                 changeFragmentBooks();
@@ -131,15 +154,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_new_disciples:
                 changeFragmentText(R.string.new_disciples, Paragraphs.NEW_DISC_CONTENT);
                 break;
-            case R.id.nav_app_rating:
-                rateApp(getApplicationContext());
-                break;
-            case R.id.nav_credits:
-                Intent intent = new Intent(this, CreditsActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.nav_exit:
-                finish();
         }
 
         drawer.closeDrawer(GravityCompat.START);

@@ -2,7 +2,7 @@ package com.edwin.abreusoft.manualparanuevoscreyentes.Content;
 
 public class QuestionsAndAnswers {
 
-    public static final String[] questions =
+    public static final String[] QUESTIONS =
             {"¿Qué significa la palabra Biblia?",
                     "¿Cuántos libros tiene la biblia?",
                     "¿En cuántas partes se divide la biblia?",
@@ -29,7 +29,7 @@ public class QuestionsAndAnswers {
                     "¿Cuál es el libro profético del nuevo testamento?"};
 
 
-    public static final String[] answers = {"Viene del griego “biblion” que significa conjuntos de libros. También podemos decir que es el conjunto de libros canónicos del judaísmo.",
+    public static final String[] ANSWERS = {"Viene del griego “biblion” que significa conjuntos de libros. También podemos decir que es el conjunto de libros canónicos del judaísmo.",
             "66 libros",
             "En dos partes",
             "Antiguo Testamento y Nuevo Testamento",
