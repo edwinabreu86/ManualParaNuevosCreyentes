@@ -4,9 +4,6 @@
     <item android:title="@string/sections">
         <menu>
             <item
-                android:id="@+id/nav_introduction"
-                android:title="@string/introduction" />
-            <item
                 android:id="@+id/nav_gratitude"
                 android:title="@string/gratitude" />
             <item

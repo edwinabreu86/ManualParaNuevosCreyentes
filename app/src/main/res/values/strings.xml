@@ -27,4 +27,6 @@
     <string name="significado">Significado:</string>
     <string name="url3">https://www.youtube.com/watch?v=0LeV257fZ70</string>
     <string name="video_background">Video background - Walk by Faith 1080p Full HD</string>
+    <string name="accept">Entendido</string>
+    <string name="no_show">No mostrar mas este mensaje</string>
 </resources>

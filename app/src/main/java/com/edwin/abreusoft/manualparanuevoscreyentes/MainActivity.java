@@ -1,9 +1,11 @@
 package com.edwin.abreusoft.manualparanuevoscreyentes;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -17,6 +19,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.edwin.abreusoft.manualparanuevoscreyentes.Content.Books;
 import com.edwin.abreusoft.manualparanuevoscreyentes.Content.Paragraphs;
@@ -25,8 +33,10 @@ import com.edwin.abreusoft.manualparanuevoscreyentes.Content.TextsToMemorize;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String CHECKED = "checked";
     private Toolbar toolbar;
     private DrawerLayout drawer;
+    private SharedPreferences prefs;
 
     @SuppressLint("CommitTransaction")
     @Override
@@ -46,8 +56,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        changeFragmentText(R.string.app_name, Paragraphs.intrContent);
+        changeFragmentText(R.string.app_name, getResources().getString(R.string.pastor));
 
+        prefs = getPreferences(Context.MODE_PRIVATE);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!prefs.contains(CHECKED)) {
+            createIntroDialog();
+        }
+    }
+
+    private void createIntroDialog() {
+        @SuppressLint("InflateParams") View view = getLayoutInflater().inflate(R.layout.intro_dialog_layout, null);
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+        dialog.setCancelable(true);
+
+        TextView introText = dialog.findViewById(R.id.intro_text);
+        introText.setText(Paragraphs.INTR_CONTENT);
+
+        final CheckBox noShowCheck = dialog.findViewById(R.id.no_show_check);
+        Button acceptButton = dialog.findViewById(R.id.accept_button);
+
+        dialog.show();
+
+        acceptButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ApplySharedPref")
+            @Override
+            public void onClick(View view) {
+                if(noShowCheck.isChecked()) {
+                    prefs.edit().putBoolean(CHECKED, true).commit();
+                }
+
+                dialog.dismiss();
+            }
+        });
     }
 
     @Override
@@ -64,10 +111,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_introduction:
-                changeFragmentText(R.string.introduction, Paragraphs.intrContent);
+                changeFragmentText(R.string.introduction, Paragraphs.INTR_CONTENT);
                 break;
             case R.id.nav_gratitude:
-                changeFragmentText(R.string.gratitude, Paragraphs.gratContent);
+                changeFragmentText(R.string.gratitude, Paragraphs.GRAT_CONTENT);
                 break;
             case R.id.nav_first_steps:
                 changeFragmentList(R.string.first_steps, QuestionsAndAnswers.questions, QuestionsAndAnswers.answers);
@@ -79,10 +126,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragmentList(R.string.memorizing_texts, TextsToMemorize.textRef, TextsToMemorize.textContent);
                 break;
             case R.id.nav_conclusion:
-                changeFragmentText(R.string.conclusion, Paragraphs.conclContent);
+                changeFragmentText(R.string.conclusion, Paragraphs.CONCL_CONTENT);
                 break;
             case R.id.nav_new_disciples:
-                changeFragmentText(R.string.new_disciples, Paragraphs.newDiscContent);
+                changeFragmentText(R.string.new_disciples, Paragraphs.NEW_DISC_CONTENT);
                 break;
             case R.id.nav_app_rating:
                 rateApp(getApplicationContext());
