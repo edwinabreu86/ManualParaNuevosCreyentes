@@ -4,25 +4,25 @@ public class QuestionsAndAnswers {
 
     public static final String[] QUESTIONS =
             {"¿Qué significa la palabra Biblia?",
-                    "¿Cuántos libros tiene la biblia?",
-                    "¿En cuántas partes se divide la biblia?",
+                    "¿Cuántos libros tiene la Biblia?",
+                    "¿En cuántas partes se divide la Biblia?",
                     "¿Cuáles son esas partes?",
-                    "¿Cuántas son las subdivisiones de la biblia?",
+                    "¿Cuántas son las subdivisiones de la Biblia?",
                     "¿Cuáles son?",
-                    "¿Cómo le llaman a los primeros cinco libros de la biblia?",
-                    "¿Cuáles son los nombres de los primeros cinco libros de la biblia?",
+                    "¿Cómo le llama a los primeros cinco libros de la Biblia?",
+                    "¿Cuáles son los nombres de los primeros cinco libros de la Biblia?",
                     "¿Cuántos son los libros históricos del antiguo testamento?",
                     "¿Cuáles son?",
                     "¿Cuántos son los libros poéticos del antiguo testamento?",
                     "¿Cuáles son?",
-                    "¿Cuántos  son los  profetas mayores del antiguo Testamento?",
+                    "¿Cuántos son los  profetas mayores del antiguo testamento?",
                     "¿Cuáles son?",
-                    "¿Cuántos son los profetas menores del antiguo Testamento?",
+                    "¿Cuántos son los profetas menores del antiguo testamento?",
                     "¿Cuáles son?",
-                    "¿Cuántos son los evangelios del nuevo Testamento?",
+                    "¿Cuántos son los evangelios del nuevo testamento?",
                     "¿Cuáles son?",
-                    "¿Cuál es el libro histórico del nuevo Testamento, aparte de los evangelios?",
-                    "¿Cuántas son las cartas paulinas del nuevo Testamento?",
+                    "¿Cuál es el libro histórico del nuevo testamento, aparte de los evangelios?",
+                    "¿Cuántas son las cartas paulinas del nuevo testamento?",
                     "¿Cuáles son?",
                     "¿Cuántas son las cartas generales del nuevo testamento incluyendo hebreo?",
                     "¿Cuáles son?",
@@ -32,18 +32,18 @@ public class QuestionsAndAnswers {
     public static final String[] ANSWERS = {"Viene del griego “biblion” que significa conjuntos de libros. También podemos decir que es el conjunto de libros canónicos del judaísmo.",
             "66 libros",
             "En dos partes",
-            "Antiguo Testamento y Nuevo Testamento",
+            "Antiguo testamento y nuevo testamento",
             "10 sub divisiones",
             "1-Los libros del pentateuco \n" +
-                    "2-Los libros históricos del antiguo Testamento \n" +
-                    "3-Los libros poéticos del antiguo Testamento \n" +
-                    "4-Los profetas mayores del antiguo Testamento \n" +
-                    "5-Los profetas menores del antiguo Testamento \n" +
-                    "6-El evangelio signo ticos que pueden ser históricos del nuevo Testamento \n" +
-                    "7-El libro histórico del nuevo Testamento \n" +
-                    "8-Las cartas paulinas del nuevo Testamento \n" +
-                    "9-Las cartas generales del nuevo Testamento \n" +
-                    "10-El libro profético del nuevo Testamento",
+                    "2-Los libros históricos del antiguo testamento \n" +
+                    "3-Los libros poéticos del antiguo testamento \n" +
+                    "4-Los profetas mayores del antiguo testamento \n" +
+                    "5-Los profetas menores del antiguo testamento \n" +
+                    "6-El evangelio signo ticos que pueden ser históricos del nuevo testamento \n" +
+                    "7-El libro histórico del nuevo testamento \n" +
+                    "8-Las cartas paulinas del nuevo testamento \n" +
+                    "9-Las cartas generales del nuevo testamento \n" +
+                    "10-El libro profético del nuevo testamento",
             "Los libros del pentateuco",
             "Génesis, Éxodo, Levítico, Número y Deuteronomio",
             "12 libros",
@@ -60,9 +60,9 @@ public class QuestionsAndAnswers {
             "1. Mateo \n2. Marcos \n3. Lucas \n4. Juan",
             "El libro de Hechos",
             "13 cartas paulinas",
-            "1. Romano \n2. 1 Corintios \n3. 2 Corintios \n4. Gálatas \n5. Efesios \n6. Filipenses \n7. Colosenses \n" +
+            "1. Romanos \n2. 1 Corintios \n3. 2 Corintios \n4. Gálatas \n5. Efesios \n6. Filipenses \n7. Colosenses \n" +
                     "8. 1 Tesalonicenses \n9. 2 Tesalonicenses \n10. 1 Timoteo \n11. 2 Timoteo \n12. Tito \n13.	Filemón",
-            "8 cartas generales incluyendo a hebreos",
+            "8 Cartas generales incluyendo a hebreos",
             "1. Hebreos \n2. Santiago \n3. 1 Pedro \n4. 2 Pedro \n5. 1 Juan \n6. 2 Juan \n7. 3 Juan \n8. Judas",
             "Apocalipsis"};
 }

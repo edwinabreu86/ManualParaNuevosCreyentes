@@ -17,7 +17,7 @@ public class Books {
 
     public static final String[] B_MEANINGS = {"nacimiento o comienzos", "salida", "Libro de la ley", "En el desierto", "Segunda Ley", "Jehová Salva", "Persona que tiene autoridad y potestad para juzgar",
             "La Compañera fiel", "Escuchado por Dios", "Escuchado por Dios", "El que decide con énfasis en la superioridad intelectual", "El que decide con énfasis en la superioridad intelectual",
-            "Los añales de los días", "Los añales de los días", "Significado: El que Dios ayuda", "Jehová a consolado", "Estrella, astro", "El perseguido o Aborrecido", "Alabanzas al Rey",
+            "Los añales de los días", "Los añales de los días", "El que Dios ayuda", "Jehová ha consolado", "Estrella, astro", "El perseguido o aborrecido", "Alabanzas al Rey",
             "Escritos Sapiensales", "Asambleísta o Congregista", "Canto de amor que representa la belleza de una relación humana como símbolo de amor divino", "La principal profecía de condena y consolación mesiánica",
             "Mensaje de juicio contra la moral de Judá y el deterioramiento espiritual", "Cinco poemas de lamento por la caída de Jerusalén", "Profecía del juicio durante el cautiverio babilónico",
             "Libro de profecía sobre los postreros tiempos", "Mensaje de condenación a Israel seguido por el perdón de Dios", "Predicción de la invasión extranjera como juicio de Dios",
