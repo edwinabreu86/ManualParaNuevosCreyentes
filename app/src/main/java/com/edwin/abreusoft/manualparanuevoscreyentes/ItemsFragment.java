@@ -65,10 +65,10 @@ public class ItemsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_items, container, false);
 
-        String name = getString(R.string.name) + ": \b";
-        String authors = getString(R.string.authors) + ": \b";
-        String chapters = getString(R.string.chapters) + ": \b";
-        String meaning = getString(R.string.meaning) + ": \b";
+        String name = getString(R.string.name) + "\b";
+        String authors = getString(R.string.authors) + "\b";
+        String chapters = getString(R.string.chapters) + "\b";
+        String meaning = getString(R.string.meaning) + "\b";
 
         onCreate(getArguments());
 

@@ -26,6 +26,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CreditsActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
     </application>
 
