@@ -1,14 +1,17 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:background="@color/primary_light">
 
     <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/item_padding"
-        android:divider="@color/divider"
-        android:dividerHeight="2dp"/>
+        android:divider="@color/primary_light"
+        android:dividerHeight="4dp"/>
 
-</LinearLayout>
+</FrameLayout>

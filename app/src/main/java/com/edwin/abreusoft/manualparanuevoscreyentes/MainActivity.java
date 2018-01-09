@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragmentList(R.string.first_steps, QuestionsAndAnswers.QUESTIONS, QuestionsAndAnswers.ANSWERS);
                 break;
             case R.id.nav_bible_books:
-                changeFragmentBooks();
+                changeFragmentBooks(R.string.bible_books, Books.B_NAMES, Books.B_AUTHORS, Books.B_CHAPTERS, Books.B_MEANINGS);
                 break;
             case R.id.nav_memorizing_texts:
                 changeFragmentList(R.string.memorizing_texts, TextsToMemorize.textRef, TextsToMemorize.textContent);
@@ -177,21 +177,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void changeFragmentBooks() {
-        String title = getResources().getString(R.string.bible_books);
-
-        toolbar.setTitle(title);
+    private void changeFragmentBooks(int titleRef, String[] text1, String[] text2, int[] text3, String[] text4) {
+        toolbar.setTitle(getResources().getString(R.string.bible_books));
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
                 .replace(R.id.container,
-                        BooksFragment.newInstance(Books.bNames, Books.bAuthors, Books.bChapters, Books.bMeanings))
+                        ItemsFragment.newBook(Books.B_NAMES, Books.B_AUTHORS, Books.B_CHAPTERS, Books.B_MEANINGS))
                 .commit();
     }
 
     private void changeFragmentText(int titleRef, String content) {
-        String title = getResources().getString(titleRef);
-
-        toolbar.setTitle(title);
+        toolbar.setTitle(getResources().getString(titleRef));
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
                 .replace(R.id.container, TextFragment.newInstance(content))
