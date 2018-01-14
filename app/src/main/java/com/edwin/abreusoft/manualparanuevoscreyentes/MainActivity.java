@@ -20,7 +20,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -195,11 +194,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void changeFragmentBooks(int titleRef, String[] text1, String[] text2, int[] text3, String[] text4) {
-        toolbar.setTitle(getResources().getString(R.string.bible_books));
+        toolbar.setTitle(getResources().getString(titleRef));
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
                 .replace(R.id.container,
-                        ItemsFragment.newBook(Books.B_NAMES, Books.B_AUTHORS, Books.B_CHAPTERS, Books.B_MEANINGS))
+                        ItemsFragment.newBook(text1, text2, text3, text4))
                 .commit();
     }
 
