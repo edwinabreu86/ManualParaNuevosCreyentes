@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.edwin.abreusoft.manualparanuevoscreyentes.CreditsActivity"
     android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
+        android:id="@+id/credits_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/primary"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:title="@string/credits"
-        app:titleTextColor="@color/primary_light"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:titleTextColor="@color/primary_text" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
                 android:text="@string/url1"
-                android:textColor="@color/accent"
+                android:textColor="@color/secondary"
                 android:textStyle="italic"/>
 
             <TextView
@@ -60,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
                 android:text="@string/url2"
-                android:textColor="@color/accent"
+                android:textColor="@color/secondary"
                 android:textStyle="italic"/>
         </LinearLayout>
     </LinearLayout>
@@ -90,7 +93,7 @@
             android:layout_marginTop="@dimen/item_padding"
             android:layout_marginStart="@dimen/item_padding"
             android:text="@string/url3"
-            android:textColor="@color/accent"
+            android:textColor="@color/secondary"
             android:textStyle="italic" />
     </LinearLayout>
 

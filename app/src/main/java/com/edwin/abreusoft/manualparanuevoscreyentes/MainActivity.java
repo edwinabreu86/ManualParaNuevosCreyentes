@@ -1,9 +1,11 @@
 package com.edwin.abreusoft.manualparanuevoscreyentes;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -18,11 +20,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -32,7 +36,8 @@ import com.edwin.abreusoft.manualparanuevoscreyentes.Content.Paragraphs;
 import com.edwin.abreusoft.manualparanuevoscreyentes.Content.QuestionsAndAnswers;
 import com.edwin.abreusoft.manualparanuevoscreyentes.Content.TextsToMemorize;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,
+        DialogInterface.OnClickListener {
 
     private static final String CHECKED = "checked";
     private Toolbar toolbar;
@@ -48,8 +53,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawer = findViewById(R.id.drawer_layout);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
+                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        }
 
+        drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawen_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -58,9 +67,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         changeFragmentList(R.string.first_steps, QuestionsAndAnswers.QUESTIONS, QuestionsAndAnswers.ANSWERS);
-
         prefs = getPreferences(Context.MODE_PRIVATE);
     }
+
+
 
     @Override
     protected void onStart() {
@@ -100,10 +110,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
+
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("Deseas salir de la aplicación?")
+                    .setCancelable(false)
+                    .setPositiveButton("Sí",this)
+                    .setNegativeButton("No",this)
+                    .create()
+                    .show();
         }
     }
 
@@ -202,6 +219,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fm.beginTransaction()
                 .replace(R.id.container, ItemsFragment.newInstance(text1, text2))
                 .commit();
+    }
+
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+        if(i == AlertDialog.BUTTON_POSITIVE) {
+            finish();
+        } else if(i == AlertDialog.BUTTON_NEGATIVE){
+            dialogInterface.cancel();
+        }
     }
 }
 

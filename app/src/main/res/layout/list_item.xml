@@ -5,17 +5,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/item_padding">
+    android:background="@color/primary_light"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    android:paddingTop="4dp">
 
     <TextView
         android:id="@+id/item_question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:background="@color/accent"
-        android:textSize="18sp"
+        android:background="@drawable/rectangle_upper"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/icons"
+        android:textColor="@color/primary_text"
         tools:text="Question" />
 
     <TextView
@@ -23,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:background="@color/icons"
+        android:background="@drawable/rectangle_lower"
         android:textSize="16sp"
         android:textColor="@color/secondary_text"
         tools:text="Answer" />
