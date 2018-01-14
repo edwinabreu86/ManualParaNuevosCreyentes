@@ -7,8 +7,7 @@
     android:layout_height="wrap_content"
     android:background="@color/primary_light"
     android:paddingStart="@dimen/item_padding"
-    android:paddingEnd="@dimen/item_padding"
-    android:paddingTop="4dp">
+    android:paddingEnd="@dimen/item_padding">
 
     <TextView
         android:id="@+id/item_question"
