@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void showCredits() {
         @SuppressLint("InflateParams")
-        View view = getLayoutInflater().inflate(R.layout.credits, null);
+        View view = getLayoutInflater().inflate(R.layout.credits_dialog, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true)
