@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,15 +19,14 @@ public class CreditsActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credits);
 
-        Toolbar creditsToolbar = findViewById(R.id.credits_toolbar);
-        setSupportActionBar(creditsToolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.credits));
+        setSupportActionBar(toolbar);
 
-        creditsToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
+        ActionBar ab = getSupportActionBar();
+
+        assert ab != null;
+        ab.setDisplayHomeAsUpEnabled(true);
 
         TextView iconUrl1 = findViewById(R.id.icon_url1);
         TextView iconUrl2 = findViewById(R.id.icon_url2);
