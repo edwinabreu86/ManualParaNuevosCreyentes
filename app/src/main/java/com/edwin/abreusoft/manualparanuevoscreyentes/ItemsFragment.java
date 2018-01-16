@@ -1,9 +1,8 @@
 package com.edwin.abreusoft.manualparanuevoscreyentes;
 
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ItemsFragment extends Fragment {
+import com.edwin.abreusoft.manualparanuevoscreyentes.ItemAdapter.TextItem;
+
+public class ItemsFragment extends ListFragment {
 
     private static final String TEXT1 = "text1";
     private static final String TEXT2 = "text2";
@@ -85,8 +86,8 @@ public class ItemsFragment extends Fragment {
         }
 
         ItemAdapter adapter = new ItemAdapter(getActivity(), itemsList);
-        ListView listView = view.findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
+
+        setListAdapter(adapter);
 
         return view;
     }

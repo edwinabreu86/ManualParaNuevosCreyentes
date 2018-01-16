@@ -5,9 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/primary_light"
-    android:paddingStart="@dimen/item_padding"
-    android:paddingEnd="@dimen/item_padding">
+    android:padding="4dp" >
 
     <TextView
         android:id="@+id/item_question"

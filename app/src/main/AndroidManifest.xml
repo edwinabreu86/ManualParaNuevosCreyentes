@@ -24,11 +24,6 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".CreditsActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/CreditsTheme"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

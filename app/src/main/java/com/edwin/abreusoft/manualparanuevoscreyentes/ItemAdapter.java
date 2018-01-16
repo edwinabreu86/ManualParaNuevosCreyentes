@@ -1,8 +1,10 @@
 package com.edwin.abreusoft.manualparanuevoscreyentes;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +13,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class ItemAdapter extends ArrayAdapter<TextItem> {
+public class ItemAdapter extends ArrayAdapter<ItemAdapter.TextItem> {
 
     ItemAdapter(@NonNull Context context, @NonNull List<TextItem> objects) {
         super(context, 0, objects);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -40,5 +43,24 @@ public class ItemAdapter extends ArrayAdapter<TextItem> {
     private static class ViewHolder {
         TextView itemView1;
         TextView itemView2;
+    }
+
+    public static class TextItem {
+        private final String text1;
+        private final String text2;
+
+        TextItem(String text1, String text2) {
+            this.text1 = text1;
+            this.text2 = text2;
+        }
+
+        String getText1() {
+            return text1;
+        }
+
+        public String getText2() {
+            return text2;
+
+        }
     }
 }

@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void createIntroDialog() {
-        @SuppressLint("InflateParams") View view = getLayoutInflater().inflate(R.layout.intro_dialog_layout, null);
+        @SuppressLint("InflateParams") View view = getLayoutInflater().inflate(R.layout.intro_dialog, null);
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage("Deseas salir de la aplicación?")
-                    .setCancelable(false)
+                    .setCancelable(true)
                     .setPositiveButton("Sí",this)
                     .setNegativeButton("No",this)
                     .create()
@@ -137,8 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 rateApp(getApplicationContext());
                 return true;
             case R.id.menu_credits:
-                Intent intent = new Intent(this, CreditsActivity.class);
-                startActivity(intent);
+                showCredits();
                 return true;
             case R.id.menu_exit:
                 finish();
@@ -146,6 +145,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         return false;
+    }
+
+    private void showCredits() {
+        @SuppressLint("InflateParams")
+        View view = getLayoutInflater().inflate(R.layout.credits, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true)
+                .setTitle(getString(R.string.credits))
+                .setNegativeButton("Aceptar", this)
+                .setView(view)
+                .create()
+                .show();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -224,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onClick(DialogInterface dialogInterface, int i) {
         if(i == AlertDialog.BUTTON_POSITIVE) {
             finish();
-        } else if(i == AlertDialog.BUTTON_NEGATIVE){
+        } else {
             dialogInterface.cancel();
         }
     }
