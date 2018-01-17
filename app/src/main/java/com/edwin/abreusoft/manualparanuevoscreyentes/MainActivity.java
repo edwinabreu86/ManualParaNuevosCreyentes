@@ -25,7 +25,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
@@ -52,11 +51,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION,
-                    WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
-
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawen_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -75,36 +69,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
         if (!prefs.contains(CHECKED)) {
-            createIntroDialog();
+            showIntro();
         }
-    }
-
-    private void createIntroDialog() {
-        @SuppressLint("InflateParams") View view = getLayoutInflater().inflate(R.layout.intro_dialog, null);
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
-        dialog.setCancelable(true);
-
-        TextView introText = dialog.findViewById(R.id.intro_text);
-        introText.setText(Paragraphs.INTR_CONTENT);
-
-        final CheckBox noShowCheck = dialog.findViewById(R.id.no_show_check);
-        Button acceptButton = dialog.findViewById(R.id.accept_button);
-
-        dialog.show();
-
-        acceptButton.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ApplySharedPref")
-            @Override
-            public void onClick(View view) {
-                if(noShowCheck.isChecked()) {
-                    prefs.edit().putBoolean(CHECKED, true).commit();
-                }
-
-                dialog.dismiss();
-            }
-        });
     }
 
     @Override
@@ -147,17 +113,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+    private void showIntro() {
+        @SuppressLint("InflateParams")
+        View view = getLayoutInflater().inflate(R.layout.intro_dialog, null);
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        TextView introText = dialog.findViewById(R.id.intro_text);
+        introText.setText(Paragraphs.INTR_CONTENT);
+
+        final CheckBox noShowCheck = dialog.findViewById(R.id.no_show_check);
+        Button closeButton = dialog.findViewById(R.id.close_button);
+
+        dialog.show();
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ApplySharedPref")
+            @Override
+            public void onClick(View view) {
+                if(noShowCheck.isChecked()) {
+                    prefs.edit().putBoolean(CHECKED, true).commit();
+                }
+
+                dialog.dismiss();
+            }
+        });
+
+    }
+
     private void showCredits() {
         @SuppressLint("InflateParams")
         View view = getLayoutInflater().inflate(R.layout.credits_dialog, null);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true)
-                .setTitle(getString(R.string.credits))
-                .setNegativeButton("Aceptar", this)
-                .setView(view)
-                .create()
-                .show();
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        Button closeButton = dialog.findViewById(R.id.close_button);
+
+        dialog.show();
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -209,7 +211,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar.setTitle(getResources().getString(titleRef));
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
-                .replace(R.id.container,
+                .replace(R.id.fragment_container,
                         ItemsFragment.newBook(text1, text2, text3, text4))
                 .commit();
     }
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar.setTitle(getResources().getString(titleRef));
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
-                .replace(R.id.container, TextFragment.newInstance(content))
+                .replace(R.id.fragment_container, TextFragment.newInstance(content))
                 .commit();
     }
 
@@ -228,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar.setTitle(title);
         FragmentManager fm = getSupportFragmentManager();
         fm.beginTransaction()
-                .replace(R.id.container, ItemsFragment.newInstance(text1, text2))
+                .replace(R.id.fragment_container, ItemsFragment.newInstance(text1, text2))
                 .commit();
     }
 

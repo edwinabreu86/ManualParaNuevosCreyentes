@@ -22,10 +22,12 @@
         android:checked="false" />
 
     <Button
-        android:id="@+id/accept_button"
+        android:id="@+id/close_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
-        android:text="@string/accept" />
+        android:layout_gravity="end"
+        android:text="@string/accept"
+        android:textColor="@color/secondary"
+        android:background="?android:attr/selectableItemBackground"/>
 
 </LinearLayout>
