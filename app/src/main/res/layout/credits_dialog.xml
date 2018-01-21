@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
@@ -28,29 +29,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
-                android:text="@string/icons_by"/>
+                android:text="Iconos creados por:"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
-                android:text="@string/url1"
-                android:textColor="@color/secondary"
-                android:textStyle="italic"/>
+                android:text="https://www.flaticon.com/authors/smashicons"
+                android:textColor="@color/colorSecondary"
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
-                android:text="@string/license"/>
+                android:text="www.flaticon.com tiene licencia de:"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/item_padding"
-                android:text="@string/url2"
-                android:textColor="@color/secondary"
-                android:textStyle="italic"/>
+                android:text="http://creativecommons.org/licenses/by/3.0/"
+                android:textColor="@color/colorSecondary"
+                android:textStyle="italic"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>
 
@@ -60,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="@string/accept"
-        android:textColor="@color/secondary"
+        android:textColor="@color/colorSecondary"
         android:background="?android:attr/selectableItemBackground"/>
 
 </LinearLayout>

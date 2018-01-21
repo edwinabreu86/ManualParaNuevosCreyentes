@@ -3,18 +3,29 @@
         android:id="@+id/nav_gratitude"
         android:title="@string/gratitude" />
     <item
-        android:id="@+id/nav_first_steps"
-        android:title="@string/first_steps" />
-    <item
-        android:id="@+id/nav_bible_books"
-        android:title="@string/bible_books" />
-    <item
-        android:id="@+id/nav_memorizing_texts"
-        android:title="@string/memorizing_texts" />
-    <item
-        android:id="@+id/nav_conclusion"
-        android:title="@string/conclusion" />
-    <item
-        android:id="@+id/nav_new_disciples"
-        android:title="@string/new_disciples" />
+        android:id="@+id/nav_general_questions"
+        android:title="@string/general_questions" />
+
+    <item android:title="@string/bible_books">
+        <menu>
+            <item
+                android:id="@+id/nav_ot_books"
+                android:title="@string/ot_books" />
+            <item
+                android:id="@+id/nav_nt_books"
+                android:title="@string/nt_books" />
+        </menu>
+    </item>
+
+    <group>
+        <item
+            android:id="@+id/nav_memorizing_texts"
+            android:title="@string/memorizing_texts" />
+        <item
+            android:id="@+id/nav_conclusion"
+            android:title="@string/conclusion" />
+        <item
+            android:id="@+id/nav_new_disciples"
+            android:title="@string/new_disciples" />
+    </group>
 </menu>

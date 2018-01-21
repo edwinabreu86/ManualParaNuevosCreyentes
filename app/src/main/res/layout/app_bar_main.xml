@@ -8,6 +8,14 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:scrollbars="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,19 +25,27 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:layout_scrollFlags="scroll|enterAlways"
             tools:targetApi="lollipop" />
     </android.support.design.widget.AppBarLayout>
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:nestedScrollingEnabled="true"
-        tools:targetApi="lollipop" />
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_padding"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:visibility="gone" />
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

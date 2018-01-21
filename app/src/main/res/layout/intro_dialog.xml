@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="@string/accept"
-        android:textColor="@color/secondary"
+        android:textColor="@color/colorSecondary"
         android:background="?android:attr/selectableItemBackground"/>
 
 </LinearLayout>
