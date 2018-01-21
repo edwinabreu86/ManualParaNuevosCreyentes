@@ -32,7 +32,6 @@
             tools:targetApi="lollipop" />
     </android.support.design.widget.AppBarLayout>
 
-
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/item_padding"
-            android:textSize="15sp"
+            android:textSize="14sp"
             android:textColor="@color/secondaryTextColor"
             android:textAlignment="center"
             android:visibility="gone" />

@@ -1,10 +1,10 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Books;
 
 public class Book  {
-    private String title;
-    private String author;
-    private String chapters;
-    private String description;
+    private final String title;
+    private final String author;
+    private final String chapters;
+    private final String description;
 
     public Book(String title, String author, String chapters, String description) {
         this.title = title;

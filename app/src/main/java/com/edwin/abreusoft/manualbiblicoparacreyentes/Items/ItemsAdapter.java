@@ -12,10 +12,11 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
 
-    private List<Item> itemsList;
+    private final List<Item> itemsList;
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView questionView, answerView;
+        final TextView questionView;
+        final TextView answerView;
 
         ViewHolder(View itemView) {
             super(itemView);

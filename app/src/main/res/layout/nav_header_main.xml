@@ -10,7 +10,8 @@
     android:backgroundTintMode="multiply"
     android:paddingStart="@dimen/item_padding"
     android:paddingEnd="@dimen/item_padding"
-    tools:targetApi="lollipop">
+    tools:targetApi="lollipop"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:layout_width="80dp"

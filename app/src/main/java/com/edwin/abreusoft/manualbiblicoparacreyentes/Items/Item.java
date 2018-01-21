@@ -1,19 +1,19 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Items;
 
 public class Item {
-    private String question;
-    private String answer;
+    private final String question;
+    private final String answer;
 
     public Item(String question, String answer) {
         this.question = question;
         this.answer = answer;
     }
 
-    public String getQuestion() {
+    String getQuestion() {
         return question;
     }
 
-    public String getAnswer() {
+    String getAnswer() {
         return answer;
 
     }

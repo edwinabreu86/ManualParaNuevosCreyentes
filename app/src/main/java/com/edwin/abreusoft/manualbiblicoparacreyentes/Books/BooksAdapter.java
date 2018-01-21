@@ -13,10 +13,13 @@ import java.util.List;
 
 public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> {
 
-    private List<Book> booksList;
+    private final List<Book> booksList;
 
     class ViewHolder extends RecyclerView.ViewHolder {
-        TextView titleView, authorView, chaptersView, descriptionView;
+        final TextView titleView;
+        final TextView authorView;
+        final TextView chaptersView;
+        final TextView descriptionView;
 
         ViewHolder(View itemView) {
             super(itemView);
