@@ -39,7 +39,7 @@ class Paragraphs {
             "y luego del Pastor y Supervisor del concilio Damasco, el reverendo Gabriel Beltré.";
 
     static final String ABOUT_AUTHOR =
-            "{Nombre: Carlos Emenegildo Gómez Mata.\n\n" +
+            "Nombre: Carlos Emenegildo Gómez Mata.\n\n" +
                     "Estado civil: casado con dos hijos biológicos y una de crianza.\n\n" +
                     "Domicilio: Moca provincia Espaillat, REP. DOM.\n\n" +
                     "Estudios realizados: \n" +
