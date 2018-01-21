@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        toolbar.setTitle(R.string.general_questions);
 
         getWindow().setStatusBarColor(Color.TRANSPARENT);
 
