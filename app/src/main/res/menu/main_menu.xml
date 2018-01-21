@@ -5,6 +5,10 @@
     <item
         android:id="@+id/menu_app_rating"
         android:title="@string/app_rating" />
+
+    <item
+        android:id="@+id/menu_about_author"
+        android:title="@string/about_author" />
     <item
         android:id="@+id/menu_credits"
         android:title="@string/credits" />

@@ -2,39 +2,30 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:padding="4dp" >
+    style="@style/list_style">
 
     <TextView
         android:id="@+id/title_view"
-        style="@style/list_style"
+        style="@style/item_style"
         android:background="@drawable/rectangle_upper"
-        android:textColor="@color/colorPrimaryText"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        tools:text="Question" />
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/author_view"
-        style="@style/list_style"
-        android:background="@color/colorPrimaryText"
-        android:textColor="@color/colorSecondaryText"
-        tools:text="Answer" />
+        style="@style/item_style"
+        tools:text="Author" />
 
     <TextView
         android:id="@+id/chapters_view"
-        style="@style/list_style"
-        android:background="@color/colorPrimaryText"
-        android:textColor="@color/colorSecondaryText"
-        tools:text="Answer" />
+        style="@style/item_style"
+        tools:text="Chapters" />
 
     <TextView
         android:id="@+id/description_view"
-        style="@style/list_style"
+        style="@style/item_style"
         android:background="@drawable/rectangle_lower"
-        android:textColor="@color/colorSecondaryText"
-        tools:text="Answer" />
-
+        tools:text="Description" />
 
 </LinearLayout>

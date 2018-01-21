@@ -3,4 +3,5 @@
     <dimen name="activity_margin">12dp</dimen>
     <dimen name="nav_header_height">120dp</dimen>
     <dimen name="item_padding">8dp</dimen>
+    <dimen name="min_padding">4dp</dimen>
 </resources>

@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
     android:orientation="horizontal"
-    android:gravity="center"
     android:background="@drawable/faith_background"
-    android:padding="8dp">
+    android:backgroundTint="@color/primaryLightColor"
+    android:backgroundTintMode="multiply"
+    android:paddingStart="@dimen/item_padding"
+    android:paddingEnd="@dimen/item_padding"
+    tools:targetApi="lollipop">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher_round"
+        android:src="@mipmap/ic_launcher"
         tools:ignore="ContentDescription" />
 
     <LinearLayout
@@ -25,19 +27,18 @@
         android:padding="@dimen/activity_margin">
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Widget.ActionMode.Title"
-            android:textColor="@color/colorPrimaryText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@android:color/white"
             android:textStyle="bold"/>
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="@string/pastor_carlos_gomez"
-            android:textColor="@color/colorPrimaryText"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/secondary_text_dark_nodisable"/>
     </LinearLayout>
 </LinearLayout>

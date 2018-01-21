@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Manual Bíblico para creyentes</string>
     <string name="navigation_drawen_open">Drawer open</string>
     <string name="navigation_drawer_close">Drawer close</string>
@@ -11,7 +11,7 @@
     <string name="memorizing_texts">Textos para memorizar</string>
     <string name="conclusion">Conclusión</string>
     <string name="new_disciples">Preparación de nuevos creyentes</string>
-    <string name="pastor">Pastor y psicólogo Carlos Gomez</string>
+    <string name="pastor">Pastor y psicólogo Carlos Gómez</string>
     <string name="credits">Créditos</string>
     <string name="exit">Salir</string>
     <string name="pastor_carlos_gomez">Pastor Carlos Gómez</string>
@@ -21,4 +21,5 @@
     <string name="content_desc">app_icon</string>
     <string name="accept">Entendido</string>
     <string name="no_show">No mostrar más este mensaje</string>
+    <string name="about_author" tools:ignore="Typos">Sobre el autor</string>
 </resources>

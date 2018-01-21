@@ -3,15 +3,14 @@
 <resources>
     <color name="ic_launcher_background">#19192A</color>
 
-    <color name="colorPrimary">#6d4c41</color>
-    <color name="colorPrimaryLight">#BCAAA4</color>
-    <color name="colorPrimaryDark">#40241a</color>
-    <color name="colorStatusBar">#8340241A</color>
-    <color name="colorSecondary">#536dfe</color>
-    <color name="colorSecondaryLight">#8f9bff</color>
-    <color name="colorSecondaryDark">#0043ca</color>
-    <color name="colorPrimaryText">#ffffff</color>
-    <color name="colorSecondaryText">#757575</color>
+    <color name="primaryColor">#DC5E5E</color>
+    <color name="primaryLightColor">#EA9999</color>
+    <color name="primaryDarkColor">#D34949</color>
+    <color name="secondaryColor">#76A5AF</color>
+    <color name="secondaryLightColor">#BBD2D7</color>
+    <color name="secondaryDarkColor">#598A96</color>
+    <color name="primaryTextColor">#000000</color>
+    <color name="secondaryTextColor">#000000</color>
 </resources>
 
 

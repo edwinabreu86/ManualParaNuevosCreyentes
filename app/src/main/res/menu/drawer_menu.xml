@@ -1,10 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/nav_gratitude"
-        android:title="@string/gratitude" />
-    <item
         android:id="@+id/nav_general_questions"
         android:title="@string/general_questions" />
+
+    <item
+        android:id="@+id/nav_memorizing_texts"
+        android:title="@string/memorizing_texts" />
 
     <item android:title="@string/bible_books">
         <menu>
@@ -17,15 +18,17 @@
         </menu>
     </item>
 
-    <group>
-        <item
-            android:id="@+id/nav_memorizing_texts"
-            android:title="@string/memorizing_texts" />
-        <item
-            android:id="@+id/nav_conclusion"
-            android:title="@string/conclusion" />
-        <item
-            android:id="@+id/nav_new_disciples"
-            android:title="@string/new_disciples" />
-    </group>
+    <item android:title="@string/others">
+        <menu>
+            <item
+                android:id="@+id/nav_gratitude"
+                android:title="@string/gratitude" />
+            <item
+                android:id="@+id/nav_conclusion"
+                android:title="@string/conclusion" />
+            <item
+                android:id="@+id/nav_new_disciples"
+                android:title="@string/new_disciples" />
+        </menu>
+    </item>
 </menu>
