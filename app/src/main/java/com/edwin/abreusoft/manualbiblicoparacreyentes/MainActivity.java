@@ -23,6 +23,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -50,8 +51,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private DrawerLayout drawer;
     private SharedPreferences prefs;
 
+    private Dialog dialog;
     private TextView textView;
     private RecyclerView recyclerView;
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("CommitTransaction")
@@ -73,8 +76,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         prefs = getPreferences(Context.MODE_PRIVATE);
+
+        dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         textView = findViewById(R.id.text_view);
 
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onStart() {
         super.onStart();
         if (!prefs.contains(CHECKED)) {
-            showIntro();
+            showIntroDialog(R.layout.intro_dialog);
         }
     }
 
@@ -100,23 +105,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("Deseas salir de la aplicación?")
-                    .setCancelable(true)
-                    .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.dismiss();
-                        }
-                    })
-                    .create()
-                    .show();
+            showExitDialog();
         }
     }
 
@@ -138,30 +127,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this, AuthorActivity.class));
                 return true;
             case R.id.menu_credits:
-                showCreditsDialog();
+                showCreditsDialog(R.layout.credits_dialog);
                 return true;
             case R.id.menu_exit:
-                finish();
+                showExitDialog();
                 return true;
         }
 
         return false;
     }
 
-    private void showIntro() {
-        @SuppressLint("InflateParams")
-        View view = getLayoutInflater().inflate(R.layout.intro_dialog, null);
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+    private void showExitDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Deseas salir de la aplicación?")
+                .setCancelable(true)
+                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .create()
+                .show();
+    }
+
+    private void showIntroDialog(int layoutRes) {
+        dialog.setContentView(getLayoutInflater().inflate(layoutRes, null),
+                new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+        dialog.show();
 
         TextView introText = dialog.findViewById(R.id.intro_text);
         introText.setText(Paragraphs.INTR_CONTENT);
 
         final CheckBox noShowCheck = dialog.findViewById(R.id.no_show_check);
         Button closeButton = dialog.findViewById(R.id.close_button);
-
-        dialog.show();
 
         closeButton.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ApplySharedPref")
@@ -170,20 +175,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(noShowCheck.isChecked()) {
                     prefs.edit().putBoolean(CHECKED, true).commit();
                 }
-
                 dialog.dismiss();
             }
         });
 
     }
 
-    private void showCreditsDialog() {
-        @SuppressLint("InflateParams")
-        View view = getLayoutInflater().inflate(R.layout.credits_dialog, null);
-
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(view, new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+    private void showCreditsDialog(int layoutRes) {
+        dialog.setContentView(getLayoutInflater().inflate(layoutRes, null),
+                new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
         dialog.show();
 
         Button closeButton = dialog.findViewById(R.id.close_button);
@@ -193,8 +193,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 dialog.dismiss();
             }
         });
-        // TextView authorText = dialog.findViewById(R.id.author_text);
-        // authorText.setText(Paragraphs.ABOUT_AUTHOR);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)

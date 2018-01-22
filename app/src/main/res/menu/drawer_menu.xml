@@ -1,19 +1,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_general_questions"
+        android:icon="@drawable/ic_questions"
         android:title="@string/general_questions" />
 
     <item
         android:id="@+id/nav_memorizing_texts"
+        android:icon="@drawable/ic_memorize"
         android:title="@string/memorizing_texts" />
 
     <item android:title="@string/bible_books">
         <menu>
             <item
                 android:id="@+id/nav_ot_books"
+                android:icon="@drawable/ic_books"
                 android:title="@string/ot_books" />
             <item
                 android:id="@+id/nav_nt_books"
+                android:icon="@drawable/ic_books"
                 android:title="@string/nt_books" />
         </menu>
     </item>
@@ -22,12 +26,15 @@
         <menu>
             <item
                 android:id="@+id/nav_gratitude"
+                android:icon="@drawable/ic_greetings"
                 android:title="@string/gratitude" />
             <item
                 android:id="@+id/nav_conclusion"
+                android:icon="@drawable/ic_conclusion"
                 android:title="@string/conclusion" />
             <item
                 android:id="@+id/nav_new_disciples"
+                android:icon="@drawable/ic_recommend"
                 android:title="@string/new_disciples" />
         </menu>
     </item>

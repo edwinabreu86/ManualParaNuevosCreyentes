@@ -4,15 +4,19 @@
 
     <item
         android:id="@+id/menu_app_rating"
+        android:icon="@drawable/ic_rating"
         android:title="@string/app_rating" />
 
     <item
         android:id="@+id/menu_about_author"
+        android:icon="@drawable/ic_about"
         android:title="@string/about_author" />
     <item
         android:id="@+id/menu_credits"
+        android:icon="@drawable/ic_credits"
         android:title="@string/credits" />
     <item
         android:id="@+id/menu_exit"
+        android:icon="@drawable/ic_exit"
         android:title="@string/exit" />
 </menu>

@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/introduction"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/primaryTextColor"/>
 
     <CheckBox
         android:id="@+id/no_show_check"
