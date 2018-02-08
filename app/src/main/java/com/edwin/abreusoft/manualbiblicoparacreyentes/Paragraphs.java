@@ -2,7 +2,8 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 
 class Paragraphs {
 
-    static final String INTR_CONTENT = "Aquí encontrarás datos esenciales de la Biblia " +
+    static final String INTR_CONTENT =
+            "Aquí encontrarás datos esenciales de la Biblia " +
             "antes conocerla por dentro, tales como: \n"+
             "* los nombres de sus 66 libros, \n" +
             "* cuántos capítulos tienen, \n" +
@@ -10,14 +11,16 @@ class Paragraphs {
             "* las sub-divisiones de la biblia \n" +
             "* versos esenciales para memorizar.";
 
-    static final String GRAT_CONTENT = "Le agradezco primero a mi DIOS por ser tan misericordioso con mi familia, " +
-            "agradeciéndole a ellos por ser el canal de motivación después del Espíritu Santo. " +
-            "Estos primeros pasos los implementé en mi casa con mis hijos, \n\n" +
+    static final String GRAT_CONTENT =
+            "Le agradezco primero a mi DIOS por ser tan misericordioso con mi familia, " +
+            "agradeciéndole a ellos por ser el canal de motivación después del Espíritu Santo. \n\n" +
+            "Estos primeros pasos los implementé en mi casa con mis hijos, "+
             "luego los apliqué en la iglesia que pastoreo donde surgió una revolución entre adultos, " +
-            "jóvenes y niños. Ahora el concilio Damasco de Rep. Dom. me pide que cada pastor tenga este material. " +
+            "jóvenes y niños. \n\nAhora el concilio Damasco de Rep. Dom. me pide que cada pastor tenga este material. " +
             "Me llegó la idea de elaborar un libro de bolsillo para que el mundo entero pueda recibir esta enseñanza.";
 
-    static final String CONCL_CONTENT = "Para concluir, se espera que usted adopte como suyo este conocimiento y lo memorice, " +
+    static final String CONCL_CONTENT =
+            "Para concluir, se espera que usted adopte como suyo este conocimiento y lo memorice, " +
             "convirtiéndose en un líder potencial para enseñar las maravillas del DIOS vivo. \n\n" +
             "Se espera que usted se levante en su iglesia como un maestro " +
             "con doctrina sana, trabajando de la mano con su pastor " +
@@ -25,7 +28,8 @@ class Paragraphs {
             "fue Cristo y estamos llamados a imitarlo. \n\n" +
             "DIOS LE BENDIGA.";
 
-    static final String NEW_DISC_CONTENT = "Hay un secreto maravilloso para preparar un nuevo creyente. " +
+    static final String NEW_DISC_CONTENT =
+            "Hay un secreto maravilloso para preparar un nuevo creyente. " +
             "Debes tener un buen maestro con capacidad de hacer líderes. " +
             "Enfócate no en los beneficios materiales, sino en el líder que todos tenemos dentro. \n\n" +
             "El Todo Poderoso es quien tiene las herramientas específicas para que cada discípulo, " +
@@ -36,7 +40,7 @@ class Paragraphs {
             "como fuente inagotable para perder lo que toda persona presenta a la hora " +
             "de pararse ante un pulpito o escenario, que se llama miedo escénico. " +
             "Esto lo aprendí primero del señor DIOS todo poderoso " +
-            "y luego del Pastor y Supervisor del concilio Damasco, el reverendo Gabriel Beltré.";
+            "y luego del pastor y supervisor del concilio Damasco, el reverendo Gabriel Beltré.";
 
     static final String ABOUT_AUTHOR =
             "Nombre: Carlos Emenegildo Gómez Mata.\n\n" +

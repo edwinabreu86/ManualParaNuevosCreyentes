@@ -13,7 +13,7 @@ public class ItemsText {
                     "3. Los libros poéticos del antiguo testamento \n" +
                     "4. Los profetas mayores del antiguo testamento \n" +
                     "5. Los profetas menores del antiguo testamento \n" +
-                    "6. El evangelio signo ticos que pueden ser históricos del nuevo testamento \n" +
+                    "6. Los evangelios, que pueden ser históricos del nuevo testamento \n" +
                     "7. El libro histórico del nuevo testamento \n" +
                     "8. Las cartas paulinas del nuevo testamento \n" +
                     "9. Las cartas generales del nuevo testamento \n" +
@@ -41,13 +41,16 @@ public class ItemsText {
             {"¿Cuál es el libro profético del nuevo testamento?", "Apocalipsis"}};
 
     public static final String[][] TEXTS_TO_MEM = {
-            {"1 Timoteo 3-16", "E indiscutiblemente, grande es el misterio de la piedad: \n" +
+            {"1 Timoteo 3-16",
+                    "E indiscutiblemente, grande es el misterio de la piedad: \n" +
                     "Dios fue manifestado en carne, \nJustificado en el Espíritu, \n" +
                     "visto de los ángeles, \npredicado a los gentiles, \n" +
                     "creído en el mundo, \nrecibido arriba en gloria."},
-            {"2 Timoteo 3-16", "Toda la Escritura es inspirada por Dios, y útil para enseñar, " +
+            {"2 Timoteo 3-16",
+                    "Toda la Escritura es inspirada por Dios, y útil para enseñar, " +
                     "para redargüir, para corregir, para instruir en justicia."},
-            {"2 Pedro 1-21", "Porque nunca la profecía fue traída por voluntad humana, "+
+            {"2 Pedro 1-21",
+                    "Porque nunca la profecía fue traída por voluntad humana, "+
                     "sino que los santos hombres de Dios hablaron siendo inspirados por el Espíritu Santo."}
     };
 
