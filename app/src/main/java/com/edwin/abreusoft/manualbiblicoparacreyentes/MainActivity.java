@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 showVersesList(getString(R.string.ot_verses), VersesText.OT_VERSES);
                 break;
             case R.id.vers_nt:
-                showItemList(getString(R.string.nt_verses), VersesText.NT_VERSES);
+                showVersesList(getString(R.string.nt_verses), VersesText.NT_VERSES);
                 break;
             case R.id.nav_conclusion:
                 showText(R.string.conclusion, Paragraphs.CONCL_CONTENT);

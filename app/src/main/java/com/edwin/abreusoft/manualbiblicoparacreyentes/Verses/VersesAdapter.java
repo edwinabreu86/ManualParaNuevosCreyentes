@@ -21,9 +21,9 @@ public class VersesAdapter extends RecyclerView.Adapter<VersesAdapter.ViewHolder
 
         ViewHolder(View itemView) {
             super(itemView);
-            bookView = itemView.findViewById(R.id.title_view);
-            verseView = itemView.findViewById(R.id.author_view);
-            contentView = itemView.findViewById(R.id.chapters_view);
+            bookView = itemView.findViewById(R.id.book_view);
+            verseView = itemView.findViewById(R.id.verse_view);
+            contentView = itemView.findViewById(R.id.content_view);
         }
     }
 
@@ -35,7 +35,7 @@ public class VersesAdapter extends RecyclerView.Adapter<VersesAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View verseView = inflater.inflate(R.layout.verse_view, parent, false);
-        return null;
+        return new ViewHolder(verseView);
     }
 
     @Override
