@@ -40,6 +40,9 @@ import com.edwin.abreusoft.manualbiblicoparacreyentes.Books.BooksText;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.Item;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.ItemsAdapter;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.ItemsText;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Verses.Verse;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Verses.VersesAdapter;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Verses.VersesText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -214,8 +217,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_nt_books:
                 showBooksList(getString(R.string.nt_books), BooksText.NT_BOOKS);
                 break;
-            case R.id.nav_memorizing_texts:
-                showItemList(getString(R.string.memorizing_texts), ItemsText.TEXTS_TO_MEM);
+            case R.id.vers_ot:
+                showVersesList(getString(R.string.ot_verses), VersesText.OT_VERSES);
+                break;
+            case R.id.vers_nt:
+                showItemList(getString(R.string.nt_verses), VersesText.NT_VERSES);
                 break;
             case R.id.nav_conclusion:
                 showText(R.string.conclusion, Paragraphs.CONCL_CONTENT);
@@ -266,6 +272,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         textView.setVisibility(View.GONE);
         recyclerView.setVisibility(View.VISIBLE);
         recyclerView.setAdapter(new ItemsAdapter(itemList));
+    }
+
+    private void showVersesList(String title, String[][] content) {
+        toolbar.setTitle(title);
+
+        List<Verse> verseList = new ArrayList<>();
+
+        for (String[] aContent : content) {
+            Verse verse = new Verse(aContent[0], aContent[1], aContent[2]);
+            verseList.add(verse);
+        }
+
+        textView.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
+        recyclerView.setAdapter(new VersesAdapter(verseList));
     }
 
     private void showBooksList(String title, String[][] content) {

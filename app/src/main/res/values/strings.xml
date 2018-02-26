@@ -6,19 +6,20 @@
     <string name="gratitude">Agradecimiento</string>
     <string name="general_questions">Preguntas generales</string>
     <string name="bible_books">Libros de la Biblia</string>
-    <string name="ot_books">Viejo testamento</string>
-    <string name="nt_books">Nuevo testamento</string>
+    <string name="ot_books">Libros del Viejo testamento</string>
+    <string name="nt_books">Libros del Nuevo testamento</string>
+    <string name="ot_verses">Versículos del Viejo testamento</string>
+    <string name="nt_verses">Versículos del Nuevo testamento</string>
     <string name="memorizing_texts">Textos para memorizar</string>
     <string name="conclusion">Conclusión</string>
     <string name="new_disciples">Preparación de nuevos creyentes</string>
-    <string name="pastor">Pastor y psicólogo Carlos Gómez</string>
     <string name="credits">Créditos</string>
     <string name="exit">Salir</string>
-    <string name="pastor_carlos_gomez">Pastor Carlos Gómez</string>
     <string name="others">Otros</string>
     <string name="app_rating">Evaluar aplicación</string>
     <string name="content_desc">app_icon</string>
     <string name="accept">Entendido</string>
     <string name="no_show">No mostrar más este mensaje</string>
     <string name="about_author" tools:ignore="Typos">Sobre el autor</string>
+    <string name="verses_for_you">Versículos para ti</string>
 </resources>

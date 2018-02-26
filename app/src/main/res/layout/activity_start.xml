@@ -40,14 +40,5 @@
             android:textStyle="bold"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@android:color/white"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/min_padding"
-            android:text="@string/pastor"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textColor="@android:color/secondary_text_dark"/>
     </LinearLayout>
 </merge>
