@@ -14,14 +14,14 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     private final List<Item> itemsList;
 
-    class ViewHolder extends RecyclerView.ViewHolder {
-        final TextView questionView;
-        final TextView answerView;
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public final TextView text1;
+        public final TextView text2;
 
-        ViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            questionView = itemView.findViewById(R.id.question_view);
-            answerView = itemView.findViewById(R.id.answer_view);
+            text1 = itemView.findViewById(R.id.text1);
+            text2 = itemView.findViewById(R.id.text2);
         }
     }
 
@@ -31,17 +31,15 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View itemView = inflater.inflate(R.layout.item_view, parent, false);
-
-        return new ViewHolder(itemView);
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        return new ViewHolder(item);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Item item = itemsList.get(position);
-        holder.questionView.setText(item.getQuestion());
-        holder.answerView.setText(item.getAnswer());
+        holder.text1.setText(item.getText1());
+        holder.text2.setText(item.getText2());
     }
 
     @Override

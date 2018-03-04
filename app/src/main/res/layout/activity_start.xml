@@ -10,35 +10,35 @@
         android:layout_height="match_parent"
         android:src="@drawable/prayer_request"
         android:scaleType="centerCrop"
-        android:contentDescription="background"
         android:tint="@color/primaryLightColor"
         android:tintMode="multiply"
-        tools:ignore="HardcodedText"
-        tools:targetApi="lollipop" />
+        tools:targetApi="lollipop"
+        tools:ignore="ContentDescription" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="@dimen/activity_margin">
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:src="@mipmap/ic_launcher_foreground"
-            android:contentDescription="icon"
-            tools:ignore="HardcodedText" />
+            android:layout_gravity="center"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/min_padding"
             android:text="@string/app_name"
             android:textAlignment="center"
             android:textStyle="bold"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@android:color/white"/>
+            android:textSize="30dp"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:ignore="SpUsage" />
     </LinearLayout>
+
 </merge>

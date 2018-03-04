@@ -4,46 +4,46 @@
         android:icon="@drawable/ic_questions"
         android:title="@string/general_questions" />
 
-    <item android:title="@string/verses_for_you">
-        <menu>
-            <item
-                android:id="@+id/vers_ot"
-                android:icon="@drawable/ic_books"
-                android:title="@string/ot_books" />
-            <item
-                android:id="@+id/vers_nt"
-                android:icon="@drawable/ic_books"
-                android:title="@string/nt_books" />
-        </menu>
-    </item>
-
     <item android:title="@string/bible_books">
         <menu>
             <item
                 android:id="@+id/nav_ot_books"
                 android:icon="@drawable/ic_books"
-                android:title="@string/ot_books" />
+                android:title="@string/old_testament" />
             <item
                 android:id="@+id/nav_nt_books"
                 android:icon="@drawable/ic_books"
-                android:title="@string/nt_books" />
+                android:title="@string/new_testament" />
+        </menu>
+    </item>
+
+    <item android:title="@string/verses_for_you">
+        <menu>
+            <item
+                android:id="@+id/nav_ot_verses"
+                android:icon="@drawable/ic_verses"
+                android:title="@string/old_testament" />
+            <item
+                android:id="@+id/nav_nt_verses"
+                android:icon="@drawable/ic_verses"
+                android:title="@string/new_testament" />
         </menu>
     </item>
 
     <item android:title="@string/others">
         <menu>
             <item
-                android:id="@+id/nav_gratitude"
-                android:icon="@drawable/ic_greetings"
-                android:title="@string/gratitude" />
+                android:id="@+id/menu_app_rating"
+                android:icon="@drawable/ic_rating"
+                android:title="@string/app_rating" />
             <item
-                android:id="@+id/nav_conclusion"
-                android:icon="@drawable/ic_conclusion"
-                android:title="@string/conclusion" />
+                android:id="@+id/menu_credits"
+                android:icon="@drawable/ic_credits"
+                android:title="@string/credits" />
             <item
-                android:id="@+id/nav_new_disciples"
-                android:icon="@drawable/ic_recommend"
-                android:title="@string/new_disciples" />
+                android:id="@+id/menu_exit"
+                android:icon="@drawable/ic_exit"
+                android:title="@string/exit" />
         </menu>
     </item>
 </menu>

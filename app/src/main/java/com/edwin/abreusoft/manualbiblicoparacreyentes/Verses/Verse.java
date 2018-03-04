@@ -1,26 +1,17 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Verses;
 
-public class Verse {
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.Item;
 
-    private final String book;
-    private final String verse;
-    private final String content;
+public class Verse extends Item {
 
-    public Verse(String book, String verse, String content) {
-        this.book = book;
-        this.verse = verse;
-        this.content = content;
+    private final String text3;
+
+    public Verse(String text1, String text2, String text3) {
+        super(text1, text2);
+        this.text3 = text3;
     }
 
-    public String getBook() {
-        return book;
-    }
-
-    public String getVerse() {
-        return verse;
-    }
-
-    public String getContent() {
-        return content;
+    public String getText3() {
+        return text3;
     }
 }

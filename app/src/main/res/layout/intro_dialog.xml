@@ -19,7 +19,7 @@
         android:id="@+id/no_show_check"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/no_show"
+        android:text="@string/no_more_message"
         android:checked="false" />
 
     <Button

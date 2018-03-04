@@ -9,9 +9,11 @@
     android:background="@drawable/prayer_request"
     android:backgroundTint="@color/primaryLightColor"
     android:backgroundTintMode="multiply"
+    android:paddingTop="@dimen/activity_margin"
     android:paddingStart="@dimen/item_padding"
     android:paddingEnd="@dimen/item_padding"
-    tools:targetApi="lollipop">
+    tools:targetApi="lollipop"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:layout_width="80dp"
@@ -19,12 +21,14 @@
         android:src="@mipmap/ic_launcher"
         tools:ignore="ContentDescription" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/min_padding"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.AppCompat.Title"
-            android:textColor="@android:color/white"
-            android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/min_padding"
+        android:text="@string/app_name"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        tools:ignore="RtlSymmetry,SpUsage" />
 </LinearLayout>

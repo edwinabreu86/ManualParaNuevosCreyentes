@@ -1,8 +1,8 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Books;
 
-public class BooksText {
+class BooksText {
 
-    public static final String[][] OT_BOOKS = {
+    static final String[][] OT_MOSES = {
             {"Génesis", "Moisés", "50",
                     "Relato sobre la creación del mundo y del primer hombre (Adán) en el jardín del Edén, la caída en el pecado, el diluvio y las vidas de los patriarcas (Abraham, Isaac, Jacob y Jose)."},
             {"Éxodo", "Moisés", "40",
@@ -12,7 +12,10 @@ public class BooksText {
             {"Números", "Moisés", "36",
                     "Descripción de censos a los israelitas en el desierto, de la organización estos en campamentos, y de sus experiencias durante cuarenta años en el desierto."},
             {"Deuteronomio", "Moisés", "34",
-                    "Repetición de la ley dada a Moisés en el monte Sinaí. Registro de la muerte de Moisés."},
+                    "Repetición de la ley dada a Moisés en el monte Sinaí. Registro de la muerte de Moisés."}
+    };
+
+    static final String[][] OT_HISTORICAL = {
             {"Josué", "Josué", "24",
                     "Relato de la conquista de Canaán por Josué y el pueblo de Israel, división de la tierra entre las doce tribus de Israel. Exhortación de Josué para que el pueblo honrara a Dios."},
             {"Jueces", "Samuel", "21",
@@ -36,7 +39,10 @@ public class BooksText {
             {"Nehemías", "Nehemías", "13",
                     "Relato del regreso de Nehemías a Jerusalén para reedificar sus muros, y de sus reformas sociales y de la restauración de la vida bajo la ley de moisés."},
             {"Ester", "Mardoqueo", "10",
-                    "Relato de la vida de Ester, y de su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, el rey persa, con ayuda de la oración y el ayuno de los judíos."},
+                    "Relato de la vida de Ester, y de su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, el rey persa, con ayuda de la oración y el ayuno de los judíos."}
+    };
+
+    static final String[][] OT_POETRY = {
             {"Job", "Moisés", "42",
                     "Relato de los sufrimientos vividos por Job al ser probada su justicia, de sus amigos atribuirle su desgracia al pecado y de su posterior restauración tras pasar su prueba."},
             {"Salmos", "David y otros", "150",
@@ -46,7 +52,10 @@ public class BooksText {
             {"Eclesiastés", "Salomón", "12",
                     "Libro que explica que todo lo hecho para satisfacción personal en este mundo es temporal y, por tanto, es vanidad. Enfatiza la necesidad de seguir a Dios para darle sentido a la vida."},
             {"El Cantar de los Cantares", "Salomón", "8",
-                    "Historia de un amor puro y profundo entre un hombre y una mujer, la belleza y lo sagrado de esa relación. Simboliza el gran amor de Dios por su pueblo."},
+                    "Historia de un amor puro y profundo entre un hombre y una mujer, la belleza y lo sagrado de esa relación. Simboliza el gran amor de Dios por su pueblo."}
+    };
+
+    static final String[][] OT_MAJ_PROPHETS = {
             {"Isaías", "Isaías", "66",
                     "Profecía sobre la cautividad babilónica tanto para Israel como para Judá, sobre el regreso de los exilados y la venida del Mesías y de su reino."},
             {"Jeremías", "Jeremías", "52",
@@ -56,7 +65,10 @@ public class BooksText {
             {"Ezequiel", "Ezequiel", "48",
                     "Profecía sobre la destrucción de Jerusalén, el juicio sobre el pueblo, el regreso de los exiliados y el futuro glorioso de Israel."},
             {"Daniel", "Daniel", "12",
-                    "Relato de experiencias de los jóvenes judíos que se negaron a adorar a Nabucodonosor, y profecías sobre los reinos que sucederían al de Babilonia hasta la llegada del renio del Mesías."},
+                    "Relato de experiencias de los jóvenes judíos que se negaron a adorar a Nabucodonosor, y profecías sobre los reinos que sucederían al de Babilonia hasta la llegada del renio del Mesías."}
+    };
+
+    static final  String[][] OT_MIN_PROPHETS = {
             {"Oseas", "Oseas", "14",
                     "Mensaje de condenación a Israel seguido por el perdón de Dios"},
             {"Joel", "Joel", "3",
@@ -69,7 +81,7 @@ public class BooksText {
                     "Relato sobre la experiencia de Jonás al negarse a profetizar a Nínive y sobre la misericordia de Dios con Nínive tras el arrepentimiento de sus habitantes."},
             {"Miqueas", "Miqueas", "7",
                     "Profecía contra los los pecados de su tiempo y especialmente contra la opresión de los ricos hacia los pobres. El profetizo tanto la destrucción de Israel como la de Judá poco tiempo antes de que el juicio cayera sobre Israel."},
-            {"Nahúm", "Nahúm", "3",
+            {"Nahum", "Nahum", "3",
                     "Profecía sobre la destrucción de Nínive. La primera parte presenta el juez y la segunda el juicio sobre la ciudad malvada."},
             {"Habacuc", "Habacuc", "3",
                     "Profecía sobre las maldades de Israel y de su inminente derrota a manos de los caldeos. Descripción de la pecaminosidad de los conquistadores caldeos y profetizo su caída final. El libro concluye con una oración de fe."},
@@ -83,7 +95,7 @@ public class BooksText {
                     "Reprensión al pueblo judío tras el regreso del exilio por volverse a su vieja vida de pecado. Predicción sobre la venida del Mesías."}
     };
 
-    public static final String[][] NT_BOOKS = {
+    static final  String[][] NT_GOSPELS = {
             {"Mateo", "Mateo", "28",
                     "Presenta a Jesús como Mesías. Genealogía de Jesús a través de José. Cumplimiento de la profecía del Antiguo Testamento."},
             {"Marcos", "Marcos", "16",
@@ -91,9 +103,15 @@ public class BooksText {
             {"Lucas", "Lucas", "24",
                     "Presenta a Jesús como El Hijo del Hombre que busca y salva al perdido. La genealogía de Jesús a través de María. El más largo de los evangelios."},
             {"Juan", "Juan", "21",
-                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."},
+                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
+    };
+
+    static final  String[][] NT_HISTORICAL = {
             {"Hechos", "Lucas", "28",
-                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."},
+                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
+    };
+
+    static final  String[][] NT_PAULINE = {
             {"Romanos", "Pablo", "16",
                     "Un examen sistemático de la justificación, santificación y glorificación. Examina el plan de Dios para los judíos y los gentiles."},
             {"1 Corintios", "Pablo", "16",
@@ -119,7 +137,10 @@ public class BooksText {
             {"Tito", "Pablo", "3",
                     "Pablo deja a Tito en Creta para que cuide de las iglesias allá. Requisitos para los ancianos."},
             {"Filemón", "Pablo", "3",
-                    "Una epístola para el propietario de un esclavo fugado. Pablo apela a Filemón para que perdone a Onésimo."},
+                    "Una epístola para el propietario de un esclavo fugado. Pablo apela a Filemón para que perdone a Onésimo."}
+    };
+
+    static final  String[][] NT_GENERAL = {
             {"Hebreos", "desconocido", "13",
                     "Una carta a los Cristianos Hebreos en peligro de regresar al Judaísmo. Esto demuestra la superioridad de Jesús sobre el sistema del Antiguo Testamento. Menciona el sacerdocio de Melquisedec."},
             {"Santiago", "Santiago", "5",
@@ -135,9 +156,11 @@ public class BooksText {
             {"3 Juan", "Juan", "1",
                     "Juan agradece a Gayo por su bondad para con el pueblo de Dios y reprocha a Diótrefes."},
             {"Judas", "Judas", "1",
-                    "Expone a los falsos maestros y usa alusiones referentes al Antiguo Testamento para demostrar el juicio sobre ellos. Contiende por la fe."},
+                    "Expone a los falsos maestros y usa alusiones referentes al Antiguo Testamento para demostrar el juicio sobre ellos. Contiende por la fe."}
+    };
+
+    static final  String[][] NT_PROPHECY = {
             {"Apocalipsis", "Juan", "22",
                     "Una visión altamente simbólica de la rebelión futura, el juicio y consumación de todas las cosas."}
     };
-
 }

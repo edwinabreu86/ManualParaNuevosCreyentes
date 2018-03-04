@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorAccent">@color/secondaryColor</item>
-        <item name="android:itemBackground">@color/primaryLightColor</item>
+        <item name="android:windowBackground">@color/backgroundColor</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionModeOverlay">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
-    <style name="item_style_top">
+    <style name="item_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:paddingTop">2dp</item>
@@ -20,29 +19,5 @@
         <item name="android:paddingStart">8dp</item>
         <item name="android:paddingEnd">8dp</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:background">@drawable/rectangle_upper</item>
-        <item name="android:textColor">@android:color/white</item>
-    </style>
-
-    <style name="item_style_bottom">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">2dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingStart">8dp</item>
-        <item name="android:paddingEnd">8dp</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:background">@android:color/white</item>
-        <item name="android:textColor">@color/secondaryTextColor</item>
-    </style>
-
-    <style name="list_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">vertical</item>
-        <item name="android:background">?attr/colorButtonNormal</item>
-        <item name="android:padding">@dimen/min_padding</item>
     </style>
 </resources>

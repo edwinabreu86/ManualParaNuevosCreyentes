@@ -1,8 +1,8 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Verses;
 
-public class VersesText {
+class VersesText {
 
-    public static final String[][] OT_VERSES = {
+    public static final  String[][] OT_MOSES = {
             {"Génesis", "12:3", "Bendeciré a los que te bendijeren, y a los que te maldijeren maldeciré; y serán benditas en ti todas las familias de la tierra."},
             {"Génesis", "28:15", "He aquí, yo estoy contigo, y te guardaré por dondequiera que fueres, y volveré a traerte a esta tierra; porque no te dejaré hasta que haya hecho lo que te he dicho."},
             {"Génesis", "39:2", "Mas Jehová estaba con José, y fue varón próspero; y estaba en la casa de su amo el egipcio."},
@@ -25,7 +25,10 @@ public class VersesText {
             {"Deuteronomio", "7:15", "Y quitará Jehová de ti toda enfermedad; y todas las malas plagas de Egipto, que tú conoces, no las pondrá sobre ti, antes las pondrá sobre todos los que te aborrecieren."},
             {"Deuteronomio", "10:12", "Ahora, pues, Israel, ¿qué pide Jehová tu Dios de ti, sino que temas a Jehová tu Dios, que andes en todos sus caminos, y que lo ames, y sirvas a Jehová tu Dios con todo tu corazón y con toda tu alma;"},
             {"Deuteronomio", "29:29", "Las cosas secretas pertenecen a Jehová nuestro Dios; mas las reveladas son para nosotros y para nuestros hijos para siempre, para que cumplamos todas las palabras de esta ley."},
-            {"Deuteronomio", "31:8", "Y Jehová va delante de ti; él estará contigo, no te dejará, ni te desamparará; no temas ni te intimides."},
+            {"Deuteronomio", "31:8", "Y Jehová va delante de ti; él estará contigo, no te dejará, ni te desamparará; no temas ni te intimides."}
+    };
+
+    public static final  String[][] OT_HISTORICAL = {
             {"Josué", "1:8", "Nunca se apartará de tu boca este libro de la ley, sino que de día y de noche meditarás en él, para que guardes y hagas conforme a todo lo que en él está escrito; porque entonces harás prosperar tu camino, y todo te saldrá bien."},
             {"Josué", "1:9", "Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas."},
             {"Josué", "3:7", "Entonces Jehová dijo a Josué: Desde este día comenzaré a engrandecerte delante de los ojos de todo Israel, para que entiendan que como estuve con Moisés, así estaré contigo."},
@@ -72,6 +75,9 @@ public class VersesText {
             {"Nehemías", "5:19", "Acuérdate de mí para bien, Dios mío, y de todo lo que hice por este pueblo."},
             {"Nehemías", "8:6", "Bendijo entonces Esdras a Jehová, Dios grande. Y todo el pueblo respondió: !!Amén! !!Amén! alzando sus manos; y se humillaron y adoraron a Jehová inclinados a tierra."},
             {"Nehemías", "9:33", "Pero tú eres justo en todo lo que ha venido sobre nosotros; porque rectamente has hecho, mas nosotros hemos hecho lo malo."},
+    };
+
+    public static final  String[][] OT_POETRY = {
             {"Job", "5:8", "Ciertamente yo buscaría a Dios, Y encomendaría a él mi causa;"},
             {"Job", "5:17", "He aquí, bienaventurado es el hombre a quien Dios castiga; Por tanto, no menosprecies la corrección del Todopoderoso."},
             {"Job", "23:4", "Mis labios no hablarán iniquidad, Ni mi lengua pronunciará engaño."},
@@ -84,6 +90,23 @@ public class VersesText {
             {"Job", "22:27", "Orarás a él, y él te oirá; y tú pagarás tus votos."},
             {"Job", "28:28", "Y dijo al hombre: He aquí que el temor del Señor es la sabiduría, y el apartarse del mal, la inteligencia."},
             {"Job", "36:11", "Si oyeren, y le sirvieren, acabarán sus días en bienestar, y sus años en dicha."},
+            {"Salmos", "1:6", "Porque Jehová conoce el camino de los justos; Mas la senda de los malos perecerá."},
+            {"Salmos", "3:3", "Mas tú, Jehová, eres escudo alrededor de mí; Mi gloria, y el que levanta mi cabeza. "},
+            {"Salmos", "3:5", "Yo me acosté y dormí, Y desperté, porque Jehová me sustentaba."},
+            {"Salmos", "4:3", "Sabed, pues, que Jehová ha escogido al piadoso para sí; Jehová oirá cuando yo a él clamare."},
+            {"Salmos", "4:8", "En paz me acostaré, y asimismo dormiré; Porque solo tú, Jehová, me haces vivir confiado."},
+            {"Salmos", "11:4", "Jehová está en su santo templo; Jehová tiene en el cielo su trono; Sus ojos ven, sus párpados examinan a los hijos de los hombres. "},
+            {"Salmos", "11:7", "Porque Jehová es justo, y ama la justicia; El hombre recto mirará su rostro."},
+            {"Salmos", "12:6", "Las palabras de Jehová son palabras limpias, Como plata refinada en horno de tierra, Purificada siete veces."},
+            {"Salmos", "19:7", "La ley de Jehová es perfecta, que convierte el alma; El testimonio de Jehová es fiel, que hace sabio al sencillo."},
+            {"Salmos", "19:14", "Sean gratos los dichos de mi boca y la meditación de mi corazón delante de ti, Oh Jehová, roca mía, y redentor mío."},
+            {"Salmos", "24:8", "¿Quién es este Rey de gloria? Jehová el fuerte y valiente, Jehová el poderoso en batalla."},
+            {"Salmos", "27:1", "Jehová es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme?"},
+            {"Salmos", "40:17", "Aunque afligido yo y necesitado, Jehová pensará en mí. Mi ayuda y mi libertador eres tú; Dios mío, no te tardes."},
+            {"Salmos", "42:2", "Mi alma tiene sed de Dios, del Dios vivo; ¿Cuándo vendré, y me presentaré delante de Dios?"},
+            {"Salmos", "87:10", "Porque mejor es un día en tus atrios que mil fuera de ellos. Escogería antes estar a la puerta de la casa de mi Dios, Que habitar en las moradas de maldad."},
+            {"Salmos", "119:37", "Aparta mis ojos, que no vean la vanidad; Avívame en tu camino."},
+            {"Salmos", "127:3", "He aquí, herencia de Jehová son los hijos; Cosa de estima el fruto del vientre"},
             {"Proverbios", "1:7", "El principio de la sabiduría es el temor de Jehová; los insensatos desprecian la sabiduría y la enseñanza."},
             {"Proverbios", "2:7", "El provee de sana sabiduría a los rectos; es escudo a los que caminan rectamente."},
             {"Proverbios", "3:5", "Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia."},
@@ -127,19 +150,22 @@ public class VersesText {
             {"Eclesiastés", "7:14", "En el día del bien goza del bien; y en el día de la adversidad considera. Dios hizo tanto lo uno como lo otro, a fin de que el hombre nada halle después de él."},
             {"Eclesiastés", "8:3", "No te apresures a irte de su presencia, ni en cosa mala persistas; porque él hará todo lo que quiere."},
             {"Eclesiastés", "8:12", "Aunque el pecador haga mal cien veces, y prolongue sus días, con todo yo también sé que les irá bien a los que a Dios temen, los que temen ante su presencia."},
-            {"Eclesiastés", "12:14", "Porque Dios traerá toda obra a juicio, juntamente con toda cosa encubierta, sea buena o sea mala."},
-            {"Isaias", "1:17", "aprended a hacer el bien; buscad el juicio, restituid al agraviado, haced justicia al huérfano, amparad a la viuda."},
-            {"Isaias", "3:10", "Decid al justo que le irá bien, porque comerá de los frutos de sus manos."},
-            {"Isaias", "8:13", "A Jehová de los ejércitos, a él santificad; sea él vuestro temor, y él sea vuestro miedo."},
-            {"Isaias", "12:5", "Cantad salmos a Jehová, porque ha hecho cosas magníficas; sea sabido esto por toda la tierra."},
-            {"Isaias", "26:3", "Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera; porque en ti ha confiado."},
-            {"Isaias", "50:10", "¿Quién hay entre vosotros que teme a Jehová, y oye la voz de su siervo? El que anda en tinieblas y carece de luz, confíe en el nombre de Jehová, y apóyese en su Dios."},
-            {"Jeremias", "9:24", "Mas alábese en esto el que se hubiere de alabar: en entenderme y conocerme, que yo soy Jehová, que hago misericordia, juicio y justicia en la tierra; porque estas cosas quiero, dice Jehová."},
-            {"Jeremias", "10:2", "Así dijo Jehová: No aprendáis el camino de las naciones, ni de las señales del cielo tengáis temor, aunque las naciones las teman."},
-            {"Jeremias", "15:19", "Por tanto, así dijo Jehová: Si te convirtieres, yo te restauraré, y delante de mí estarás; y si entresacares lo precioso de lo vil, serás como mi boca. Conviértanse ellos a ti, y tú no te conviertas a ellos."},
-            {"Jeremias", "17:7", "Bendito el varón que confía en Jehová, y cuya confianza es Jehová."},
-            {"Jeremias", "23:28", "El profeta que tuviere un sueño, cuente el sueño; y aquel a quien fuere mi palabra, cuente mi palabra verdadera. ¿Qué tiene que ver la paja con el trigo? dice Jehová."},
-            {"Jeremias", "50:8", " Huid de en medio de Babilonia, y salid de la tierra de los caldeos, y sed como los machos cabríos que van delante del rebaño."},
+            {"Eclesiastés", "12:14", "Porque Dios traerá toda obra a juicio, juntamente con toda cosa encubierta, sea buena o sea mala."}
+    };
+
+    public static final  String[][] OT_MAJ_PROPHETS = {
+            {"Isaías", "1:17", "aprended a hacer el bien; buscad el juicio, restituid al agraviado, haced justicia al huérfano, amparad a la viuda."},
+            {"Isaías", "3:10", "Decid al justo que le irá bien, porque comerá de los frutos de sus manos."},
+            {"Isaías", "8:13", "A Jehová de los ejércitos, a él santificad; sea él vuestro temor, y él sea vuestro miedo."},
+            {"Isaías", "12:5", "Cantad salmos a Jehová, porque ha hecho cosas magníficas; sea sabido esto por toda la tierra."},
+            {"Isaías", "26:3", "Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera; porque en ti ha confiado."},
+            {"Isaías", "50:10", "¿Quién hay entre vosotros que teme a Jehová, y oye la voz de su siervo? El que anda en tinieblas y carece de luz, confíe en el nombre de Jehová, y apóyese en su Dios."},
+            {"Jeremías", "9:24", "Mas alábese en esto el que se hubiere de alabar: en entenderme y conocerme, que yo soy Jehová, que hago misericordia, juicio y justicia en la tierra; porque estas cosas quiero, dice Jehová."},
+            {"Jeremías", "10:2", "Así dijo Jehová: No aprendáis el camino de las naciones, ni de las señales del cielo tengáis temor, aunque las naciones las teman."},
+            {"Jeremías", "15:19", "Por tanto, así dijo Jehová: Si te convirtieres, yo te restauraré, y delante de mí estarás; y si entresacares lo precioso de lo vil, serás como mi boca. Conviértanse ellos a ti, y tú no te conviertas a ellos."},
+            {"Jeremías", "17:7", "Bendito el varón que confía en Jehová, y cuya confianza es Jehová."},
+            {"Jeremías", "23:28", "El profeta que tuviere un sueño, cuente el sueño; y aquel a quien fuere mi palabra, cuente mi palabra verdadera. ¿Qué tiene que ver la paja con el trigo? dice Jehová."},
+            {"Jeremías", "50:8", " Huid de en medio de Babilonia, y salid de la tierra de los caldeos, y sed como los machos cabríos que van delante del rebaño."},
             {"Lamentaciones", "3:22", "Por la misericordia de Jehová no hemos sido consumidos, porque nunca decayeron sus misericordias."},
             {"Lamentaciones", "3:27", "Bueno le es al hombre llevar el yugo desde su juventud."},
             {"Lamentaciones", "3:40", "Escudriñemos nuestros caminos, y busquemos, y volvámonos a Jehová;"},
@@ -153,7 +179,10 @@ public class VersesText {
             {"Daniel", "2:20", "Y Daniel habló y dijo: Sea bendito el nombre de Dios de siglos en siglos, porque suyos son el poder y la sabiduría. "},
             {"Daniel", "3:17", "He aquí nuestro Dios a quien servimos puede librarnos del horno de fuego ardiendo; y de tu mano, oh rey, nos librará."},
             {"Daniel", "4:2", "Conviene que yo declare las señales y milagros que el Dios Altísimo ha hecho conmigo."},
-            {"Daniel", "9:9", "De Jehová nuestro Dios es el tener misericordia y el perdonar, aunque contra él nos hemos rebelado,"},
+            {"Daniel", "9:9", "De Jehová nuestro Dios es el tener misericordia y el perdonar, aunque contra él nos hemos rebelado,"}
+    };
+
+    public static final  String[][] OT_MIN_PROPHETS = {
             {"Oseas", "2:19", "Y te desposaré conmigo para siempre; te desposaré conmigo en justicia, juicio, benignidad y misericordia."},
             {"Oseas", "2:20", "Y te desposaré conmigo en fidelidad, y conocerás a Jehová."},
             {"Oseas", "5:15", "Andaré y volveré a mi lugar, hasta que reconozcan su pecado y busquen mi rostro. En su angustia me buscarán."},
@@ -182,24 +211,24 @@ public class VersesText {
             {"Habacuc", "2:4", "He aquí que aquel cuya alma no es recta, se enorgullece; mas el justo por su fe vivirá."},
             {"Habacuc", "3:18", "Con todo, yo me alegraré en Jehová, Y me gozaré en el Dios de mi salvación."},
             {"Habacuc", "3:19", "Jehová el Señor es mi fortaleza, El cual hace mis pies como de ciervas, Y en mis alturas me hace andar..."},
-            {"Sofonias", "2:3", "Buscad a Jehová todos los humildes de la tierra, los que pusisteis por obra su juicio; buscad justicia, buscad mansedumbre; quizá seréis guardados en el día del enojo de Jehová."},
-            {"Sofonias", "3:9", "En aquel tiempo devolveré yo a los pueblos pureza de labios, para que todos invoquen el nombre de Jehová, para que le sirvan de común consentimiento."},
-            {"Sofonias", "3:13", "El remanente de Israel no hará injusticia ni dirá mentira, ni en boca de ellos se hallará lengua engañosa; porque ellos serán apacentados, y dormirán, y no habrá quien los atemorice."},
-            {"Sofonias", "3:20", "n aquel tiempo yo os traeré, en aquel tiempo os reuniré yo; pues os pondré para renombre y para alabanza entre todos los pueblos de la tierra, cuando levante vuestro cautiverio delante de vuestros ojos, dice Jehová."},
+            {"Sofonías", "2:3", "Buscad a Jehová todos los humildes de la tierra, los que pusisteis por obra su juicio; buscad justicia, buscad mansedumbre; quizá seréis guardados en el día del enojo de Jehová."},
+            {"Sofonías", "3:9", "En aquel tiempo devolveré yo a los pueblos pureza de labios, para que todos invoquen el nombre de Jehová, para que le sirvan de común consentimiento."},
+            {"Sofonías", "3:13", "El remanente de Israel no hará injusticia ni dirá mentira, ni en boca de ellos se hallará lengua engañosa; porque ellos serán apacentados, y dormirán, y no habrá quien los atemorice."},
+            {"Sofonías", "3:20", "n aquel tiempo yo os traeré, en aquel tiempo os reuniré yo; pues os pondré para renombre y para alabanza entre todos los pueblos de la tierra, cuando levante vuestro cautiverio delante de vuestros ojos, dice Jehová."},
             {"Hageo", "1:7", "Así ha dicho Jehová de los ejércitos: Meditad sobre vuestros caminos."},
             {"Hageo", "1:8", " Subid al monte, y traed madera, y reedificad la casa; y pondré en ella mi voluntad, y seré glorificado, ha dicho Jehová."},
             {"Hageo", "2:5", "Según el pacto que hice con vosotros cuando salisteis de Egipto, así mi Espíritu estará en medio de vosotros, no temáis."},
-            {"Zacarias", "1:3", "Diles, pues: Así ha dicho Jehová de los ejércitos: Volveos a mí, dice Jehová de los ejércitos, y yo me volveré a vosotros, ha dicho Jehová de los ejércitos."},
-            {"Zacarias", "8:7", "Así ha dicho Jehová de los ejércitos: He aquí, yo salvo a mi pueblo de la tierra del oriente, y de la tierra donde se pone el sol;"},
-            {"Zacarias", "8:8", "y los traeré, y habitarán en medio de Jerusalén; y me serán por pueblo, y yo seré a ellos por Dios en verdad y en justicia."},
-            {"Zacarias", "13:9", "Y meteré en el fuego a la tercera parte, y los fundiré como se funde la plata, y los probaré como se prueba el oro. El invocará mi nombre, y yo le oiré, y diré: Pueblo mío; y él dirá: Jehová es mi Dios."},
-            {"Malaquias", "2:5", "Mi pacto con él fue de vida y de paz, las cuales cosas yo le di para que me temiera; y tuvo temor de mí, y delante de mi nombre estuvo humillado."},
-            {"Malaquias", "2:7", "Porque los labios del sacerdote han de guardar la sabiduría, y de su boca el pueblo buscará la ley; porque mensajero es de Jehová de los ejércitos."},
-            {"Malaquias", "3:17", "Y serán para mí especial tesoro, ha dicho Jehová de los ejércitos, en el día en que yo actúe; y los perdonaré, como el hombre que perdona a su hijo que le sirve."},
-            {"Malaquias", "3:18", "Entonces os volveréis, y discerniréis la diferencia entre el justo y el malo, entre el que sirve a Dios y el que no le sirve."}
+            {"Zacarías", "1:3", "Diles, pues: Así ha dicho Jehová de los ejércitos: Volveos a mí, dice Jehová de los ejércitos, y yo me volveré a vosotros, ha dicho Jehová de los ejércitos."},
+            {"Zacarías", "8:7", "Así ha dicho Jehová de los ejércitos: He aquí, yo salvo a mi pueblo de la tierra del oriente, y de la tierra donde se pone el sol;"},
+            {"Zacarías", "8:8", "y los traeré, y habitarán en medio de Jerusalén; y me serán por pueblo, y yo seré a ellos por Dios en verdad y en justicia."},
+            {"Zacarías", "13:9", "Y meteré en el fuego a la tercera parte, y los fundiré como se funde la plata, y los probaré como se prueba el oro. El invocará mi nombre, y yo le oiré, y diré: Pueblo mío; y él dirá: Jehová es mi Dios."},
+            {"Malaquías", "2:5", "Mi pacto con él fue de vida y de paz, las cuales cosas yo le di para que me temiera; y tuvo temor de mí, y delante de mi nombre estuvo humillado."},
+            {"Malaquías", "2:7", "Porque los labios del sacerdote han de guardar la sabiduría, y de su boca el pueblo buscará la ley; porque mensajero es de Jehová de los ejércitos."},
+            {"Malaquías", "3:17", "Y serán para mí especial tesoro, ha dicho Jehová de los ejércitos, en el día en que yo actúe; y los perdonaré, como el hombre que perdona a su hijo que le sirve."},
+            {"Malaquías", "3:18", "Entonces os volveréis, y discerniréis la diferencia entre el justo y el malo, entre el que sirve a Dios y el que no le sirve."}
     };
 
-    public static final String[][] NT_VERSES = {
+    public static final  String[][] NT_GOSPELS = {
             {"Mateo", "5:6", "Bienaventurados los que tienen hambre y sed de justicia, porque ellos serán saciados."},
             {"Mateo", "5:16", "Así alumbre vuestra luz delante de los hombres, para que vean vuestras buenas obras, y glorifiquen a vuestro Padre que está en los cielos."},
             {"Mateo", "5:48", "Sed, pues, vosotros perfectos, como vuestro Padre que está en los cielos es perfecto."},
@@ -244,7 +273,10 @@ public class VersesText {
             {"Juan", "14:27", "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da. No se turbe vuestro corazón, ni tenga miedo."},
             {"Juan", "15:5", "Yo soy la vid, vosotros los pámpanos; el que permanece en mí, y yo en él, éste lleva mucho fruto; porque separados de mí nada podéis hacer."},
             {"Juan", "15:7", "Si permanecéis en mí, y mis palabras permanecen en vosotros, pedid todo lo que queréis, y os será hecho."},
-            {"Juan", "17:21", "para que todos sean uno; como tú, oh Padre, en mí, y yo en ti, que también ellos sean uno en nosotros; para que el mundo crea que tú me enviaste."},
+            {"Juan", "17:21", "para que todos sean uno; como tú, oh Padre, en mí, y yo en ti, que también ellos sean uno en nosotros; para que el mundo crea que tú me enviaste."}
+    };
+
+    public static final  String[][] NT_HISTORICAL = {
             {"Hechos", "1:8", "pero recibiréis poder, cuando haya venido sobre vosotros el Espíritu Santo, y me seréis testigos en Jerusalén, en toda Judea, en Samaria, y hasta lo último de la tierra."},
             {"Hechos", "2:38", "Pedro les dijo: Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados; y recibiréis el don del Espíritu Santo."},
             {"Hechos", "2:42", "Y perseveraban en la doctrina de los apóstoles, en la comunión unos con otros, en el partimiento del pan y en las oraciones."},
@@ -258,7 +290,10 @@ public class VersesText {
             {"Hechos", "13:52", "Y los discípulos estaban llenos de gozo y del Espíritu Santo."},
             {"Hechos", "16:5", "Así que las iglesias eran confirmadas en la fe, y aumentaban en número cada día."},
             {"Hechos", "18:28", "porque con gran vehemencia refutaba públicamente a los judíos, demostrando por las Escrituras que Jesús era el Cristo."},
-            {"Hechos", "22:15", "Porque serás testigo suyo a todos los hombres, de lo que has visto y oído."},
+            {"Hechos", "22:15", "Porque serás testigo suyo a todos los hombres, de lo que has visto y oído."}
+    };
+
+    public static final  String[][] NT_PAULINE = {
             {"Romanos", "1:16", "Porque no me avergüenzo del evangelio, porque es poder de Dios para salvación a todo aquel que cree; al judío primeramente, y también al griego."},
             {"Romanos", "5:1", "Justificados, pues, por la fe, tenemos paz para con Dios por medio de nuestro Señor Jesucristo;"},
             {"Romanos", "6:22", "Mas ahora que habéis sido libertados del pecado y hechos siervos de Dios, tenéis por vuestro fruto la santificación, y como fin, la vida eterna."},
@@ -327,7 +362,10 @@ public class VersesText {
             {"2 Timoteo", "2:24", "Porque el siervo del Señor no debe ser contencioso, sino amable para con todos, apto para enseñar, sufrido;"},
             {"2 Timoteo", "4:5", "Pero tú sé sobrio en todo, soporta las aflicciones, haz obra de evangelista, cumple tu ministerio."},
             {"Tito", "2:1", "Pero tú habla lo que está de acuerdo con la sana doctrina."},
-            {"Tito", "2:7", "presentándote tú en todo como ejemplo de buenas obras; en la enseñanza mostrando integridad, seriedad,"},
+            {"Tito", "2:7", "presentándote tú en todo como ejemplo de buenas obras; en la enseñanza mostrando integridad, seriedad,"}
+    };
+
+    public static final  String[][] NT_GENERAL = {
             {"Hebreos", "2:1", "Por tanto, es necesario que con más diligencia atendamos a las cosas que hemos oído, no sea que nos deslicemos."},
             {"Hebreos", "2:18", "Pues en cuanto él mismo padeció siendo tentado, es poderoso para socorrer a los que son tentados."},
             {"Hebreos", "3:12", "Mirad, hermanos, que no haya en ninguno de vosotros corazón malo de incredulidad para apartarse del Dios vivo;"},
@@ -374,7 +412,10 @@ public class VersesText {
             {"2 Juan", "1:9", "Cualquiera que se extravía, y no persevera en la doctrina de Cristo, no tiene a Dios; el que persevera en la doctrina de Cristo, ése sí tiene al Padre y al Hijo."},
             {"2 Juan", "1:10", "Si alguno viene a vosotros, y no trae esta doctrina, no lo recibáis en casa, ni le digáis: !!Bienvenido!"},
             {"Judas", "1:20", "Pero vosotros, amados, edificándoos sobre vuestra santísima fe, orando en el Espíritu Santo,"},
-            {"Judas", "1:21", "conservaos en el amor de Dios, esperando la misericordia de nuestro Señor Jesucristo para vida eterna."},
+            {"Judas", "1:21", "conservaos en el amor de Dios, esperando la misericordia de nuestro Señor Jesucristo para vida eterna."}
+    };
+
+    public static final  String[][] NT_PROPHECY = {
             {"Apocalipsis", "2:5", "Recuerda, por tanto, de dónde has caído, y arrepiéntete, y haz las primeras obras; pues si no, vendré pronto a ti, y quitaré tu candelero de su lugar, si no te hubieres arrepentido."},
             {"Apocalipsis", "2:19", "Yo conozco tus obras, y amor, y fe, y servicio, y tu paciencia, y que tus obras postreras son más que las primeras."},
             {"Apocalipsis", "3:3", "Acuérdate, pues, de lo que has recibido y oído; y guárdalo, y arrepiéntete. Pues si no velas, vendré sobre ti como ladrón, y no sabrás a qué hora vendré sobre ti."},

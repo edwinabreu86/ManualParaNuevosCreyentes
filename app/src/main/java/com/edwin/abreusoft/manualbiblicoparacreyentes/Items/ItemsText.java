@@ -1,8 +1,8 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Items;
 
-public class ItemsText {
+class ItemsText {
 
-    public static final String[][] ITEMS = new String[][]{
+    static final String[][] ITEMS = new String[][]{
             {"¿Qué significa la palabra Biblia?", "Viene del griego “biblion” que significa conjuntos de libros. También podemos decir que es el conjunto de libros canónicos del judaísmo."},
             {"¿Cuántos libros tiene la Biblia?", "66 libros"},
             {"¿En cuántas partes se divide la Biblia?", "En dos partes"},
@@ -39,19 +39,4 @@ public class ItemsText {
             {"¿Cuántas son las cartas generales del nuevo testamento incluyendo hebreo?", "8 Cartas generales incluyendo a hebreos"},
             {"¿Cuáles son?", "1. Hebreos \n2. Santiago \n3. 1ra de Pedro \n4. 2da de Pedro \n5. 1ra de Juan \n6. 2da de Juan \n7. 3ra de Juan \n8. Judas"},
             {"¿Cuál es el libro profético del nuevo testamento?", "Apocalipsis"}};
-
-    public static final String[][] TEXTS_TO_MEM = {
-            {"1 Timoteo 3-16",
-                    "E indiscutiblemente, grande es el misterio de la piedad: \n" +
-                    "Dios fue manifestado en carne, \nJustificado en el Espíritu, \n" +
-                    "visto de los ángeles, \npredicado a los gentiles, \n" +
-                    "creído en el mundo, \nrecibido arriba en gloria."},
-            {"2 Timoteo 3-16",
-                    "Toda la Escritura es inspirada por Dios, y útil para enseñar, " +
-                    "para redargüir, para corregir, para instruir en justicia."},
-            {"2 Pedro 1-21",
-                    "Porque nunca la profecía fue traída por voluntad humana, "+
-                    "sino que los santos hombres de Dios hablaron siendo inspirados por el Espíritu Santo."}
-    };
-
 }
