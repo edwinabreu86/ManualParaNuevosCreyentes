@@ -112,12 +112,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(LayoutInflater.from(this).inflate(layoutId, null),
                 new ViewGroup.LayoutParams(480, ViewGroup.LayoutParams.WRAP_CONTENT));
-        dialog.show();
         return dialog;
     }
 
     private void showIntro() {
         final Dialog dialog = showCustomDialog(R.layout.intro_dialog);
+        dialog.show();
         final CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
 
         Button closeDialog = dialog.findViewById(R.id.close_dialog);
@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void showCredits() {
         final Dialog dialog = showCustomDialog(R.layout.credits_dialog);
+        dialog.show();
 
         Button closeDialog = dialog.findViewById(R.id.close_dialog);
         closeDialog.setOnClickListener(new View.OnClickListener() {
@@ -394,7 +395,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         public CharSequence getPageTitle(int position) {
             if(subtitle.equals(getString(R.string.old_testament))) {
                 return otLabels[position];
-            } else if(title.equals(getString(R.string.new_testament))) {
+            } else if(subtitle.equals(getString(R.string.new_testament))) {
                 return ntLabels[position];
             } else {
                 return null;
