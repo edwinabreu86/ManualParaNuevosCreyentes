@@ -1,4 +1,4 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes.Items;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.edwin.abreusoft.manualbiblicoparacreyentes.Columns;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.MainFragment;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Texts.ItemsText;
 
 public class SectionsItemsAdapter extends FragmentStatePagerAdapter {
 

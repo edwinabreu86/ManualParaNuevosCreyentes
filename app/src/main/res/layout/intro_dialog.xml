@@ -8,10 +8,9 @@
     android:padding="@dimen/item_padding">
 
     <TextView
-        android:id="@+id/intro_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/introduction"
+        android:text="@string/introduction_text"
         android:textAlignment="center"
         android:textColor="@color/primaryTextColor"/>
 
@@ -23,7 +22,7 @@
         android:checked="false" />
 
     <Button
-        android:id="@+id/close_button"
+        android:id="@+id/close_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"

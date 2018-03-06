@@ -1,4 +1,4 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes.Books;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -6,8 +6,11 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.edwin.abreusoft.manualbiblicoparacreyentes.MainFragment;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.Columns;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Texts.BooksText;
 
 public class SectionsOTBooksAdapter extends FragmentStatePagerAdapter {
+
+    private final String[] otLabels = {"Pentateuco", "Históricos", "Poéticos", "Proféticos mayores", "Proféticos menores"};
 
     public SectionsOTBooksAdapter(FragmentManager fm) {
         super(fm);
@@ -65,4 +68,8 @@ public class SectionsOTBooksAdapter extends FragmentStatePagerAdapter {
         return POSITION_NONE;
     }
 
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return otLabels[position];
+    }
 }

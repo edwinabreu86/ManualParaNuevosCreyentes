@@ -1,8 +1,8 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes.Books;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.Texts;
 
-class BooksText {
+public class BooksText {
 
-    static final String[][] OT_MOSES = {
+    public static final String[][] OT_MOSES = {
             {"Génesis", "Moisés", "50",
                     "Relato sobre la creación del mundo y del primer hombre (Adán) en el jardín del Edén, la caída en el pecado, el diluvio y las vidas de los patriarcas (Abraham, Isaac, Jacob y Jose)."},
             {"Éxodo", "Moisés", "40",
@@ -15,7 +15,7 @@ class BooksText {
                     "Repetición de la ley dada a Moisés en el monte Sinaí. Registro de la muerte de Moisés."}
     };
 
-    static final String[][] OT_HISTORICAL = {
+    public static final String[][] OT_HISTORICAL = {
             {"Josué", "Josué", "24",
                     "Relato de la conquista de Canaán por Josué y el pueblo de Israel, división de la tierra entre las doce tribus de Israel. Exhortación de Josué para que el pueblo honrara a Dios."},
             {"Jueces", "Samuel", "21",
@@ -42,7 +42,7 @@ class BooksText {
                     "Relato de la vida de Ester, y de su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, el rey persa, con ayuda de la oración y el ayuno de los judíos."}
     };
 
-    static final String[][] OT_POETRY = {
+    public static final String[][] OT_POETRY = {
             {"Job", "Moisés", "42",
                     "Relato de los sufrimientos vividos por Job al ser probada su justicia, de sus amigos atribuirle su desgracia al pecado y de su posterior restauración tras pasar su prueba."},
             {"Salmos", "David y otros", "150",
@@ -55,7 +55,7 @@ class BooksText {
                     "Historia de un amor puro y profundo entre un hombre y una mujer, la belleza y lo sagrado de esa relación. Simboliza el gran amor de Dios por su pueblo."}
     };
 
-    static final String[][] OT_MAJ_PROPHETS = {
+    public static final String[][] OT_MAJ_PROPHETS = {
             {"Isaías", "Isaías", "66",
                     "Profecía sobre la cautividad babilónica tanto para Israel como para Judá, sobre el regreso de los exilados y la venida del Mesías y de su reino."},
             {"Jeremías", "Jeremías", "52",
@@ -68,7 +68,7 @@ class BooksText {
                     "Relato de experiencias de los jóvenes judíos que se negaron a adorar a Nabucodonosor, y profecías sobre los reinos que sucederían al de Babilonia hasta la llegada del renio del Mesías."}
     };
 
-    static final  String[][] OT_MIN_PROPHETS = {
+    public static final  String[][] OT_MIN_PROPHETS = {
             {"Oseas", "Oseas", "14",
                     "Mensaje de condenación a Israel seguido por el perdón de Dios"},
             {"Joel", "Joel", "3",
@@ -95,7 +95,7 @@ class BooksText {
                     "Reprensión al pueblo judío tras el regreso del exilio por volverse a su vieja vida de pecado. Predicción sobre la venida del Mesías."}
     };
 
-    static final  String[][] NT_GOSPELS = {
+    public static final  String[][] NT_GOSPELS = {
             {"Mateo", "Mateo", "28",
                     "Presenta a Jesús como Mesías. Genealogía de Jesús a través de José. Cumplimiento de la profecía del Antiguo Testamento."},
             {"Marcos", "Marcos", "16",
@@ -106,12 +106,12 @@ class BooksText {
                     "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
     };
 
-    static final  String[][] NT_HISTORICAL = {
+    public static final  String[][] NT_HISTORICAL = {
             {"Hechos", "Lucas", "28",
                     "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
     };
 
-    static final  String[][] NT_PAULINE = {
+    public static final  String[][] NT_PAULINE = {
             {"Romanos", "Pablo", "16",
                     "Un examen sistemático de la justificación, santificación y glorificación. Examina el plan de Dios para los judíos y los gentiles."},
             {"1 Corintios", "Pablo", "16",
@@ -140,7 +140,7 @@ class BooksText {
                     "Una epístola para el propietario de un esclavo fugado. Pablo apela a Filemón para que perdone a Onésimo."}
     };
 
-    static final  String[][] NT_GENERAL = {
+    public static final  String[][] NT_GENERAL = {
             {"Hebreos", "desconocido", "13",
                     "Una carta a los Cristianos Hebreos en peligro de regresar al Judaísmo. Esto demuestra la superioridad de Jesús sobre el sistema del Antiguo Testamento. Menciona el sacerdocio de Melquisedec."},
             {"Santiago", "Santiago", "5",
@@ -159,7 +159,7 @@ class BooksText {
                     "Expone a los falsos maestros y usa alusiones referentes al Antiguo Testamento para demostrar el juicio sobre ellos. Contiende por la fe."}
     };
 
-    static final  String[][] NT_PROPHECY = {
+    public static final  String[][] NT_PROPHECY = {
             {"Apocalipsis", "Juan", "22",
                     "Una visión altamente simbólica de la rebelión futura, el juicio y consumación de todas las cosas."}
     };

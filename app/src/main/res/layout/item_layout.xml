@@ -21,5 +21,6 @@
         style="@style/item_style"
         android:background="@drawable/rectangle_lower"
         android:textColor="@color/secondaryTextColor"
+        android:lineSpacingMultiplier="1.2"
         tools:text="text2" />
 </LinearLayout>

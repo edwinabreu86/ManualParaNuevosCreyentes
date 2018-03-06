@@ -2,7 +2,6 @@
     <string name="app_name">Manual Bíblico para creyentes</string>
     <string name="navigation_drawen_open">Drawer open</string>
     <string name="navigation_drawer_close">Drawer close</string>
-    <string name="introduction">Introducción</string>
     <string name="general_questions">Preguntas generales</string>
     <string name="bible_books">Libros de la Biblia</string>
     <string name="verses_for_you">Versículos para ti</string>
@@ -15,21 +14,6 @@
     <string name="accept">Entendido</string>
     <string name="no_more_message">No mostrar más este mensaje</string>
     <string name="others">Otros</string>
-
-    <string-array name="ot_sections">
-        <item>Pentateuco</item>
-        <item>Históricos</item>
-        <item>Poéticos</item>
-        <item>Proféticos mayores</item>
-        <item>Proféticos menores</item>
-    </string-array>
-
-    <string-array name="nt_sections">
-        <item>Evangelios</item>
-        <item>Históricos</item>
-        <item>Cartas paulinas</item>
-        <item>Cartas generales</item>
-        <item>Proféticos</item>
-    </string-array>
+    <string name="introduction_text">Aquí encontrarás datos esenciales de la Biblia antes conocerla por dentro, tales como:   los nombres de sus 66 libros,   cuántos capítulos tienen, el contenido general de ellos,   las sub-divisiones de la biblia versos esenciales para tu edificación.</string>
 
 </resources>

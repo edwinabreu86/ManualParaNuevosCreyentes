@@ -8,13 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Books.Book;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Books.BooksAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.Item;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Items.ItemsAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Verses.Verse;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Verses.VersesAdapter;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,8 +73,8 @@ public class MainFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_main, container, false);
 
         List<Item> itemsList = new ArrayList<>();
-        List<Verse> versesList = new ArrayList<>();
-        List<Book> booksList = new ArrayList<>();
+        List<Item> versesList = new ArrayList<>();
+        List<Item> booksList = new ArrayList<>();
         
         if(text3 == null && text4 == null) {
             for(int n = 0; n < text1.length; n++) {
@@ -90,17 +83,18 @@ public class MainFragment extends Fragment {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 recyclerView.setAdapter(itemAdapter);
             }
-        } else if(text4 == null) {
+        } else if(text3 != null && text4 == null) {
             for(int n = 0; n < text1.length; n++) {
-                versesList.add(new Verse(text1[n], text2[n], text3[n]));
-                VersesAdapter versesAdapter = new VersesAdapter(versesList);
+                versesList.add(new Item(text1[n], text2[n], text3[n]));
+                ItemsAdapter versesAdapter = new ItemsAdapter(versesList);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 recyclerView.setAdapter(versesAdapter);
             }
         } else {
             for(int n = 0; n < text1.length; n++) {
-                booksList.add(new Book(text1[n], text2[n], text3[n], text4[n]));
-                BooksAdapter booksAdapter = new BooksAdapter(booksList);
+                assert text3 != null;
+                booksList.add(new Item(text1[n], text2[n], text3[n], text4[n]));
+                ItemsAdapter booksAdapter = new ItemsAdapter(booksList);
                 recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                 recyclerView.setAdapter(booksAdapter);
             }

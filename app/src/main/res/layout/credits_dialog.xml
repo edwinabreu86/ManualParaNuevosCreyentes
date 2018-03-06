@@ -62,7 +62,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/close_button"
+        android:id="@+id/close_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/accept"

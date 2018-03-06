@@ -1,8 +1,8 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes.Items;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.Texts;
 
-class ItemsText {
+public class ItemsText {
 
-    static final String[][] ITEMS = new String[][]{
+    public static final String[][] ITEMS = new String[][]{
             {"¿Qué significa la palabra Biblia?", "Viene del griego “biblion” que significa conjuntos de libros. También podemos decir que es el conjunto de libros canónicos del judaísmo."},
             {"¿Cuántos libros tiene la Biblia?", "66 libros"},
             {"¿En cuántas partes se divide la Biblia?", "En dos partes"},
