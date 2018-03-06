@@ -3,6 +3,7 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -14,8 +15,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -30,11 +31,9 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter.SectionsNTBooksAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter.SectionsOTBooksAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter.SectionsItemsAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter.SectionsNTVersesAdapter;
-import com.edwin.abreusoft.manualbiblicoparacreyentes.SectionsAdapter.SectionsOTVersesAdapter;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Texts.BooksText;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Texts.ItemsText;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Texts.VersesText;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -64,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         viewPager = findViewById(R.id.view_pager);
         tabLayout = findViewById(R.id.tab_layout);
 
-        showList(R.string.general_questions, 0, new SectionsItemsAdapter(getSupportFragmentManager()));
+        showList(R.string.general_questions, 0);
     }
 
 
@@ -108,13 +107,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .show();
     }
 
-    private void showIntro() {
+    protected Dialog showCustomDialog(int layoutId) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(LayoutInflater.from(this).inflate(R.layout.intro_dialog, null),
-                new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
+        dialog.setContentView(LayoutInflater.from(this).inflate(layoutId, null),
+                new ViewGroup.LayoutParams(480, ViewGroup.LayoutParams.WRAP_CONTENT));
         dialog.show();
+        return dialog;
+    }
 
+    private void showIntro() {
+        final Dialog dialog = showCustomDialog(R.layout.intro_dialog);
         final CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
 
         Button closeDialog = dialog.findViewById(R.id.close_dialog);
@@ -132,11 +135,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showCredits() {
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(LayoutInflater.from(this).inflate(R.layout.credits_dialog, null),
-                new ViewGroup.LayoutParams(540, ViewGroup.LayoutParams.WRAP_CONTENT));
-        dialog.show();
+        final Dialog dialog = showCustomDialog(R.layout.credits_dialog);
 
         Button closeDialog = dialog.findViewById(R.id.close_dialog);
         closeDialog.setOnClickListener(new View.OnClickListener() {
@@ -146,8 +145,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
-
-
+    
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -155,18 +153,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         item.setChecked(true);
         int id = item.getItemId();
 
-        FragmentManager fm = getSupportFragmentManager();
-
         if(id == R.id.nav_general_questions) {
-            showList(R.string.general_questions, 0, new SectionsItemsAdapter(fm));
+            showList(R.string.general_questions, 0);
         } else if (id == R.id.nav_ot_books) {
-            showList(R.string.bible_books, R.string.old_testament, new SectionsOTBooksAdapter(fm));
+            showList(R.string.bible_books, R.string.old_testament);
         } else if (id == R.id.nav_nt_books) {
-            showList(R.string.bible_books, R.string.new_testament, new SectionsNTBooksAdapter(fm));
+            showList(R.string.bible_books, R.string.new_testament);
         } else if (id == R.id.nav_ot_verses) {
-            showList(R.string.verses_for_you, R.string.old_testament, new SectionsOTVersesAdapter(fm));
+            showList(R.string.verses_for_you, R.string.old_testament);
         } else if (id == R.id.nav_nt_verses) {
-            showList(R.string.verses_for_you, R.string.new_testament, new SectionsNTVersesAdapter(fm));
+            showList(R.string.verses_for_you, R.string.new_testament);
         } else if (id == R.id.menu_app_rating) {
             rateApp();
         } else if(id == R.id.menu_credits) {
@@ -195,11 +191,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    private void showList(int titleId, int subtitleId, PagerAdapter adapter) {
+    private void showList(int titleId, int subtitleId) {
         toolbar.setTitle(getString(titleId));
-
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
 
         if(titleId == R.string.general_questions) {
             tabLayout.setVisibility(View.GONE);
@@ -207,6 +200,205 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             tabLayout.setVisibility(View.VISIBLE);
             toolbar.setSubtitle(getString(subtitleId));
+        }
+
+        viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager()));
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private class SectionsAdapter extends FragmentStatePagerAdapter {
+
+        private final String[] otLabels = {"Pentateuco", "Históricos", "Poéticos", "Proféticos mayores", "Proféticos menores"};
+        private final String[] ntLabels = {"Evangelios", "Históricos", "Cartas paulinas", "Cartas generales", "Proféticos"};
+
+        private String title = toolbar.getTitle().toString();
+        private String subtitle = toolbar.getSubtitle().toString();
+        private String[] text1;
+        private String[] text2;
+        private String[] text3;
+        private String[] text4;
+
+        SectionsAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        private String[] getColumn(String[][] items, int index) {
+            String[] column = new String[items.length];
+
+            for (int i = 0; i < column.length; i++) {
+                column[i] = items[i][index];
+            }
+            return column;
+        }
+        
+        @Override
+        public Fragment getItem(int position) {
+
+            if (title.equals(getString(R.string.general_questions))) {
+                text1 = getColumn(ItemsText.ITEMS, 0);
+                text2 = getColumn(ItemsText.ITEMS, 1);
+
+                return MainFragment.newInstance(text1, text2);
+
+            } else if (title.equals(getString(R.string.bible_books))
+                    && subtitle.equals(getString(R.string.old_testament))) {
+
+                switch (position) {
+                    case 0:
+                        text1 = getColumn(BooksText.OT_MOSES, 0);
+                        text2 = getColumn(BooksText.OT_MOSES, 1);
+                        text3 = getColumn(BooksText.OT_MOSES, 2);
+                        text4 = getColumn(BooksText.OT_MOSES, 3);
+                        break;
+                    case 1:
+                        text1 = getColumn(BooksText.OT_HISTORICAL, 0);
+                        text2 = getColumn(BooksText.OT_HISTORICAL, 1);
+                        text3 = getColumn(BooksText.OT_HISTORICAL, 2);
+                        text4 = getColumn(BooksText.OT_HISTORICAL, 3);
+                        break;
+                    case 2:
+                        text1 = getColumn(BooksText.OT_POETRY, 0);
+                        text2 = getColumn(BooksText.OT_POETRY, 1);
+                        text3 = getColumn(BooksText.OT_POETRY, 2);
+                        text4 = getColumn(BooksText.OT_POETRY, 3);
+                        break;
+                    case 3:
+                        text1 = getColumn(BooksText.OT_MAJ_PROPHETS, 0);
+                        text2 = getColumn(BooksText.OT_MAJ_PROPHETS, 1);
+                        text3 = getColumn(BooksText.OT_MAJ_PROPHETS, 2);
+                        text4 = getColumn(BooksText.OT_MAJ_PROPHETS, 3);
+                        break;
+                    case 4:
+                        text1 = getColumn(BooksText.OT_MIN_PROPHETS, 0);
+                        text2 = getColumn(BooksText.OT_MIN_PROPHETS, 1);
+                        text3 = getColumn(BooksText.OT_MIN_PROPHETS, 2);
+                        text4 = getColumn(BooksText.OT_MIN_PROPHETS, 3);
+                        break;
+                }
+                return MainFragment.newInstance(text1, text2, text3, text4);
+
+            } else if (title.equals(getString(R.string.bible_books))
+                    && subtitle.equals(getString(R.string.new_testament))) {
+
+                switch (position) {
+                    case 0:
+                        text1 = getColumn(BooksText.NT_GOSPELS, 0);
+                        text2 = getColumn(BooksText.NT_GOSPELS, 1);
+                        text3 = getColumn(BooksText.NT_GOSPELS, 2);
+                        text4 = getColumn(BooksText.NT_GOSPELS, 3);
+                        break;
+                    case 1:
+                        text1 = getColumn(BooksText.NT_HISTORICAL, 0);
+                        text2 = getColumn(BooksText.NT_HISTORICAL, 1);
+                        text3 = getColumn(BooksText.NT_HISTORICAL, 2);
+                        text4 = getColumn(BooksText.NT_HISTORICAL, 3);
+                        break;
+                    case 2:
+                        text1 = getColumn(BooksText.NT_PAULINE, 0);
+                        text2 = getColumn(BooksText.NT_PAULINE, 1);
+                        text3 = getColumn(BooksText.NT_PAULINE, 2);
+                        text4 = getColumn(BooksText.NT_PAULINE, 3);
+                        break;
+                    case 3:
+                        text1 = getColumn(BooksText.NT_GENERAL, 0);
+                        text2 = getColumn(BooksText.NT_GENERAL, 1);
+                        text3 = getColumn(BooksText.NT_GENERAL, 2);
+                        text4 = getColumn(BooksText.NT_GENERAL, 3);
+                        break;
+                    case 4:
+                        text1 = getColumn(BooksText.NT_PROPHECY, 0);
+                        text2 = getColumn(BooksText.NT_PROPHECY, 1);
+                        text3 = getColumn(BooksText.NT_PROPHECY, 2);
+                        text4 = getColumn(BooksText.NT_PROPHECY, 3);
+                        break;
+                }
+                return MainFragment.newInstance(text1, text2, text3, text4);
+
+            } else if (title.equals(getString(R.string.verses_for_you))
+                    && subtitle.equals(getString(R.string.old_testament))) {
+
+                switch (position) {
+                    case 0:
+                        text1 = getColumn(VersesText.OT_MOSES, 0);
+                        text2 = getColumn(VersesText.OT_MOSES, 1);
+                        text3 = getColumn(VersesText.OT_MOSES, 2);
+                        break;
+                    case 1:
+                        text1 = getColumn(VersesText.OT_HISTORICAL, 0);
+                        text2 = getColumn(VersesText.OT_HISTORICAL, 1);
+                        text3 = getColumn(VersesText.OT_HISTORICAL, 2);
+                        break;
+                    case 2:
+                        text1 = getColumn(VersesText.OT_POETRY, 0);
+                        text2 = getColumn(VersesText.OT_POETRY, 1);
+                        text3 = getColumn(VersesText.OT_POETRY, 2);
+                        break;
+                    case 3:
+                        text1 = getColumn(VersesText.OT_MAJ_PROPHETS, 0);
+                        text2 = getColumn(VersesText.OT_MAJ_PROPHETS, 1);
+                        text3 = getColumn(VersesText.OT_MAJ_PROPHETS, 2);
+                        break;
+                    case 4:
+                        text1 = getColumn(VersesText.OT_MIN_PROPHETS, 0);
+                        text2 = getColumn(VersesText.OT_MIN_PROPHETS, 1);
+                        text3 = getColumn(VersesText.OT_MIN_PROPHETS, 2);
+                        break;
+                }
+                return MainFragment.newInstance(text1, text2, text3);
+
+            } else if (title.equals(getString(R.string.verses_for_you))
+                    && subtitle.equals(getString(R.string.new_testament))) {
+
+                switch (position) {
+                    case 0:
+                        text1 = getColumn(VersesText.NT_GOSPELS, 0);
+                        text2 = getColumn(VersesText.NT_GOSPELS, 1);
+                        text3 = getColumn(VersesText.NT_GOSPELS, 2);
+                        break;
+                    case 1:
+                        text1 = getColumn(VersesText.NT_HISTORICAL, 0);
+                        text2 = getColumn(VersesText.NT_HISTORICAL, 1);
+                        text3 = getColumn(VersesText.NT_HISTORICAL, 2);
+                        break;
+                    case 2:
+                        text1 = getColumn(VersesText.NT_PAULINE, 0);
+                        text2 = getColumn(VersesText.NT_PAULINE, 1);
+                        text3 = getColumn(VersesText.NT_PAULINE, 2);
+                        break;
+                    case 3:
+                        text1 = getColumn(VersesText.NT_GENERAL, 0);
+                        text2 = getColumn(VersesText.NT_GENERAL, 1);
+                        text3 = getColumn(VersesText.NT_GENERAL, 2);
+                        break;
+                    case 4:
+                        text1 = getColumn(VersesText.NT_PROPHECY, 0);
+                        text2 = getColumn(VersesText.NT_PROPHECY, 1);
+                        text3 = getColumn(VersesText.NT_PROPHECY, 2);
+                        break;
+                }
+                return MainFragment.newInstance(text1, text2, text3);
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            if(title.equals(getString(R.string.general_questions))) {
+                return 1;
+            } else {
+                return 5;
+            }
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            if(subtitle.equals(getString(R.string.old_testament))) {
+                return otLabels[position];
+            } else if(title.equals(getString(R.string.new_testament))) {
+                return ntLabels[position];
+            } else {
+                return null;
+            }
         }
     }
 }

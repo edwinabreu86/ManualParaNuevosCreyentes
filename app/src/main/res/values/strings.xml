@@ -14,6 +14,6 @@
     <string name="accept">Entendido</string>
     <string name="no_more_message">No mostrar más este mensaje</string>
     <string name="others">Otros</string>
-    <string name="introduction_text">Aquí encontrarás datos esenciales de la Biblia antes conocerla por dentro, tales como:   los nombres de sus 66 libros,   cuántos capítulos tienen, el contenido general de ellos,   las sub-divisiones de la biblia versos esenciales para tu edificación.</string>
+    <string name="introduction_text">Aquí encontrarás datos esenciales de la Biblia, tales como: las sub-divisiones de sus libros, los nombres de sus libros, cuántos capítulos tiene cada uno, la descripción del contenido de estos, versos esenciales para tu edificación.</string>
 
 </resources>
