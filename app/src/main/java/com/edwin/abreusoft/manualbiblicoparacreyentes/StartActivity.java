@@ -19,6 +19,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void run() {
                 Intent i = new Intent(StartActivity.this, MainActivity.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(i);
                 finish();
             }

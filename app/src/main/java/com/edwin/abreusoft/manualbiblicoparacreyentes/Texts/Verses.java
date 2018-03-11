@@ -1,6 +1,6 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Texts;
 
-public class VersesText {
+public class Verses {
 
     public static final  String[][] OT_MOSES = {
             {"Génesis", "12:3", "Bendeciré a los que te bendijeren, y a los que te maldijeren maldeciré; y serán benditas en ti todas las familias de la tierra."},

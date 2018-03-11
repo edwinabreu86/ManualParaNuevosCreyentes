@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Manual Bíblico para creyentes</string>
     <string name="navigation_drawen_open">Drawer open</string>
     <string name="navigation_drawer_close">Drawer close</string>
@@ -10,10 +10,12 @@
     <string name="credits">Créditos</string>
     <string name="exit">Salir</string>
     <string name="app_rating">Evaluar aplicación</string>
-    <string name="content_desc">app_icon</string>
     <string name="accept">Entendido</string>
     <string name="no_more_message">No mostrar más este mensaje</string>
     <string name="others">Otros</string>
     <string name="introduction_text">Aquí encontrarás datos esenciales de la Biblia, tales como: las sub-divisiones de sus libros, los nombres de sus libros, cuántos capítulos tiene cada uno, la descripción del contenido de estos, versos esenciales para tu edificación.</string>
+    <string name="copy" tools:keep="@string/copy">Copiar</string>
+    <string name="share" tools:keep="@string/share">Compartir</string>
+    <string name="bookmark" tools:keep="@string/bookmark">Etiquetar</string>
 
 </resources>

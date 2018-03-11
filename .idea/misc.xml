@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="EntryPointsManager">
+    <pattern value="com.edwin.abreusoft.manualbiblicoparacreyentes.Item" method="isBookmarked" />
+    <pattern value="com.edwin.abreusoft.manualbiblicoparacreyentes.Item" />
+  </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="android.support.annotation.Nullable" />
     <option name="myDefaultNotNull" value="android.support.annotation.NonNull" />

@@ -10,8 +10,8 @@
     android:backgroundTint="@color/primaryLightColor"
     android:backgroundTintMode="multiply"
     android:paddingTop="@dimen/activity_margin"
-    android:paddingStart="@dimen/item_padding"
-    android:paddingEnd="@dimen/item_padding"
+    android:paddingStart="@dimen/item_margin"
+    android:paddingEnd="@dimen/item_margin"
     tools:targetApi="lollipop"
     tools:ignore="Overdraw">
 

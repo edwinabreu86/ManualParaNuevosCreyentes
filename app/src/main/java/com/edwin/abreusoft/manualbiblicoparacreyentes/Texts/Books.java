@@ -1,6 +1,6 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.Texts;
 
-public class BooksText {
+public class Books {
 
     public static final String[][] OT_MOSES = {
             {"Génesis", "Moisés", "50",

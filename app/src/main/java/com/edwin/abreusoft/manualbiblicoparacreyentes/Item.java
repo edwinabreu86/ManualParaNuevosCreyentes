@@ -3,21 +3,21 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 class Item {
     private final String text1;
     private final String text2;
-    private final String text3;
-    private final String text4;
-    
+    private String text3;
+    private String text4;
+    private final boolean bookmarked;
+
     Item(String text1, String text2) {
         this.text1 = text1;
         this.text2 = text2;
-        text3 = null;
-        text4 = null;
+        this.bookmarked = false;
     }
 
     Item(String text1, String text2, String text3) {
         this.text1 = text1;
         this.text2 = text2;
         this.text3 = text3;
-        text4 = null;
+        this.bookmarked = false;
     }
 
     Item(String text1, String text2, String text3, String text4) {
@@ -25,6 +25,7 @@ class Item {
         this.text2 = text2;
         this.text3 = text3;
         this.text4 = text4;
+        this.bookmarked = false;
     }
 
     String getText1() {
@@ -41,5 +42,9 @@ class Item {
 
     String getText4() {
         return text4;
+    }
+
+    public boolean isBookmarked() {
+        return bookmarked;
     }
 }
