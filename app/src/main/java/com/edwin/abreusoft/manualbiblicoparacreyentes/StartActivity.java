@@ -15,14 +15,15 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         Handler h = new Handler();
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(StartActivity.this, MainActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivity(i);
-                finish();
-            }
-        }, 2000);
+        h.postDelayed(new Start(), 1500);
+    }
+
+    private class Start implements Runnable {
+        @Override
+        public void run() {
+            Intent i = new Intent(getApplication(), MainActivity.class);
+            startActivity(i);
+            finish();
+        }
     }
 }

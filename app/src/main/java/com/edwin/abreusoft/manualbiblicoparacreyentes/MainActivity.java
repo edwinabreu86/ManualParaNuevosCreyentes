@@ -8,8 +8,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
@@ -19,14 +21,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         showList(R.string.general_questions, 0);
     }
-
 
     @Override
     protected void onStart() {
@@ -91,22 +91,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .create().show();
     }
 
-    private Dialog showCustomDialog(int layoutId) {
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(LayoutInflater.from(this).inflate(layoutId, null),
-                new ViewGroup.LayoutParams(520, ViewGroup.LayoutParams.WRAP_CONTENT));
-        return dialog;
-    }
 
     private void showIntro() {
-        final Dialog dialog = showCustomDialog(R.layout.intro_dialog);
+        final Dialog dialog = OptionsDialog.createCustomDialog(this, R.layout.intro_dialog);
         dialog.show();
 
         final CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
 
-        Button closeDialog = dialog.findViewById(R.id.close_dialog);
-        closeDialog.setOnClickListener(new View.OnClickListener() {
+        Button closeIntro = dialog.findViewById(R.id.close_intro);
+        closeIntro.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ApplySharedPref")
             @Override
             public void onClick(View view) {
@@ -119,24 +112,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showCredits() {
-        final Dialog dialog = showCustomDialog(R.layout.credits_dialog);
+        final Dialog dialog = OptionsDialog.createCustomDialog(this, R.layout.credits_dialog);
         dialog.show();
 
-        TextView creditsText = dialog.findViewById(R.id.credits_text);
-        creditsText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.flaticon.com/authors/smashicons")));
-            }
-        });
+        final TextView creditsText1 = dialog.findViewById(R.id.credits_text1);
+        final TextView creditsText2 = dialog.findViewById(R.id.credits_text2);
+        Button closeCredits = dialog.findViewById(R.id.close_credits);
 
-        Button closeDialog = dialog.findViewById(R.id.close_dialog);
-        closeDialog.setOnClickListener(new View.OnClickListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
+                if(view.getId() == R.id.credits_text1) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText1.getText().toString())));
+                } else if(view.getId() == R.id.credits_text2) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText2.getText().toString())));
+                } else {
+                    dialog.dismiss();
+                }
             }
-        });
+        };
+
+        creditsText1.setOnClickListener(listener);
+        creditsText2.setOnClickListener(listener);
+        closeCredits.setOnClickListener(listener);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -148,6 +146,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(id == R.id.nav_general_questions) {
             showList(R.string.general_questions, 0);
+        } else if(id == R.id.nav_recommend) {
+            startActivity(new Intent(this, RecommedActivity.class));
+            item.setChecked(false);
         } else if (id == R.id.nav_ot_books) {
             showList(R.string.bible_books, R.string.old_testament);
         } else if (id == R.id.nav_nt_books) {
@@ -156,33 +157,68 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             showList(R.string.verses_for_you, R.string.old_testament);
         } else if (id == R.id.nav_nt_verses) {
             showList(R.string.verses_for_you, R.string.new_testament);
-        } else if (id == R.id.menu_app_rating) {
-            rateApp();
-        } else if(id == R.id.menu_credits) {
-            showCredits();
+        } else if (id == R.id.nav_fav_verses) {
+            startActivity(new Intent(this, FavActivity.class));
+            item.setChecked(false);
         } else {
             finish();
         }
-        drawer.closeDrawer(GravityCompat.START);
+
+        Handler handler = new Handler();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                drawer.closeDrawer(GravityCompat.START);
+            }
+        });
         return true;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    private void rateApp() {
-        Intent goToMarket = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("market://details?id=" + getApplicationContext().getPackageName()));
-
-        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-
-        try {
-            startActivity(goToMarket);
-        } catch (ActivityNotFoundException e) {
-            startActivity(new Intent(Intent.ACTION_VIEW,
-                    Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.second_menu, menu);
+        return true;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_app_rating:
+                try {
+                    startActivity(rateIntent());
+                } catch (ActivityNotFoundException e) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+                }
+                break;
+            case R.id.menu_credits:
+                showCredits();
+                break;
+            case R.id.menu_sugest:
+                Uri uri = Uri.parse("mailto:core2duo2602@gmail.com")
+                        .buildUpon()
+                        .appendQueryParameter("subject", "Sugerencias para Manual Bíblico")
+                        .build();
+                Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+                startActivity(Intent.createChooser(intent, "Enviar sugerencia"));
+                break;
+        }
+        return false;
+    }
+
+    private Intent rateIntent() {
+        Intent rateIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("market://details?id=" + getApplicationContext().getPackageName()));
+        int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
+        if(Build.VERSION.SDK_INT >= 21) {
+            flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
+        } else {
+            flags |= Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
+        }
+        rateIntent.addFlags(flags);
+        return rateIntent;
+    }
+
     private void showList(int titleId, int subtitleId) {
         String title = getString(titleId);
         String subtitle;
@@ -194,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar.setTitle(title);
         toolbar.setSubtitle(subtitle);
+        AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager(), this, title, subtitle));
@@ -203,10 +240,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(titleId == R.string.general_questions) {
             tabLayout.setVisibility(View.GONE);
+            params.setScrollFlags(0);
         } else {
             tabLayout.setVisibility(View.VISIBLE);
+            params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL |
+                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
         }
-
         tabLayout.setupWithViewPager(viewPager);
     }
 }

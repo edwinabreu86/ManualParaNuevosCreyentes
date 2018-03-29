@@ -11,17 +11,25 @@
     </style>
 
     <style name="textView_style">
-        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">2dp</item>
-        <item name="android:paddingBottom">2dp</item>
-        <item name="android:paddingStart">@dimen/min_padding</item>
-        <item name="android:paddingEnd">@dimen/min_padding</item>
+        <item name="android:paddingTop">@dimen/min_padding</item>
+        <item name="android:paddingBottom">@dimen/min_padding</item>
+        <item name="android:paddingStart">@dimen/item_margin</item>
+        <item name="android:paddingEnd">@dimen/item_margin</item>
+        <item name="android:textColor">@color/secondaryTextColor</item>
     </style>
 
-    <style name="item_style" parent="textView_style">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:textSize">15sp</item>
+    <style name="textView_style2" parent="textView_style">
+        <item name="android:textAlignment">center</item>
     </style>
+
+    <style name="image_button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/item_margin</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
 </resources>

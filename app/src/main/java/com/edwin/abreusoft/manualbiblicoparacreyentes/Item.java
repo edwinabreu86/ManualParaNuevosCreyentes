@@ -5,19 +5,18 @@ class Item {
     private final String text2;
     private String text3;
     private String text4;
-    private final boolean bookmarked;
+    private boolean favorite;
 
     Item(String text1, String text2) {
         this.text1 = text1;
         this.text2 = text2;
-        this.bookmarked = false;
     }
 
-    Item(String text1, String text2, String text3) {
+    Item(String text1, String text2, String text3, boolean favorite) {
         this.text1 = text1;
         this.text2 = text2;
         this.text3 = text3;
-        this.bookmarked = false;
+        this.favorite = favorite;
     }
 
     Item(String text1, String text2, String text3, String text4) {
@@ -25,7 +24,6 @@ class Item {
         this.text2 = text2;
         this.text3 = text3;
         this.text4 = text4;
-        this.bookmarked = false;
     }
 
     String getText1() {
@@ -44,7 +42,7 @@ class Item {
         return text4;
     }
 
-    public boolean isBookmarked() {
-        return bookmarked;
+    boolean isFavorite() {
+        return favorite;
     }
 }

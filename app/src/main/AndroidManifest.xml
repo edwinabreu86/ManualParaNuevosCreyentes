@@ -9,7 +9,6 @@
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
@@ -24,6 +23,16 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FavActivity"
+            android:label="@string/favorite_verses"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".RecommedActivity"
+            android:label="@string/recommend"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
     </application>
 

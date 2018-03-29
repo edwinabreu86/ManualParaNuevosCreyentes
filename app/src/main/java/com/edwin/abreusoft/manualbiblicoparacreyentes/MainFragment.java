@@ -68,21 +68,22 @@ public class MainFragment extends Fragment {
 
         List<Item> itemsList = new ArrayList<>();
 
-        for(int n = 0; n < text1.length; n++) {
-            if(text3 == null && text4 == null) {
-                itemsList.add(new Item(text1[n], text2[n]));
-            } else if(text3 != null && text4 == null) {
-                itemsList.add(new Item(text1[n], text2[n], text3[n]));
-            } else {
-                assert text3 != null;
-                itemsList.add(new Item(text1[n], text2[n], text3[n], text4[n]));
+        if(text3 != null && text4 == null) {
+            for (int n = 0; n < text1.length; n++) {
+                itemsList.add(new Item(text1[n], text2[n], text3[n], false));
+            }
+            recyclerView.setAdapter(new VersesAdapter(getContext(), itemsList));
+        } else {
+            for (int n = 0; n < text1.length; n++) {
+                if (text3 == null && text4 == null) {
+                    itemsList.add(new Item(text1[n], text2[n]));
+                } else {
+                    assert text3 != null;
+                    itemsList.add(new Item(text1[n], text2[n], text3[n], text4[n]));
+                }
+                recyclerView.setAdapter(new ItemsAdapter(getContext(), itemsList));
             }
         }
-
-        ItemsAdapter adapter = new ItemsAdapter(itemsList);
-        adapter.notifyDataSetChanged();
-        recyclerView.setAdapter(adapter);
-
         return recyclerView;
     }
 
@@ -93,4 +94,3 @@ public class MainFragment extends Fragment {
         registerForContextMenu(view);
     }
 }
-

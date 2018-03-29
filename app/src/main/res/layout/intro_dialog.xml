@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal"
@@ -8,11 +7,9 @@
     android:padding="@dimen/item_margin">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/introduction_text"
-        android:textAlignment="center"
-        android:textColor="@color/primaryTextColor"/>
+        style="@style/textView_style"
+        android:text="@string/intro_text"
+        android:lineSpacingMultiplier="1.1"/>
 
     <CheckBox
         android:id="@+id/no_show_check"
@@ -22,10 +19,10 @@
         android:checked="false" />
 
     <Button
-        android:id="@+id/close_dialog"
+        android:id="@+id/close_intro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
+        android:layout_gravity="center"
         android:text="@string/accept"
         android:textColor="@color/secondaryDarkColor"
         android:background="?android:attr/selectableItemBackground"/>

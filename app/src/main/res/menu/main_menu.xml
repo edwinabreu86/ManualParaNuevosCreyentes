@@ -1,8 +1,14 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_general_questions"
         android:icon="@drawable/ic_questions"
         android:title="@string/general_questions" />
+
+    <item
+        android:id="@+id/nav_recommend"
+        android:icon="@drawable/ic_recommend"
+        android:title="@string/recommend" />
 
     <item android:title="@string/bible_books">
         <menu>
@@ -27,23 +33,17 @@
                 android:id="@+id/nav_nt_verses"
                 android:icon="@drawable/ic_verses"
                 android:title="@string/new_testament" />
+
+            <item android:id="@+id/nav_fav_verses"
+                android:icon="@drawable/ic_favorite"
+                android:title="@string/favorite_verses" />
         </menu>
     </item>
 
-    <item android:title="@string/others">
-        <menu>
-            <item
-                android:id="@+id/menu_app_rating"
-                android:icon="@drawable/ic_rating"
-                android:title="@string/app_rating" />
-            <item
-                android:id="@+id/menu_credits"
-                android:icon="@drawable/ic_credits"
-                android:title="@string/credits" />
-            <item
-                android:id="@+id/menu_exit"
-                android:icon="@drawable/ic_exit"
-                android:title="@string/exit" />
-        </menu>
-    </item>
+    <group>
+        <item
+            android:id="@+id/nav_exit"
+            android:icon="@drawable/ic_exit"
+            android:title="@string/exit" />
+    </group>
 </menu>

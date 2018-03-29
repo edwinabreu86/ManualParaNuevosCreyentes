@@ -4,42 +4,42 @@ public class Books {
 
     public static final String[][] OT_MOSES = {
             {"Génesis", "Moisés", "50",
-                    "Relato sobre la creación del mundo y del primer hombre (Adán) en el jardín del Edén, la caída en el pecado, el diluvio y las vidas de los patriarcas (Abraham, Isaac, Jacob y Jose)."},
+                    "Relato sobre la creación del mundo, la caída de Adán (primer hombre) en el pecado en el jardín del Edén, el diluvio y las vidas de los patriarcas (Abraham, Isaac, Jacob y José)."},
             {"Éxodo", "Moisés", "40",
-                    "Relato sobre la vida de Moisés, las plagas de Egipto, la salida del pueblo de Israel de Egipto, los Diez Mandamientos y otras leyes, descripción del tabernáculo y de sus utensilios."},
+                    "Relato sobre la vida de Moisés, su llamado, las plagas de Egipto, la salida del pueblo de Israel de Egipto, la institución de los Diez Mandamientos y otras leyes, descripción del tabernáculo y de sus utensilios."},
             {"Levítico", "Moisés", "27",
-                    "Instrucciones sobre holocaustos, ofrendas y sacrificios. Consagración de los sacerdotes y del sumo sacerdote. Leyes para el pueblo de Dios conservar la santidad."},
+                    "Instrucciones sobre holocaustos, ofrendas y sacrificios, sobre la consagración de los sacerdotes y del sumo sacerdote. Leyes para que el pueblo de Dios conservara su santidad."},
             {"Números", "Moisés", "36",
-                    "Descripción de censos a los israelitas en el desierto, de la organización estos en campamentos, y de sus experiencias durante cuarenta años en el desierto."},
+                    "Relato y descripción de los censos hechos a los israelitas en el desierto, de su organización en campamentos, y de sus extraordinarias experiencias durante sus cuarenta años en el desierto."},
             {"Deuteronomio", "Moisés", "34",
-                    "Repetición de la ley dada a Moisés en el monte Sinaí. Registro de la muerte de Moisés."}
+                    "Repetición de la ley dada a Moisés en el monte Sinaí. Relato sobre la muerte de Moisés."}
     };
 
     public static final String[][] OT_HISTORICAL = {
             {"Josué", "Josué", "24",
                     "Relato de la conquista de Canaán por Josué y el pueblo de Israel, división de la tierra entre las doce tribus de Israel. Exhortación de Josué para que el pueblo honrara a Dios."},
             {"Jueces", "Samuel", "21",
-                    "Historia tras la muerte de Josué, donde el pueblo cedía ante sus enemigos cada vez que se alejaba de Dios, y era librado de sus enemigos por los “jueces” cada vez que se volvía a Dios."},
+                    "Historia de lo ocurrido en Israal tras la muerte de Josué, donde el pueblo cedía ante sus enemigos cada vez que se alejaba de Dios, y era librado de sus enemigos por los jueces (Sansón, Gedeón, Jefté, ...) cada vez que se volvía a Dios."},
             {"Rut", "Samuel", "4",
-                    "Historia ocurrida en tiempo de los jueces, sobre la vida de Rut (bisabuela del rey David), su amor y su lealtad por su suegra y la bendición que recibió por su obediencia a Dios. "},
+                    "Historia ocurrida durante el tiempo de los jueces, sobre la vida de Rut (bisabuela del rey David), su amor y su lealtad por su suegra y la bendición que recibió por su obediencia al Dios de su suegra."},
             {"1 Samuel", "Samuel, Gad, Natán", "31",
-                    "Relato sobre la vida del profeta Samuel, la perdida y regreso del arca del pacto, el reinado de Saul y su desaprobación ante Dios, y la unción de David como rey y su ascenso al trono."},
+                    "Relato sobre la vida del profeta Samuel, la pérdida y regreso del arca del pacto, el reinado de Saul y su desaprobación ante Dios, y la unción de David como rey hasta su ascenso al trono."},
             {"2 Samuel", "Gad, Natán", "24",
-                    "Relato de eventos durante el reinado de David en Judá e Israel: la recuperación del arca del pacto, los aciertos y pecados del rey, campañas militares y represión de sublevaciones. "},
+                    "Relato de eventos mientras David reinó en Judá e Israel: la recuperación del arca del pacto, los aciertos y pecados de este rey, sus campañas militares y represión de sublevaciones."},
             {"1 Reyes", "Jeremías", "22",
-                    "Relato del ascenso de Salomón como rey, de la grandeza de su reino, la construcción del templo, la división de los reinos de Judá e Israel, los hechos de los profetas Elías."},
+                    "Relato del ascenso de Salomón como rey, de la grandeza de su reino, la construcción del templo, la división de los reinos de Judá e Israel, los hechos del profeta Elías."},
             {"2 Reyes", "Jeremías", "25",
                     "Relato de los hechos del profeta Eliseo, historia de los reyes de Israel hasta su cautiverio e historia los reinos de Judá hasta la caída de Jerusalén."},
             {"1 Crónicas", "Esdras", "29",
-                    "Genealogía desde Adán hasta David, muerte de Saul y sus hijos, hechos del reinado de David hasta la entrega del reino a Salomón."},
+                    "Genealogía desde Adán hasta David, muerte de Saul y sus hijos, hechos importantes durante el reinado de David hasta la entrega del reino a Salomón."},
             {"2 Crónicas", "Esdras", "36",
-                    "Relato de hechos del reinado de Salomón, edificación y dedicación del templo e historia de los demás reinos de Judá hasta la cautividad de Judá en Babilonia. "},
+                    "Relato de hechos durante el reinado de Salomón, edificación y dedicación del templo e historia de los demás reinos de Judá hasta la cautividad de Judá en Babilonia."},
             {"Esdras", "Esdras", "10",
-                    "Relato del regreso a Jerusalén de Zorobabel y exilados de la cautividad, la reedificación del templo y la restauración de la vida conforme a la ley de Moisés. "},
+                    "Relato del regreso a Jerusalén de Zorobabel y los exilados de la cautividad, la reedificación del templo y la restauración de la vida conforme a la ley de Moisés."},
             {"Nehemías", "Nehemías", "13",
                     "Relato del regreso de Nehemías a Jerusalén para reedificar sus muros, y de sus reformas sociales y de la restauración de la vida bajo la ley de moisés."},
             {"Ester", "Mardoqueo", "10",
-                    "Relato de la vida de Ester, y de su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, el rey persa, con ayuda de la oración y el ayuno de los judíos."}
+                    "Relato de la vida de Ester y su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, rey persa, con ayuda de la oración y el ayuno de los judíos."}
     };
 
     public static final String[][] OT_POETRY = {
@@ -48,9 +48,9 @@ public class Books {
             {"Salmos", "David y otros", "150",
                     "Libro de oraciones, poemas e himnos sobre la alabanza y adoración a Dios, el confiar en Él, Israel como pueblo de Dios, y Jerusalén (Sion) como lugar de la presencia de Dios."},
             {"Proverbios", "Salomón, Agur, Lemuel", "31",
-                    "Escritos Sapiensales"},
+                    "Escritos de exhortación para beneficio del hombre en su diario vivir y en su relación con Dios."},
             {"Eclesiastés", "Salomón", "12",
-                    "Libro que explica que todo lo hecho para satisfacción personal en este mundo es temporal y, por tanto, es vanidad. Enfatiza la necesidad de seguir a Dios para darle sentido a la vida."},
+                    "Explicación de que todo lo hecho para satisfacción personal en este mundo es temporal y, por tanto, es vanidad. Enfatiza la necesidad de seguir a Dios para darle sentido a la vida."},
             {"El Cantar de los Cantares", "Salomón", "8",
                     "Historia de un amor puro y profundo entre un hombre y una mujer, la belleza y lo sagrado de esa relación. Simboliza el gran amor de Dios por su pueblo."}
     };
@@ -84,7 +84,7 @@ public class Books {
             {"Nahum", "Nahum", "3",
                     "Profecía sobre la destrucción de Nínive. La primera parte presenta el juez y la segunda el juicio sobre la ciudad malvada."},
             {"Habacuc", "Habacuc", "3",
-                    "Profecía sobre las maldades de Israel y de su inminente derrota a manos de los caldeos. Descripción de la pecaminosidad de los conquistadores caldeos y profetizo su caída final. El libro concluye con una oración de fe."},
+                    "Profecía sobre las maldades de Israel y de su inminente derrota a manos de los caldeos. Descripción de la pecaminosidad de los conquistadores caldeos y profetizo su caída final. Oración de fe de Habacuc."},
             {"Sofonías", "Sofonías", "3",
                     "Profecía contra los pecados del pueblo. El profetizo el juicio sobre Judá y las naciones vecinas, así como también las bendiciones sobre Jerusalén restaurada."},
             {"Hageo", "Ageo", "2",
@@ -97,70 +97,70 @@ public class Books {
 
     public static final  String[][] NT_GOSPELS = {
             {"Mateo", "Mateo", "28",
-                    "Presenta a Jesús como Mesías. Genealogía de Jesús a través de José. Cumplimiento de la profecía del Antiguo Testamento."},
+                    "Genealogía de Jesús desde Abraham, su nacimiento y persecución, su ministerio hasta su muerte y resurrección. Muestra a Jesús como Mesías por el cumplimiento de las profecías sobre él."},
             {"Marcos", "Marcos", "16",
-                    "Presenta a Jesús como el siervo. Una tercera parte del evangelio trata con la última semana de Su vida."},
+                    "Narra sobre el ministerio de Jesús y sus sanidades y milagros hasta su muerte y resurrección. Incluye el relato de su última semana de vida y presenta a Jesús como un siervo."},
             {"Lucas", "Lucas", "24",
-                    "Presenta a Jesús como El Hijo del Hombre que busca y salva al perdido. La genealogía de Jesús a través de María. El más largo de los evangelios."},
+                    "Genealogía de Jesús desde Adán, hechos sobre su nacimiento, su ministerio, su muerte, su resurección y su ascención. Presenta a Jesús como El Hijo del Hombre que busca y salva al perdido."},
             {"Juan", "Juan", "21",
-                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
+                    "Narra encuentros de Jesús con Nicodemo, la samaritana, la mujer adúltera, el ciego de nacimiento y otros. Presenta a Jesús como Verbo de Dios, pan de vida, agua que quita la sed, la vid verdadera."}
     };
 
     public static final  String[][] NT_HISTORICAL = {
             {"Hechos", "Lucas", "28",
-                    "Presenta a Jesús como Dios en carne, el Cristo, para que así Ustedes puedan creer."}
+                    "Relato sobre la ascensión de Jesús, la vida de la iglesia primitiva, las primeras muertes de discípulos de Jesús, el llamamiento, la conversión y los viajes misioneros de Pablo."}
     };
 
     public static final  String[][] NT_PAULINE = {
             {"Romanos", "Pablo", "16",
-                    "Un examen sistemático de la justificación, santificación y glorificación. Examina el plan de Dios para los judíos y los gentiles."},
+                    "Explica la justificación del hombre ante Dios por la fe en Jesucristo. Instruye sobre el uso de los dones de Dios, el sometimiento a las autoridades y el cuidado del débil en la fe."},
             {"1 Corintios", "Pablo", "16",
-                    "Esta epístola trata con el perfil y las correcciones debidas a la inmoralidad, los juicios y abusos en la Cena del Señor. También menciona los ídolos, el matrimonio y la resurrección."},
+                    "Explica la salvación por voluntad de Dios y no por sabiduría humana. Instruye sobre la inmoralidad sexual, el matrimonio, los ídolos, la Cena del Señor y el uso de dones espirituales."},
             {"2 Corintios", "Pablo", "13",
-                    "La defensa de Pablo de su posición apostólica."},
+                    "Exposición de Pablo en defensa de su apostolado en Cristo. Instruye sobre el dar ofrendas y exhorta contra seguir a otro Cristo"},
             {"Gálatas", "Pablo", "6",
-                    "Pablo refuta los errores del legalismo y examina el adecuado lugar de la gracia en la vida Cristiana."},
+                    "Argumenta sobre la salvación por gracia Dios, contraria al legalismo religioso. Instruye sobre el fruto del Espíritu, las obras de la carne y la necesidad de hacer el bien a otros."},
             {"Efesios", "Pablo", "6",
-                    "La posición del creyente en Cristo e información acerca de la guerra espiritual."},
+                    "Explica la posición del creyente en Cristo. Orienta sobre la conducta del nuevo hombre en Cristo, sea esposo, esposa, padre o hijo. Informa acerca de la guerra espiritual."},
             {"Filipenses", "Pablo", "4",
-                    "Pablo habla de su prisión y su amor por los Filipenses. Él los exhorta a la piedad y los previene acerca del legalismo."},
+                    "Relato de Pablo sobre su prisión y su amor por los Filipenses. Exhorta a mantener la unidad y la confraternidad en Cristo, a practicar la piedad y previene acerca del legalismo."},
             {"Colosenses", "Pablo", "4",
-                    "Pablo se enfoca en la preeminencia de Jesús en la creación, la redención y la piedad."},
+                    "Presenta a Jesús como la razón de todo lo creado. Exhorta a practicar la sana doctrina cristiana y a no perseverar en las doctrinas y tradiciones de los hombres."},
             {"1 Tesalonicenses", "Pablo", "5",
-                    "El ministerio de Pablo a los Tesalonicenses. Enseñanzas acerca de la pureza y la mención del regreso de Cristo."},
+                    "Explica el ministerio de Pablo a los Tesalonicenses. Orienta acerca de la santificación y el buen proceder del cristiano. Describe eventos del regreso de Cristo."},
             {"2 Tesalonicenses", "Pablo", "3",
-                    "Correcciones acerca del Día del Señor."},
+                    "Instruye acerca de los eventos previos a la venida del Señor. Exhortación al trabajo honrado para ganarse el sustento."},
             {"1 Timoteo", "Pablo", "6",
-                    "Instrucciones a Timoteo acerca del liderazgo apropiado y los falsos maestros, el papel de las mujeres, la oración, y los requisitos de los ancianos y diáconos."},
+                    "Instruye sobre la oración, el vestuario de la mujer, los requisitos de ancianos y diáconos. Advierte contra la apostasía y las falsas doctrinas sobre el matrimonio y los alimentos."},
             {"2 Timoteo", "Pablo", "4",
-                    "Una epístola de ánimo para que Timoteo sea fuerte."},
+                    "Orienta sobre la doctrina y la conducta cristiana. Anima a Timoteo para que persevere en su fe y en su ministerio."},
             {"Tito", "Pablo", "3",
-                    "Pablo deja a Tito en Creta para que cuide de las iglesias allá. Requisitos para los ancianos."},
+                    "Requisitos para ser obispo o anciano. Exhorta a la prudencia y la integridad. Instrucciones para la expulsión de quien causa divisiones."},
             {"Filemón", "Pablo", "3",
-                    "Una epístola para el propietario de un esclavo fugado. Pablo apela a Filemón para que perdone a Onésimo."}
+                    "Petición del perdón de Onésimo, un esclavo fugado, por Filemón, su propietario."}
     };
 
     public static final  String[][] NT_GENERAL = {
             {"Hebreos", "desconocido", "13",
-                    "Una carta a los Cristianos Hebreos en peligro de regresar al Judaísmo. Esto demuestra la superioridad de Jesús sobre el sistema del Antiguo Testamento. Menciona el sacerdocio de Melquisedec."},
+                    "Orienta a los cristianos a no regresar al judaísmo. Presenta a Jesús como sacrificio superior al sacrificio de animales hechos por sacerdotes. Instruye sobre la importancia de la fe."},
             {"Santiago", "Santiago", "5",
-                    "Una exhortación práctica a los creyentes para que vivan una vida cristiana que sea evidencia de la regeneración. Urge un examen propio de la evidencia de una vida cambiada."},
+                    "Orienta sobre el pedir con fe, la tentación, la acepción de personas y las obras como manifestación de fe. Exhorta a usar la boca para bendición, no para maldición."},
             {"1 Pedro", "Pedro", "5",
-                    "Pedro escribió esta carta para animar a sus destinatarios a la luz de sus sufrimientos y que fueran humildes en éste. Menciona el bautismo."},
+                    "Sugiere la obediencia, la santificación y el buen andar ante todos aun en el sufrimiento del cristiano. Orienta sobre el vestuario, el matrimonio, y la conducta de ancianos y jóvenes."},
             {"2 Pedro", "Pedro", "3",
-                    "Trata con la persona en el nivel interior, advertencias contra los falsos maestros y menciona el Día del Señor."},
+                    "Exhorta a la perseverancia en valores cristianos (paciencia, afecto fraternal, amor, ...). Advierte contra los falsos maestros. Trata sobre el Día del Señor."},
             {"1 Juan", "Juan", "5",
-                    "Juan describe la verdadera comunión de los creyentes con otros creyentes y con Dios. Describe a Dios como la luz y el amor. Anima al Cristiano santo a caminar delante del Señor. Se menciona mucho el amor Cristiano."},
+                    "Describe la verdadera comunión de los creyentes con otros creyentes y con Dios. Enfatiza el amor al prójimo. Enseña contra el practicar pecado y el amar las cosas del mundo."},
             {"2 Juan", "Juan", "1",
-                    "Alabar el caminar en Cristo y un recordatorio para caminar en el amor de Dios."},
+                    "Recuerda el caminar en el amor de Dios. Advierta contra recibir engañadores que vienen con otra doctrina distina a la de Cristo."},
             {"3 Juan", "Juan", "1",
-                    "Juan agradece a Gayo por su bondad para con el pueblo de Dios y reprocha a Diótrefes."},
+                    "Felicitación a Gayo por su buen andar y por su servicio al pueblo de Dios. Reprocha a Diótrefes por su actitud al no recibir a los hermanos."},
             {"Judas", "Judas", "1",
-                    "Expone a los falsos maestros y usa alusiones referentes al Antiguo Testamento para demostrar el juicio sobre ellos. Contiende por la fe."}
+                    "Menciona los rasgos de los falsos maestros. Refiere al Antiguo Testamento para demostrar el juicio sobre ellos. Recomienda la perseverancia en Jesús."}
     };
 
     public static final  String[][] NT_PROPHECY = {
             {"Apocalipsis", "Juan", "22",
-                    "Una visión altamente simbólica de la rebelión futura, el juicio y consumación de todas las cosas."}
+                    "Contiene orientaciones y advertencias de Dios para las iglesias. Muestra una visión altamente simbólica de la rebelión futura, el juicio y consumación de todas las cosas."}
     };
 }

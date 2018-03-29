@@ -7,38 +7,55 @@
     android:orientation="vertical"
     android:gravity="center"
     android:fitsSystemWindows="true"
-    android:padding="@dimen/item_margin">
+    android:padding="@dimen/activity_margin">
 
     <TextView
-        style="@style/textView_style"
+        style="@style/textView_style2"
         android:text="Iconos creados por:"
-        android:textColor="@color/primaryTextColor"
-        android:drawableTop="@mipmap/ic_launcher"
         tools:ignore="HardcodedText" />
 
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@mipmap/ic_launcher"
+        tools:ignore="ContentDescription" />
+
     <TextView
-        style="@style/textView_style"
-        android:id="@+id/credits_text"
+        style="@style/textView_style2"
+        android:id="@+id/credits_text1"
         android:text="https://www.flaticon.com/authors/smashicons"
         android:textColor="@color/secondaryDarkColor"
         android:textStyle="italic"
         tools:ignore="HardcodedText" />
 
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_books"
+        tools:ignore="ContentDescription" />
+
     <TextView
-        style="@style/textView_style"
-        android:text="www.flaticon.com tiene licencia de:"
-        android:textColor="@color/primaryTextColor"
+        style="@style/textView_style2"
+        android:id="@+id/credits_text2"
+        android:text="http://www.freepik.com"
+        android:textColor="@color/secondaryDarkColor"
+        android:textStyle="italic"
         tools:ignore="HardcodedText" />
 
     <TextView
-        style="@style/textView_style"
+        style="@style/textView_style2"
+        android:text="www.flaticon.com tiene licencia de:"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        style="@style/textView_style2"
         android:text="http://creativecommons.org/licenses/by/3.0/"
         android:textColor="@color/secondaryDarkColor"
         android:textStyle="italic"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/close_dialog"
+        android:id="@+id/close_credits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/accept"

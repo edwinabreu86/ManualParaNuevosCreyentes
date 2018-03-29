@@ -2,39 +2,30 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/min_padding"
     app:cardCornerRadius="6dp">
 
     <LinearLayout
-        android:id="@+id/item_layout"
+        android:id="@+id/item_holder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/selector">
 
         <TextView
-            android:id="@+id/text1"
-            style="@style/item_style"
+            android:id="@+id/title_view"
+            style="@style/textView_style2"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textAlignment="center"
             android:background="@color/secondaryColor"
-            android:textColor="@android:color/white"
-            tools:text="Text1" />
+            android:textColor="@color/primaryTextColor" />
 
         <TextView
-            android:id="@+id/text2"
-            style="@style/item_style"
-            android:textColor="@color/secondaryTextColor"
-            android:lineSpacingMultiplier="1.2"
-            tools:text="text2" />
+            android:id="@+id/content_view"
+            style="@style/textView_style"
+            android:textSize="15sp"
+            android:lineSpacingMultiplier="1.1" />
     </LinearLayout>
-
-    <View
-        android:id="@+id/layer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorLayer"
-        android:visibility="gone"/>
 </android.support.v7.widget.CardView>
