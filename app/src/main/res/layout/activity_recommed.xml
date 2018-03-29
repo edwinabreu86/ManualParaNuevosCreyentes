@@ -35,8 +35,9 @@
             <TextView
                 android:id="@+id/text_view"
                 style="@style/textView_style"
-                android:textSize="15sp"
-                android:lineSpacingMultiplier="1.1" />
+                android:layout_height="match_parent"
+                android:lineSpacingMultiplier="1.1"
+                android:textSize="15sp" />
         </android.support.v4.widget.NestedScrollView>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

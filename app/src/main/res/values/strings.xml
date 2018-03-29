@@ -15,15 +15,14 @@
     <string name="favorite_verses">Versículos favoritos</string>
 
     <string name="intro_text">
-        <![CDATA[ Aquí encuentras datos básicos de la Biblia,
-        \n tales como:
-        \nlas secciones en que se divide
-        \nlos nombres de sus libros
-        \nla cantidad de capítulos de cada libro
-        \nuna reseña del contenido de éstos
+        <![CDATA[ Aquí encontrarás datos básicos de la Biblia,
+        \ncomo:
+        \nlas secciones en que se divide,
+        \nlos nombres de sus libros,
+        \nla cantidad de capítulos de cada libro,
+        \nuna reseña del contenido de éstos,
         \nversículos útiles para tu edificación]]>
     </string>
-    <string name="about">Acerca de …</string>
     <string name="sugest">Sugerencias</string>
     <string name="recommend">Recomendaciones</string>
 </resources>

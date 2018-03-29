@@ -74,10 +74,10 @@ class OptionsDialog {
                     case R.id.img_fav:
                         if(!favorite) {
                             dbHelper.addVerse(new Item(text[0], text[1], text[2], true));
-                            Toast.makeText(ctx, "Versículo agregado a favoritos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " agregado a favoritos", Toast.LENGTH_SHORT).show();
                         } else {
                             dbHelper.removeVerse(new Item(text[0], text[1], text[2], false));
-                            Toast.makeText(ctx, "Versículo revomido de favoritos", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " revomido de favoritos", Toast.LENGTH_SHORT).show();
                         }
                         break;
                 }

@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="match_parent"
-        android:src="@mipmap/ic_launcher"
+        android:src="@mipmap/ic_launcher_foreground"
         tools:ignore="ContentDescription" />
 
     <TextView

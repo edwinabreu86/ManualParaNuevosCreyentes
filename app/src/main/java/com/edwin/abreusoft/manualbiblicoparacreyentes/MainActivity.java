@@ -6,6 +6,7 @@ import android.app.Dialog;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
@@ -27,15 +28,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String CHECKED = "checked";
     private Toolbar toolbar;
     private DrawerLayout drawer;
+    private SharedPreferences preferences;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +53,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         showList(R.string.general_questions, 0);
+
+        preferences = getPreferences(MODE_PRIVATE);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        if (!getPreferences(MODE_PRIVATE).contains(CHECKED)) {
+        if (!preferences.contains(CHECKED)) {
             showIntro();
         }
     }
@@ -104,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                 if (noIntro.isChecked()) {
-                    getPreferences(MODE_PRIVATE).edit().putBoolean(CHECKED, true).commit();
+                    preferences.edit().putBoolean(CHECKED, true).commit();
                 }
                 dialog.dismiss();
             }
@@ -182,26 +184,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_app_rating:
-                try {
-                    startActivity(rateIntent());
-                } catch (ActivityNotFoundException e) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
-                }
-                break;
-            case R.id.menu_credits:
-                showCredits();
-                break;
-            case R.id.menu_sugest:
-                Uri uri = Uri.parse("mailto:core2duo2602@gmail.com")
-                        .buildUpon()
-                        .appendQueryParameter("subject", "Sugerencias para Manual Bíblico")
-                        .build();
-                Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-                startActivity(Intent.createChooser(intent, "Enviar sugerencia"));
-                break;
+        int id = item.getItemId();
+
+        if(id == R.id.menu_app_rating) {
+            try {
+                startActivity(rateIntent());
+            } catch (ActivityNotFoundException e) {
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
+            }
+        } else if(id == R.id.menu_sugest) {
+            Uri uri = Uri.parse("mailto:core2duo2602@gmail.com")
+                    .buildUpon()
+                    .appendQueryParameter("subject", "Sugerencias para Manual Bíblico")
+                    .build();
+            Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
+            startActivity(Intent.createChooser(intent, "Enviar sugerencia"));
+        } else if(id == R.id.menu_credits) {
+            showCredits();
         }
         return false;
     }

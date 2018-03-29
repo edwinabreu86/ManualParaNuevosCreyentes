@@ -41,13 +41,18 @@ class VersesDbHelper extends SQLiteOpenHelper {
         values.put(VERSE, verse.getText2());
         values.put(CONTENT, verse.getText3());
 
-        db.insert(TABLE_NAME, null, values);
+        String sql = "SELECT * FROM " + TABLE_NAME + " WHERE " + BOOK + "=? AND " + VERSE + "=?";
+        Cursor cursor = db.rawQuery(sql, new String[]{verse.getText1(), verse.getText2()});
+        if (cursor.getCount() == 0) {
+            db.insert(TABLE_NAME, null, values);
+        }
+        cursor.close();
         db.close();
     }
 
     void removeVerse(Item verse) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_NAME, "book=? AND verse=?", new String[]{verse.getText1(), verse.getText2()});
+        db.delete(TABLE_NAME, BOOK + "=? AND " + VERSE + "=?", new String[]{verse.getText1(), verse.getText2()});
         db.close();
     }
 
