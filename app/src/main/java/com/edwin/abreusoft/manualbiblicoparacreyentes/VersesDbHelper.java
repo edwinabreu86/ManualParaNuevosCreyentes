@@ -2,9 +2,12 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
+import android.database.CursorIndexOutOfBoundsException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,15 +65,16 @@ class VersesDbHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         try (Cursor cursor = db.query(TABLE_NAME, new String[]{BOOK, VERSE, CONTENT}, null, null, null, null, null)) {
             cursor.moveToFirst();
-
-            while (cursor.moveToNext()) {
+            do {
                 String book = cursor.getString(cursor.getColumnIndex(BOOK));
                 String verse = cursor.getString(cursor.getColumnIndex(VERSE));
                 String content = cursor.getString(cursor.getColumnIndex(CONTENT));
-
                 verses.add(new Item(book, verse, content, true));
-            }
+            } while (cursor.moveToNext());
+        } catch (CursorIndexOutOfBoundsException e) {
+            e.printStackTrace();
         }
+
         db.close();
         return verses;
     }

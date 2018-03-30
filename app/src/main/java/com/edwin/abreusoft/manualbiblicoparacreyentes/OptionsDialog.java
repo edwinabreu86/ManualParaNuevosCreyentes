@@ -77,6 +77,7 @@ class OptionsDialog {
                             Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " agregado a favoritos", Toast.LENGTH_SHORT).show();
                         } else {
                             dbHelper.removeVerse(new Item(text[0], text[1], text[2], false));
+                            // ctx.sendBroadcast(new Intent().setAction("com.abreusoft.DB_UPDATED"));
                             Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " revomido de favoritos", Toast.LENGTH_SHORT).show();
                         }
                         break;

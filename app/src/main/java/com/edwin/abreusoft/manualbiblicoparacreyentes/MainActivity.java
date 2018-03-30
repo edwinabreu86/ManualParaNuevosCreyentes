@@ -185,21 +185,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if(id == R.id.menu_app_rating) {
-            try {
-                startActivity(rateIntent());
-            } catch (ActivityNotFoundException e) {
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("http://play.google.com/store/apps/details?id=" + getApplicationContext().getPackageName())));
-            }
+            startActivity(rateIntent());
         } else if(id == R.id.menu_sugest) {
-            Uri uri = Uri.parse("mailto:core2duo2602@gmail.com")
-                    .buildUpon()
-                    .appendQueryParameter("subject", "Sugerencias para Manual Bíblico")
-                    .build();
-            Intent intent = new Intent(Intent.ACTION_SENDTO, uri);
-            startActivity(Intent.createChooser(intent, "Enviar sugerencia"));
+            startActivity(Intent.createChooser(createMailIntent(), "Enviar sugerencia"));
         } else if(id == R.id.menu_credits) {
             showCredits();
         }
@@ -217,6 +206,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         rateIntent.addFlags(flags);
         return rateIntent;
+    }
+
+    private Intent createMailIntent() {
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "core2duo2602@gmail.com", null));
+        intent.putExtra(Intent.EXTRA_SUBJECT, "Sugerencias para Manual Bíblico");
+        intent.putExtra(Intent.EXTRA_TEXT, "Sugerencias: \n");
+        return intent;
     }
 
     private void showList(int titleId, int subtitleId) {

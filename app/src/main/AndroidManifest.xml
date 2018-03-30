@@ -7,11 +7,11 @@
         android:allowBackup="true"
         android:debuggable="false"
         android:fullBackupContent="true"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
+        android:theme="@style/AppTheme.Transparent"
         tools:ignore="GoogleAppIndexingWarning,HardcodedDebugMode">
         <activity
             android:name=".StartActivity"
@@ -31,10 +31,10 @@
             android:label="@string/favorite_verses"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".RecommedActivity"
+        <activity
+            android:name=".RecommedActivity"
             android:label="@string/recommend"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
     </application>
-
 </manifest>

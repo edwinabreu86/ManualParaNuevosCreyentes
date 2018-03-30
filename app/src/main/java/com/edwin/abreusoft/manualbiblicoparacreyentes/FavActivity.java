@@ -6,6 +6,8 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -23,13 +25,20 @@ public class FavActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view);
+        final RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        VersesDbHelper dbHelper = new VersesDbHelper(this);
-        List<Item> favList = dbHelper.getVersesList();
+        final TextView emptyView = findViewById(R.id.empty_view);
 
-        recyclerView.setAdapter(new VersesAdapter(this, favList));
+        VersesDbHelper dbHelper = new VersesDbHelper(this);
+        final List<Item> favList = dbHelper.getVersesList();
+
+        if(!favList.isEmpty()) {
+            recyclerView.setAdapter(new VersesAdapter(this, favList));
+            emptyView.setVisibility(View.GONE);
+        } else {
+            emptyView.setVisibility(View.VISIBLE);
+        }
     }
 }
