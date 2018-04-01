@@ -9,7 +9,8 @@
     android:background="@drawable/prayer_request"
     android:paddingTop="@dimen/activity_margin"
     android:paddingStart="@dimen/item_margin"
-    android:paddingEnd="@dimen/item_margin">
+    android:paddingEnd="@dimen/item_margin"
+    tools:ignore="Overdraw">
 
     <ImageView
         android:layout_width="80dp"

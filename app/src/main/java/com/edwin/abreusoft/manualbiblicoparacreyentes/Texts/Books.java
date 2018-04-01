@@ -37,7 +37,7 @@ public class Books {
             {"Esdras", "Esdras", "10",
                     "Relato del regreso a Jerusalén de Zorobabel y los exilados de la cautividad, la reedificación del templo y la restauración de la vida conforme a la ley de Moisés."},
             {"Nehemías", "Nehemías", "13",
-                    "Relato del regreso de Nehemías a Jerusalén para reedificar sus muros, y de sus reformas sociales y de la restauración de la vida bajo la ley de moisés."},
+                    "Relato del regreso de Nehemías a Jerusalén para reedificar sus muros, y de sus reformas sociales y de la restauración de la vida bajo la ley de Moisés."},
             {"Ester", "Mardoqueo", "10",
                     "Relato de la vida de Ester y su intervención para evitar la destrucción del pueblo judíos en manos de Asuero, rey persa, con ayuda de la oración y el ayuno de los judíos."}
     };
@@ -70,27 +70,27 @@ public class Books {
 
     public static final  String[][] OT_MIN_PROPHETS = {
             {"Oseas", "Oseas", "14",
-                    "Mensaje de condenación a Israel seguido por el perdón de Dios"},
+                    "Mensaje de condenación a Israel por causa de la idolatría y otros pecados, seguido por el perdón de Dios."},
             {"Joel", "Joel", "3",
                     "Profecía sobre una gran calamidad causada por una invasión de langostas, y la respuesta de Dios a las oraciones del pueblo, sobre el hecho de que los judíos irían a establecer una gran nación en Palestina en el futuro."},
             {"Amós", "Amós", "9",
-                    "Enseñanza sobre el amor de Dios por la misericordia y no solamente los sacrificios formales, y sobre la futura grandeza de Israel asegurada no por medio del poder y la riqueza, sino por la justicia y el juicio."},
+                    "Enseñanza sobre el amor de Dios por la misericordia y no solamente por los sacrificios formales, y sobre la futura grandeza de Israel asegurada no por medio del poder y la riqueza, sino por la justicia y el juicio."},
             {"Abdías", "Abdías", "1",
-                    "Profecía sobre la caída de los edomitas, los que se habían gozado de la caída de Judá, y sobre un futuro cuando los judíos volverían a gobernar las tierras que estuvieron una vez bajo el control de David."},
+                    "Profecía sobre la caída de los edomitas, por haberse gozado de la caída de Judá, y sobre un futuro cuando los judíos volverían a gobernar las tierras que estuvieron una vez bajo el control de David."},
             {"Jonás", "Jonás", "4",
                     "Relato sobre la experiencia de Jonás al negarse a profetizar a Nínive y sobre la misericordia de Dios con Nínive tras el arrepentimiento de sus habitantes."},
             {"Miqueas", "Miqueas", "7",
-                    "Profecía contra los los pecados de su tiempo y especialmente contra la opresión de los ricos hacia los pobres. El profetizo tanto la destrucción de Israel como la de Judá poco tiempo antes de que el juicio cayera sobre Israel."},
+                    "Profecía contra los los pecados de su tiempo y especialmente contra la opresión de los ricos hacia los pobres. Predicción de la destrucción tanto de Israel como de Judá poco tiempo antes de que el juicio cayera sobre Israel."},
             {"Nahum", "Nahum", "3",
                     "Profecía sobre la destrucción de Nínive. La primera parte presenta el juez y la segunda el juicio sobre la ciudad malvada."},
             {"Habacuc", "Habacuc", "3",
                     "Profecía sobre las maldades de Israel y de su inminente derrota a manos de los caldeos. Descripción de la pecaminosidad de los conquistadores caldeos y profetizo su caída final. Oración de fe de Habacuc."},
             {"Sofonías", "Sofonías", "3",
-                    "Profecía contra los pecados del pueblo. El profetizo el juicio sobre Judá y las naciones vecinas, así como también las bendiciones sobre Jerusalén restaurada."},
+                    "Profecía de juicio sobre Judá los pecados de su pueblo y de las naciones vecinas, así como también las bendiciones sobre la Jerusalén restaurada."},
             {"Hageo", "Ageo", "2",
                     "Libro de profecías sobre la reedificación del templo bajo Zorobabel, animando al pueblo a reedificar la casa de Dios."},
             {"Zacarías", "Zacarías", "14",
-                    "Mensaje sobre la restauración del templo y sobre el reino de Cristo."},
+                    "Mensaje sobre la restauración del templo en Jerusalén, reprensión contra la injusticia y profecías sobre el reino de Cristo."},
             {"Malaquías", "Malaquías", "4",
                     "Reprensión al pueblo judío tras el regreso del exilio por volverse a su vieja vida de pecado. Predicción sobre la venida del Mesías."}
     };

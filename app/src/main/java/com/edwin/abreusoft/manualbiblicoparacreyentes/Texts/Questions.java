@@ -6,7 +6,7 @@ public class Questions {
             {"¿Qué significa la palabra Biblia?", "Viene del griego “biblion” que significa conjuntos de libros. También se puede decir que es el conjunto de libros canónicos del judaísmo."},
             {"¿Cuántos libros tiene la Biblia?", "66 libros"},
             {"¿En cuántas partes se divide la Biblia?", "En dos partes"},
-            {"¿Cuáles son esas partes?", "Antiguo testamento y nuevo testamento"},
+            {"¿Cuáles son las partes de la Biblia?", "Antiguo testamento y nuevo testamento"},
             {"¿Cuántas son las subdivisiones de la Biblia?", "10 subdivisiones"},
             {"¿Cuáles son las subdivisiones de la Biblia?", "1. Libros del pentateuco \n" +
                     "2. Libros históricos del antiguo testamento \n" +

@@ -1,4 +1,4 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.TextAdapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Item;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.OptionsDialog;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.R;
 
 import java.util.List;
 
@@ -28,7 +32,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         }
     }
 
-    ItemsAdapter(Context ctx, List<Item> itemsList) {
+    public ItemsAdapter(Context ctx, List<Item> itemsList) {
         this.ctx = ctx;
         this.itemsList = itemsList;
     }

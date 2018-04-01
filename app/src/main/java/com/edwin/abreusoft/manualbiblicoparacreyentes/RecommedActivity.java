@@ -25,7 +25,7 @@ public class RecommedActivity extends AppCompatActivity {
     }
 
     private static class Reccommend {
-        static String recommendText = "Para preparar un nuevo creyente se requiere de un buen maestro, " +
+        static final String recommendText = "Para preparar un nuevo creyente se requiere de un buen maestro, " +
                 "enfocado no en beneficios materiales, sino en capacitar al líder que todo creyente lleva dentro. \n\n" +
                 "Se sugiere que cada discípulo, con ayuda del Todo Poderoso, procure memorizar este material en forma de juego didáctico, enfocándose en cada enseñanza. \n\n" +
                 "El liderazgo lo da Dios a quien él quiere, llevándole gradualmente al propósito por el cual ha nacido, si el individuo lo asume con responsabilidad. \n\n" +

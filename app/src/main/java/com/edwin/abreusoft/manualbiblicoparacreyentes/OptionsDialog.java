@@ -5,27 +5,30 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.content.LocalBroadcastManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-class OptionsDialog {
+public class OptionsDialog {
 
-    static Dialog createCustomDialog(Context ctx, int layoutId) {
+    static final String COPY_FILTER = "com.abreusoft.COPY_INTENT";
+    static final String VERSES_FILTER = "com.abreusoft.VERSE_INTENT";
+    static final String VERSES_EXTRA = "verses_extra";
+
+    static Dialog createDialog(Context ctx, int layoutId) {
         final Dialog dialog = new Dialog(ctx);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(LayoutInflater.from(ctx).inflate(layoutId, null),
-                new ViewGroup.LayoutParams(520,
-                        ViewGroup.LayoutParams.WRAP_CONTENT));
+                new ViewGroup.LayoutParams(520, ViewGroup.LayoutParams.WRAP_CONTENT));
         return dialog;
     }
 
-    static void createOptionsDialog(final Context ctx, final String[] text, final boolean favorite) {
-        final Dialog dialog = createCustomDialog(ctx, R.layout.options_dialog);
+    public static void createOptionsDialog(final Context ctx, final String[] text, final boolean favorite) {
+        final Dialog dialog = createDialog(ctx, R.layout.options_dialog);
         dialog.show();
 
         final TextView titleView = dialog.findViewById(R.id.opt_title);
@@ -53,6 +56,8 @@ class OptionsDialog {
         final String content = contentView.getText().toString();
         final VersesDbHelper dbHelper = new VersesDbHelper(ctx);
 
+        final LocalBroadcastManager broadcastManager = LocalBroadcastManager.getInstance(ctx.getApplicationContext());
+
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +67,8 @@ class OptionsDialog {
                         if (clipboard != null) {
                             clipboard.setPrimaryClip(ClipData.newPlainText("label", title + "\n" + content));
                         }
-                        Toast.makeText(ctx, "Texto copiado", Toast.LENGTH_SHORT).show();
+
+                        broadcastManager.sendBroadcast(new Intent(COPY_FILTER));
                         break;
                     case R.id.img_share:
                         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -74,12 +80,13 @@ class OptionsDialog {
                     case R.id.img_fav:
                         if(!favorite) {
                             dbHelper.addVerse(new Item(text[0], text[1], text[2], true));
-                            Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " agregado a favoritos", Toast.LENGTH_SHORT).show();
                         } else {
                             dbHelper.removeVerse(new Item(text[0], text[1], text[2], false));
-                            // ctx.sendBroadcast(new Intent().setAction("com.abreusoft.DB_UPDATED"));
-                            Toast.makeText(ctx, "Versículo "+ text[0] + " " + text[1] + " revomido de favoritos", Toast.LENGTH_SHORT).show();
                         }
+                        Intent versesIntent = new Intent(VERSES_FILTER);
+                        versesIntent.putExtra(VERSES_EXTRA, text[0] + " " + text[1]);
+
+                        broadcastManager.sendBroadcast(versesIntent);
                         break;
                 }
                 dialog.dismiss();

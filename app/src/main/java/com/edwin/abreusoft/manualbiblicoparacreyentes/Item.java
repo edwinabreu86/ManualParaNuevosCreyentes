@@ -1,6 +1,6 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes;
 
-class Item {
+public class Item {
     private final String text1;
     private final String text2;
     private String text3;
@@ -26,23 +26,23 @@ class Item {
         this.text4 = text4;
     }
 
-    String getText1() {
+    public String getText1() {
         return text1;
     }
 
-    String getText2() {
+    public String getText2() {
         return text2;
     }
 
-    String getText3() {
+    public String getText3() {
         return text3;
     }
 
-    String getText4() {
+    public String getText4() {
         return text4;
     }
 
-    boolean isFavorite() {
+    public boolean isFavorite() {
         return favorite;
     }
 }

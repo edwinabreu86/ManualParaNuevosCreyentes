@@ -1,7 +1,10 @@
-package com.edwin.abreusoft.manualbiblicoparacreyentes;
+package com.edwin.abreusoft.manualbiblicoparacreyentes.TextAdapters;
 
 import android.content.Context;
 import android.view.View;
+
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Item;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.OptionsDialog;
 
 import java.util.List;
 
@@ -10,7 +13,7 @@ public class VersesAdapter extends ItemsAdapter {
     private final Context ctx;
     private final List<Item> versesList;
 
-    VersesAdapter(Context ctx, List<Item> versesList) {
+    public VersesAdapter(Context ctx, List<Item> versesList) {
         super(ctx, versesList);
         this.ctx = ctx;
         this.versesList = versesList;
@@ -28,9 +31,9 @@ public class VersesAdapter extends ItemsAdapter {
             @Override
             public boolean onLongClick(View view) {
                 if(!verse.isFavorite()) {
-                    OptionsDialog.createOptionsDialog(ctx, text, false);
+                    OptionsDialog.createOptionsDialog(ctx, text, !verse.isFavorite());
                 } else {
-                    OptionsDialog.createOptionsDialog(ctx, text, true);
+                    OptionsDialog.createOptionsDialog(ctx, text, verse.isFavorite());
                 }
                 return false;
             }

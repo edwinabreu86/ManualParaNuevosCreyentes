@@ -3,18 +3,22 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.AppBarLayout.LayoutParams;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -33,8 +37,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private static final String CHECKED = "checked";
     private Toolbar toolbar;
+    private ViewPager viewPager;
     private DrawerLayout drawer;
     private SharedPreferences preferences;
+    private LocalBroadcastManager broadcastManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,27 +48,52 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        viewPager = findViewById(R.id.view_pager);
         drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+
+        setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawen_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-        NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         showList(R.string.general_questions, 0);
 
         preferences = getPreferences(MODE_PRIVATE);
+        broadcastManager = LocalBroadcastManager.getInstance(this);
     }
 
-    @Override
+    private final BroadcastReceiver receiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.filterEquals(new Intent(OptionsDialog.COPY_FILTER))) {
+                Snackbar.make(viewPager, "Texto copiado", Snackbar.LENGTH_SHORT).show();
+            } else if (intent.filterEquals(new Intent(OptionsDialog.VERSES_FILTER))) {
+                Snackbar.make(viewPager, "Versículo " + intent.getStringExtra(OptionsDialog.VERSES_EXTRA) + " agregado a favoritos", Snackbar.LENGTH_SHORT).show();
+            }
+        }
+    };
+
+        @Override
     protected void onStart() {
         super.onStart();
         if (!preferences.contains(CHECKED)) {
-            showIntro();
+            showIntroDialog();
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        broadcastManager.unregisterReceiver(receiver);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        broadcastManager.registerReceiver(receiver, new IntentFilter(OptionsDialog.COPY_FILTER));
+        broadcastManager.registerReceiver(receiver, new IntentFilter(OptionsDialog.VERSES_FILTER));
     }
 
     @Override
@@ -75,36 +106,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showExitDialog() {
+        DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                if(i == DialogInterface.BUTTON_POSITIVE) {
+                    finish();
+                } else {
+                    dialogInterface.dismiss();
+                }
+            }
+        };
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Deseas salir de la aplicación?")
-                .setCancelable(true)
-                .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                })
+        builder.setMessage("Deseas salir de la aplicación?").setCancelable(true)
+                .setPositiveButton("Sí", listener)
+                .setNegativeButton("No", listener)
                 .create().show();
     }
 
 
-    private void showIntro() {
-        final Dialog dialog = OptionsDialog.createCustomDialog(this, R.layout.intro_dialog);
+    private void showIntroDialog() {
+        final Dialog dialog = OptionsDialog.createDialog(this, R.layout.intro_dialog);
         dialog.show();
-
-        final CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
 
         Button closeIntro = dialog.findViewById(R.id.close_intro);
         closeIntro.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ApplySharedPref")
             @Override
             public void onClick(View view) {
+                CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
                 if (noIntro.isChecked()) {
                     preferences.edit().putBoolean(CHECKED, true).commit();
                 }
@@ -113,8 +143,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    private void showCredits() {
-        final Dialog dialog = OptionsDialog.createCustomDialog(this, R.layout.credits_dialog);
+    private void showCreditsDialog() {
+        final Dialog dialog = OptionsDialog.createDialog(this, R.layout.credits_dialog);
         dialog.show();
 
         final TextView creditsText1 = dialog.findViewById(R.id.credits_text1);
@@ -133,13 +163,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         };
-
         creditsText1.setOnClickListener(listener);
         creditsText2.setOnClickListener(listener);
         closeCredits.setOnClickListener(listener);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         item.setCheckable(true);
@@ -190,14 +218,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if(id == R.id.menu_sugest) {
             startActivity(Intent.createChooser(createMailIntent(), "Enviar sugerencia"));
         } else if(id == R.id.menu_credits) {
-            showCredits();
+            showCreditsDialog();
         }
         return false;
     }
 
     private Intent rateIntent() {
-        Intent rateIntent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("market://details?id=" + getApplicationContext().getPackageName()));
+        Intent rateIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getApplicationContext().getPackageName()));
         int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
         if(Build.VERSION.SDK_INT >= 21) {
             flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
@@ -211,37 +238,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Intent createMailIntent() {
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "core2duo2602@gmail.com", null));
         intent.putExtra(Intent.EXTRA_SUBJECT, "Sugerencias para Manual Bíblico");
-        intent.putExtra(Intent.EXTRA_TEXT, "Sugerencias: \n");
         return intent;
     }
 
-    private void showList(int titleId, int subtitleId) {
-        String title = getString(titleId);
-        String subtitle;
-        if(subtitleId == 0) {
-            subtitle = "";
-        } else {
-            subtitle = getString(subtitleId);
-        }
+    private void showList(final int titleId, final int subtitleId) {
+        final String title = getString(titleId);
+        final String subtitle = (subtitleId == 0) ? "" : getString(subtitleId);
 
-        toolbar.setTitle(title);
-        toolbar.setSubtitle(subtitle);
-        AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
+        int flags = (titleId == R.string.general_questions) ?
+                0 : AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS;
+        ((LayoutParams) toolbar.getLayoutParams()).setScrollFlags(flags);
+        int visibility = (titleId == R.string.general_questions) ?
+                View.GONE : View.VISIBLE;
 
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager(), this, title, subtitle));
-        viewPager.setOffscreenPageLimit(3);
+        final TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.setVisibility(visibility);
 
-        TabLayout tabLayout = findViewById(R.id.tab_layout);
-
-        if(titleId == R.string.general_questions) {
-            tabLayout.setVisibility(View.GONE);
-            params.setScrollFlags(0);
-        } else {
-            tabLayout.setVisibility(View.VISIBLE);
-            params.setScrollFlags(AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL |
-                    AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS);
-        }
-        tabLayout.setupWithViewPager(viewPager);
+        Handler h = new Handler();
+        h.post(new Runnable() {
+            @Override
+            public void run() {
+                toolbar.setTitle(title);
+                toolbar.setSubtitle(subtitle);
+                viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager(), titleId, subtitleId));
+                tabLayout.setupWithViewPager(viewPager);
+            }
+        });
     }
 }
