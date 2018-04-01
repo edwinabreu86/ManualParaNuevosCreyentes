@@ -35,5 +35,4 @@
         <item name="android:padding">@dimen/item_margin</item>
         <item name="android:background">?android:attr/selectableItemBackground</item>
     </style>
-
 </resources>

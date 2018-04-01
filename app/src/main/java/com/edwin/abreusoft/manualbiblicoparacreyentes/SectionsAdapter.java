@@ -17,6 +17,7 @@ class SectionsAdapter extends FragmentStatePagerAdapter {
     private final int subtitleId;
 
     private String[] text0, text1, text2, text3;
+    private final String[][] texts = new String[][]{text0, text1, text2, text3};
 
     private String[] getColumn(String[][] items, int index) {
         String[] column = new String[items.length];
@@ -36,142 +37,78 @@ class SectionsAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (titleId == R.string.general_questions) {
-            text0 = getColumn(Questions.QUESTIONS, 0);
-            text1 = getColumn(Questions.QUESTIONS, 1);
-
-            return MainFragment.newInstance(text0, text1);
-
+            for (int n = 0; n < 2; n++) {
+                texts[n] = getColumn(Questions.QUESTIONS, n);
+            }
         } else if (titleId == R.string.bible_books) {
-            if (subtitleId == R.string.old_testament) {
-                switch (position) {
-                    case 0:
-                        text0 = getColumn(Books.OT_MOSES, 0);
-                        text1 = getColumn(Books.OT_MOSES, 1);
-                        text2 = getColumn(Books.OT_MOSES, 2);
-                        text3 = getColumn(Books.OT_MOSES, 3);
+            for (int n = 0; n < 4; n++) {
+                switch (subtitleId) {
+                    case R.string.old_testament:
+                        if(position == 0) {
+                            texts[n] = getColumn(Books.OT_MOSES, n);
+                        } else if(position == 1) {
+                            texts[n] = getColumn(Books.OT_HISTORICAL, n);
+                        } else if(position == 2) {
+                            texts[n] = getColumn(Books.OT_POETRY, n);
+                        } else if(position == 3) {
+                            texts[n] = getColumn(Books.OT_MAJ_PROPHETS, n);
+                        } else {
+                            texts[n] = getColumn(Books.OT_MIN_PROPHETS, n);
+                        }
                         break;
-                    case 1:
-                        text0 = getColumn(Books.OT_HISTORICAL, 0);
-                        text1 = getColumn(Books.OT_HISTORICAL, 1);
-                        text2 = getColumn(Books.OT_HISTORICAL, 2);
-                        text3 = getColumn(Books.OT_HISTORICAL, 3);
-                        break;
-                    case 2:
-                        text0 = getColumn(Books.OT_POETRY, 0);
-                        text1 = getColumn(Books.OT_POETRY, 1);
-                        text2 = getColumn(Books.OT_POETRY, 2);
-                        text3 = getColumn(Books.OT_POETRY, 3);
-                        break;
-                    case 3:
-                        text0 = getColumn(Books.OT_MAJ_PROPHETS, 0);
-                        text1 = getColumn(Books.OT_MAJ_PROPHETS, 1);
-                        text2 = getColumn(Books.OT_MAJ_PROPHETS, 2);
-                        text3 = getColumn(Books.OT_MAJ_PROPHETS, 3);
-                        break;
-                    case 4:
-                        text0 = getColumn(Books.OT_MIN_PROPHETS, 0);
-                        text1 = getColumn(Books.OT_MIN_PROPHETS, 1);
-                        text2 = getColumn(Books.OT_MIN_PROPHETS, 2);
-                        text3 = getColumn(Books.OT_MIN_PROPHETS, 3);
-                        break;
-                }
-            } else if (subtitleId == R.string.new_testament) {
-                switch (position) {
-                    case 0:
-                        text0 = getColumn(Books.NT_GOSPELS, 0);
-                        text1 = getColumn(Books.NT_GOSPELS, 1);
-                        text2 = getColumn(Books.NT_GOSPELS, 2);
-                        text3 = getColumn(Books.NT_GOSPELS, 3);
-                        break;
-                    case 1:
-                        text0 = getColumn(Books.NT_HISTORICAL, 0);
-                        text1 = getColumn(Books.NT_HISTORICAL, 1);
-                        text2 = getColumn(Books.NT_HISTORICAL, 2);
-                        text3 = getColumn(Books.NT_HISTORICAL, 3);
-                        break;
-                    case 2:
-                        text0 = getColumn(Books.NT_PAULINE, 0);
-                        text1 = getColumn(Books.NT_PAULINE, 1);
-                        text2 = getColumn(Books.NT_PAULINE, 2);
-                        text3 = getColumn(Books.NT_PAULINE, 3);
-                        break;
-                    case 3:
-                        text0 = getColumn(Books.NT_GENERAL, 0);
-                        text1 = getColumn(Books.NT_GENERAL, 1);
-                        text2 = getColumn(Books.NT_GENERAL, 2);
-                        text3 = getColumn(Books.NT_GENERAL, 3);
-                        break;
-                    case 4:
-                        text0 = getColumn(Books.NT_PROPHECY, 0);
-                        text1 = getColumn(Books.NT_PROPHECY, 1);
-                        text2 = getColumn(Books.NT_PROPHECY, 2);
-                        text3 = getColumn(Books.NT_PROPHECY, 3);
+                    case R.string.new_testament:
+                        if(position == 0) {
+                            texts[n] = getColumn(Books.NT_GOSPELS, n);
+                        } else if(position == 1) {
+                            texts[n] = getColumn(Books.NT_HISTORICAL, n);
+                        } else if(position == 2) {
+                            texts[n] = getColumn(Books.NT_PAULINE, n);
+                        } else if(position == 3) {
+                            texts[n] = getColumn(Books.NT_GENERAL, n);
+                        } else {
+                            texts[n] = getColumn(Books.NT_PROPHECY, n);
+                        }
                         break;
                 }
             }
-            return MainFragment.newInstance(text0, text1, text2, text3);
-
         }else if (titleId == R.string.verses_for_you) {
-            if (subtitleId == R.string.old_testament) {
-                switch (position) {
-                    case 0:
-                        text0 = getColumn(Verses.OT_MOSES, 0);
-                        text1 = getColumn(Verses.OT_MOSES, 1);
-                        text2 = getColumn(Verses.OT_MOSES, 2);
+            for (int n = 0; n < 3; n++) {
+                switch (subtitleId) {
+                    case R.string.old_testament:
+                        if(position == 0) {
+                            texts[n] = getColumn(Verses.OT_MOSES, n);
+                        } else if(position == 1) {
+                            texts[n] = getColumn(Verses.OT_HISTORICAL, n);
+                        } else if(position == 2) {
+                            texts[n] = getColumn(Verses.OT_POETRY, n);
+                        } else if(position == 3) {
+                            texts[n] = getColumn(Verses.OT_MAJ_PROPHETS, n);
+                        } else {
+                            texts[n] = getColumn(Verses.OT_MIN_PROPHETS, n);
+                        }
                         break;
-                    case 1:
-                        text0 = getColumn(Verses.OT_HISTORICAL, 0);
-                        text1 = getColumn(Verses.OT_HISTORICAL, 1);
-                        text2 = getColumn(Verses.OT_HISTORICAL, 2);
-                        break;
-                    case 2:
-                        text0 = getColumn(Verses.OT_POETRY, 0);
-                        text1 = getColumn(Verses.OT_POETRY, 1);
-                        text2 = getColumn(Verses.OT_POETRY, 2);
-                        break;
-                    case 3:
-                        text0 = getColumn(Verses.OT_MAJ_PROPHETS, 0);
-                        text1 = getColumn(Verses.OT_MAJ_PROPHETS, 1);
-                        text2 = getColumn(Verses.OT_MAJ_PROPHETS, 2);
-                        break;
-                    case 4:
-                        text0 = getColumn(Verses.OT_MIN_PROPHETS, 0);
-                        text1 = getColumn(Verses.OT_MIN_PROPHETS, 1);
-                        text2 = getColumn(Verses.OT_MIN_PROPHETS, 2);
-                        break;
-                }
-            } else if (subtitleId == R.string.new_testament) {
-                switch (position) {
-                    case 0:
-                        text0 = getColumn(Verses.NT_GOSPELS, 0);
-                        text1 = getColumn(Verses.NT_GOSPELS, 1);
-                        text2 = getColumn(Verses.NT_GOSPELS, 2);
-                        break;
-                    case 1:
-                        text0 = getColumn(Verses.NT_HISTORICAL, 0);
-                        text1 = getColumn(Verses.NT_HISTORICAL, 1);
-                        text2 = getColumn(Verses.NT_HISTORICAL, 2);
-                        break;
-                    case 2:
-                        text0 = getColumn(Verses.NT_PAULINE, 0);
-                        text1 = getColumn(Verses.NT_PAULINE, 1);
-                        text2 = getColumn(Verses.NT_PAULINE, 2);
-                        break;
-                    case 3:
-                        text0 = getColumn(Verses.NT_GENERAL, 0);
-                        text1 = getColumn(Verses.NT_GENERAL, 1);
-                        text2 = getColumn(Verses.NT_GENERAL, 2);
-                        break;
-                    case 4:
-                        text0 = getColumn(Verses.NT_PROPHECY, 0);
-                        text1 = getColumn(Verses.NT_PROPHECY, 1);
-                        text2 = getColumn(Verses.NT_PROPHECY, 2);
+                    case R.string.new_testament:
+                        if(position == 0) {
+                            texts[n] = getColumn(Verses.NT_GOSPELS, n);
+                        } else if(position == 1) {
+                            texts[n] = getColumn(Verses.NT_HISTORICAL, n);
+                        } else if(position == 2) {
+                            texts[n] = getColumn(Verses.NT_PAULINE, n);
+                        } else if(position == 3) {
+                            texts[n] = getColumn(Verses.NT_GENERAL, n);
+                        } else {
+                            texts[n] = getColumn(Verses.NT_PROPHECY, n);
+                        }
                         break;
                 }
             }
-            return MainFragment.newInstance(text0, text1, text2);
         }
-        return null;
+        text0 = texts[0];
+        text1 = texts[1];
+        text2 = texts[2];
+        text3 = texts[3];
+
+        return MainFragment.newInstance(text0, text1, text2, text3);
     }
 
     @Override

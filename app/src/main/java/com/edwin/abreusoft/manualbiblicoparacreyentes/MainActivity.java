@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
@@ -39,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Toolbar toolbar;
     private ViewPager viewPager;
     private DrawerLayout drawer;
-    private SharedPreferences preferences;
     private LocalBroadcastManager broadcastManager;
 
     @Override
@@ -60,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         showList(R.string.general_questions, 0);
 
-        preferences = getPreferences(MODE_PRIVATE);
         broadcastManager = LocalBroadcastManager.getInstance(this);
     }
 
@@ -78,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         @Override
     protected void onStart() {
         super.onStart();
-        if (!preferences.contains(CHECKED)) {
+        if (!getPreferences(MODE_PRIVATE).contains(CHECKED)) {
             showIntroDialog();
         }
     }
@@ -136,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
                 CheckBox noIntro = dialog.findViewById(R.id.no_show_check);
                 if (noIntro.isChecked()) {
-                    preferences.edit().putBoolean(CHECKED, true).commit();
+                    getPreferences(MODE_PRIVATE).edit().putBoolean(CHECKED, true).commit();
                 }
                 dialog.dismiss();
             }
@@ -226,7 +223,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private Intent rateIntent() {
         Intent rateIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getApplicationContext().getPackageName()));
         int flags = Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_MULTIPLE_TASK;
-        if(Build.VERSION.SDK_INT >= 21) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             flags |= Intent.FLAG_ACTIVITY_NEW_DOCUMENT;
         } else {
             flags |= Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET;
@@ -236,7 +234,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private Intent createMailIntent() {
-        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", "core2duo2602@gmail.com", null));
+        Intent intent = new Intent(Intent.ACTION_SENDTO,
+                Uri.fromParts("mailto", "core2duo2602@gmail.com", null));
         intent.putExtra(Intent.EXTRA_SUBJECT, "Sugerencias para Manual Bíblico");
         return intent;
     }

@@ -30,11 +30,7 @@ public class VersesAdapter extends ItemsAdapter {
         holder.itemHolder.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                if(!verse.isFavorite()) {
-                    OptionsDialog.createOptionsDialog(ctx, text, !verse.isFavorite());
-                } else {
-                    OptionsDialog.createOptionsDialog(ctx, text, verse.isFavorite());
-                }
+                OptionsDialog.createOptionsDialog(ctx, text, verse.isFavorite());
                 return false;
             }
         });

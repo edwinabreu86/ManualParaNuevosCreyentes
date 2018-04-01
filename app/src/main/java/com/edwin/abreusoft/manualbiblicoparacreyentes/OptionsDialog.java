@@ -33,7 +33,6 @@ public class OptionsDialog {
 
         final TextView titleView = dialog.findViewById(R.id.opt_title);
         final TextView contentView = dialog.findViewById(R.id.opt_content);
-
         final ImageView imgCopy = dialog.findViewById(R.id.img_copy);
         ImageView imgShare = dialog.findViewById(R.id.img_share);
         ImageView imgFav = dialog.findViewById(R.id.img_fav);
@@ -43,11 +42,9 @@ public class OptionsDialog {
             contentView.setText(text[1]);
             imgFav.setVisibility(View.GONE);
         } else {
-            if(favorite) {
-                imgFav.setImageResource(R.drawable.ic_remove);
-            } else {
-                imgFav.setImageResource(R.drawable.ic_favorite);
-            }
+            int resId = (favorite) ? R.drawable.ic_remove : R.drawable.ic_favorite;
+            imgFav.setImageResource(resId);
+
             titleView.setText(String.format("%s %s", text[0], text[1]));
             contentView.setText(text[2]);
         }
@@ -67,7 +64,6 @@ public class OptionsDialog {
                         if (clipboard != null) {
                             clipboard.setPrimaryClip(ClipData.newPlainText("label", title + "\n" + content));
                         }
-
                         broadcastManager.sendBroadcast(new Intent(COPY_FILTER));
                         break;
                     case R.id.img_share:
@@ -75,7 +71,7 @@ public class OptionsDialog {
                         sharingIntent.setType("text/plain");
                         sharingIntent.putExtra(Intent.EXTRA_SUBJECT, title);
                         sharingIntent.putExtra(Intent.EXTRA_TEXT, title + "\n" + content);
-                        ctx.startActivity(Intent.createChooser(sharingIntent, "Compartir con:"));
+                        ctx.startActivity(Intent.createChooser(sharingIntent, "Compartir con: "));
                         break;
                     case R.id.img_fav:
                         if(!favorite) {
@@ -83,10 +79,7 @@ public class OptionsDialog {
                         } else {
                             dbHelper.removeVerse(new Item(text[0], text[1], text[2], false));
                         }
-                        Intent versesIntent = new Intent(VERSES_FILTER);
-                        versesIntent.putExtra(VERSES_EXTRA, text[0] + " " + text[1]);
-
-                        broadcastManager.sendBroadcast(versesIntent);
+                        broadcastManager.sendBroadcast(new Intent(VERSES_FILTER).putExtra(VERSES_EXTRA, title));
                         break;
                 }
                 dialog.dismiss();

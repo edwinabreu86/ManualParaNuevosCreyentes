@@ -2,6 +2,7 @@ package com.edwin.abreusoft.manualbiblicoparacreyentes;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -23,28 +24,8 @@ public class MainFragment extends Fragment {
 
     private String[] text1, text2, text3, text4;
 
-
     public MainFragment() {
         // Required empty public constructor
-    }
-
-    public static MainFragment newInstance(String[] text1, String[] text2) {
-        MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putStringArray(TEXT1, text1);
-        args.putStringArray(TEXT2, text2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static MainFragment newInstance(String[] text1, String[] text2, String[] text3) {
-        MainFragment fragment = new MainFragment();
-        Bundle args = new Bundle();
-        args.putStringArray(TEXT1, text1);
-        args.putStringArray(TEXT2, text2);
-        args.putStringArray(TEXT3, text3);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     public static MainFragment newInstance(String[] text1, String[] text2, String[] text3, String[] text4) {
@@ -61,9 +42,10 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        text1 = getArguments().getStringArray(TEXT1);
+        text2 = getArguments().getStringArray(TEXT2);
+
         if (getArguments() != null) {
-            text1 = getArguments().getStringArray(TEXT1);
-            text2 = getArguments().getStringArray(TEXT2);
             text3 = getArguments().getStringArray(TEXT3);
             text4 = getArguments().getStringArray(TEXT4);
         }
@@ -72,6 +54,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         RecyclerView recyclerView = (RecyclerView) inflater.inflate(R.layout.fragment_main, container, false);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         List<Item> itemsList = new ArrayList<>();
