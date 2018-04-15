@@ -15,27 +15,28 @@
         android:orientation="vertical"
         android:background="@drawable/selector">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/secondaryColor">
             <TextView
                 android:id="@+id/title_view"
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 style="@style/textView_style2"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/primaryTextColor" />
+                android:textColor="@color/primaryTextColor"
+                tools:text="Verse"/>
 
             <ImageView
                 android:id="@+id/favorite_img"
-                style="@style/textView_style"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/min_padding"
                 android:src="@drawable/ic_favorite_true"
-                android:visibility="gone"
-                tools:ignore="ContentDescription" />
-        </LinearLayout>
+                android:layout_gravity="center_vertical|end"
+                tools:ignore="ContentDescription,RtlSymmetry" />
+        </FrameLayout>
 
         <TextView
             android:id="@+id/content_view"
