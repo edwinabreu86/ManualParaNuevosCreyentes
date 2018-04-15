@@ -4,34 +4,34 @@ public class Books {
 
     public static final String[][] OT_MOSES = {
             {"Génesis", "Moisés", "50",
-                    "Relato sobre la creación del mundo, la caída de Adán (primer hombre) en el pecado en el jardín del Edén, el diluvio y las vidas de los patriarcas (Abraham, Isaac, Jacob y José)."},
+                    "Relato sobre la creación del mundo, la caída de Adán (primer hombre) en el pecado en el jardín del Edén, el diluvio en tiempos de Noé y las vidas de los patriarcas (Abraham, Isaac, Jacob y José)."},
             {"Éxodo", "Moisés", "40",
                     "Relato sobre la vida de Moisés, su llamado, las plagas de Egipto, la salida del pueblo de Israel de Egipto, la institución de los Diez Mandamientos y otras leyes, descripción del tabernáculo y de sus utensilios."},
             {"Levítico", "Moisés", "27",
                     "Instrucciones sobre holocaustos, ofrendas y sacrificios, sobre la consagración de los sacerdotes y del sumo sacerdote. Leyes para que el pueblo de Dios conservara su santidad."},
             {"Números", "Moisés", "36",
-                    "Relato y descripción de los censos hechos a los israelitas en el desierto, de su organización en campamentos, y de sus extraordinarias experiencias durante sus cuarenta años en el desierto."},
+                    "Relato y descripción de los censos hechos a los israelitas en el desierto, de su organización en campamentos, y de sus extraordinarias experiencias durante los cuarenta años que Dios les hizo pasar en el desierto."},
             {"Deuteronomio", "Moisés", "34",
                     "Repetición de la ley dada a Moisés en el monte Sinaí. Relato sobre la muerte de Moisés."}
     };
 
     public static final String[][] OT_HISTORICAL = {
             {"Josué", "Josué", "24",
-                    "Relato de la conquista de Canaán por Josué y el pueblo de Israel, división de la tierra entre las doce tribus de Israel. Exhortación de Josué para que el pueblo honrara a Dios."},
+                    "Relato sobre la conquista de Canaán hecha por el pueblo de Israel, encabezado por Josué. División de la tierra conquistada entre las doce tribus de Israel. Exhortación de Josué para que el pueblo honrara a Dios."},
             {"Jueces", "Samuel", "21",
                     "Historia de lo ocurrido en Israal tras la muerte de Josué, donde el pueblo cedía ante sus enemigos cada vez que se alejaba de Dios, y era librado de sus enemigos por los jueces (Sansón, Gedeón, Jefté, ...) cada vez que se volvía a Dios."},
             {"Rut", "Samuel", "4",
                     "Historia ocurrida durante el tiempo de los jueces, sobre la vida de Rut (bisabuela del rey David), su amor y su lealtad por su suegra y la bendición que recibió por su obediencia al Dios de su suegra."},
             {"1 Samuel", "Samuel, Gad, Natán", "31",
-                    "Relato sobre la vida del profeta Samuel, la pérdida y regreso del arca del pacto, el reinado de Saul y su desaprobación ante Dios, y la unción de David como rey hasta su ascenso al trono."},
+                    "Relato sobre la vida del profeta Samuel, la pérdida y regreso del arca del pacto a mano de los filisteos, el reinado de Saul, su desaprobación ante Dios y su muerte, y la unción de David como rey hasta su ascenso al trono."},
             {"2 Samuel", "Gad, Natán", "24",
-                    "Relato de eventos mientras David reinó en Judá e Israel: la recuperación del arca del pacto, los aciertos y pecados de este rey, sus campañas militares y represión de sublevaciones."},
+                    "Relato de eventos mientras David reinó en Judá e Israel: la recuperación del arca del pacto, los aciertos y pecados de este rey, sus campañas militares y la represión de sublevaciones contra su reino."},
             {"1 Reyes", "Jeremías", "22",
-                    "Relato del ascenso de Salomón como rey, de la grandeza de su reino, la construcción del templo, la división de los reinos de Judá e Israel, los hechos del profeta Elías."},
+                    "Relato del ascenso de Salomón como rey, de la grandeza de su reino, la construcción del templo, la división de los reinos de Judá e Israel. Relato de las vivencias del profeta Elías."},
             {"2 Reyes", "Jeremías", "25",
-                    "Relato de los hechos del profeta Eliseo, historia de los reyes de Israel hasta su cautiverio e historia los reinos de Judá hasta la caída de Jerusalén."},
+                    "Relato de los hechos del profeta Eliseo. Historia de los reyes de Israel hasta su cautiverio e historia de los reinos de Judá hasta la caída de Jerusalén."},
             {"1 Crónicas", "Esdras", "29",
-                    "Genealogía desde Adán hasta David, muerte de Saul y sus hijos, hechos importantes durante el reinado de David hasta la entrega del reino a Salomón."},
+                    "Genealogía desde Adán hasta David, muerte de Saul y de sus hijos. Hechos importantes durante el reinado de David hasta la entrega del reino a Salomón."},
             {"2 Crónicas", "Esdras", "36",
                     "Relato de hechos durante el reinado de Salomón, edificación y dedicación del templo e historia de los demás reinos de Judá hasta la cautividad de Judá en Babilonia."},
             {"Esdras", "Esdras", "10",
@@ -70,7 +70,7 @@ public class Books {
 
     public static final  String[][] OT_MIN_PROPHETS = {
             {"Oseas", "Oseas", "14",
-                    "Mensaje de condenación a Israel por causa de la idolatría y otros pecados, seguido por el perdón de Dios."},
+                    "Mensaje de condenación contra Israel por causa de su idolatría y de otros pecados, seguido por el perdón de Dios."},
             {"Joel", "Joel", "3",
                     "Profecía sobre una gran calamidad causada por una invasión de langostas, y la respuesta de Dios a las oraciones del pueblo, sobre el hecho de que los judíos irían a establecer una gran nación en Palestina en el futuro."},
             {"Amós", "Amós", "9",
@@ -161,6 +161,6 @@ public class Books {
 
     public static final  String[][] NT_PROPHECY = {
             {"Apocalipsis", "Juan", "22",
-                    "Contiene orientaciones y advertencias de Dios para las iglesias. Muestra una visión altamente simbólica de la rebelión futura, el juicio y consumación de todas las cosas."}
+                    "Contiene orientaciones y advertencias de Dios para las iglesias. Muestra una visión altamente simbólica de la rebelión futura, el juicio y la consumación de todas las cosas."}
     };
 }

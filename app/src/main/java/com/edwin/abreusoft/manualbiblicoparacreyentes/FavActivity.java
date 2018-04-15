@@ -15,7 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.edwin.abreusoft.manualbiblicoparacreyentes.TextAdapters.VersesAdapter;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.TextAdapters.VerseAdapter;
 
 public class FavActivity extends AppCompatActivity {
 
@@ -70,7 +70,7 @@ public class FavActivity extends AppCompatActivity {
 
     private void refillRecyclerView(String verseRef) {
         VersesDbHelper dbHelper = new VersesDbHelper(this);
-        VersesAdapter adapter = new VersesAdapter(this, dbHelper.getVersesList());
+        VerseAdapter adapter = new VerseAdapter(this, dbHelper.getVersesList());
         adapter.notifyDataSetChanged();
 
         TextView emptyView = findViewById(R.id.empty_view);
@@ -80,7 +80,7 @@ public class FavActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         if(verseRef != null) {
-            Snackbar.make(recyclerView, "Versículo "+ verseRef + " removido de favoritos", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(recyclerView, verseRef + " removido de favoritos", Snackbar.LENGTH_SHORT).show();
         }
 
         int visible = (!dbHelper.getVersesList().isEmpty()) ? View.GONE : View.VISIBLE;

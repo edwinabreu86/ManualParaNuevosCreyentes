@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private static final String CHECKED = "checked";
     private Toolbar toolbar;
     private ViewPager viewPager;
+    private TabLayout tabLayout;
     private DrawerLayout drawer;
     private LocalBroadcastManager broadcastManager;
 
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         toolbar = findViewById(R.id.toolbar);
         viewPager = findViewById(R.id.view_pager);
+        tabLayout = findViewById(R.id.tab_layout);
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.navigation_view);
 
@@ -67,12 +69,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if (intent.filterEquals(new Intent(OptionsDialog.COPY_FILTER))) {
                 Snackbar.make(viewPager, "Texto copiado", Snackbar.LENGTH_SHORT).show();
             } else if (intent.filterEquals(new Intent(OptionsDialog.VERSES_FILTER))) {
-                Snackbar.make(viewPager, "Versículo " + intent.getStringExtra(OptionsDialog.VERSES_EXTRA) + " agregado a favoritos", Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(viewPager, intent.getStringExtra(OptionsDialog.VERSES_EXTRA) + " agregado a favoritos", Snackbar.LENGTH_SHORT).show();
             }
         }
     };
 
-        @Override
+    @Override
     protected void onStart() {
         super.onStart();
         if (!getPreferences(MODE_PRIVATE).contains(CHECKED)) {
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DialogInterface.OnClickListener listener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                if(i == DialogInterface.BUTTON_POSITIVE) {
+                if (i == DialogInterface.BUTTON_POSITIVE) {
                     finish();
                 } else {
                     dialogInterface.dismiss();
@@ -151,12 +153,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(view.getId() == R.id.credits_text1) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText1.getText().toString())));
-                } else if(view.getId() == R.id.credits_text2) {
-                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText2.getText().toString())));
-                } else {
-                    dialog.dismiss();
+                switch (view.getId()) {
+                    case R.id.credits_text1:
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText1.getText().toString())));
+                        break;
+                    case R.id.credits_text2:
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(creditsText2.getText().toString())));
+                        break;
+                    default:
+                        dialog.dismiss();
+                        break;
                 }
             }
         };
@@ -171,33 +177,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         item.setChecked(true);
         int id = item.getItemId();
 
-        if(id == R.id.nav_general_questions) {
-            showList(R.string.general_questions, 0);
-        } else if(id == R.id.nav_recommend) {
-            startActivity(new Intent(this, RecommedActivity.class));
-            item.setChecked(false);
-        } else if (id == R.id.nav_ot_books) {
-            showList(R.string.bible_books, R.string.old_testament);
-        } else if (id == R.id.nav_nt_books) {
-            showList(R.string.bible_books, R.string.new_testament);
-        } else if (id == R.id.nav_ot_verses) {
-            showList(R.string.verses_for_you, R.string.old_testament);
-        } else if (id == R.id.nav_nt_verses) {
-            showList(R.string.verses_for_you, R.string.new_testament);
-        } else if (id == R.id.nav_fav_verses) {
-            startActivity(new Intent(this, FavActivity.class));
-            item.setChecked(false);
-        } else {
-            finish();
+        switch (id) {
+            case R.id.nav_general_questions:
+                showList(R.string.general_questions, 0);
+                break;
+            case R.id.nav_recommend:
+                startActivity(new Intent(this, RecommedActivity.class));
+                item.setChecked(false);
+                break;
+            case R.id.nav_ot_books:
+                showList(R.string.bible_books, R.string.old_testament);
+                break;
+            case R.id.nav_nt_books:
+                showList(R.string.bible_books, R.string.new_testament);
+                break;
+            case R.id.nav_ot_verses:
+                showList(R.string.verses_for_you, R.string.old_testament);
+                break;
+            case R.id.nav_nt_verses:
+                showList(R.string.verses_for_you, R.string.new_testament);
+                break;
+            case R.id.nav_fav_verses:
+                startActivity(new Intent(this, FavActivity.class));
+                item.setChecked(false);
+                break;
+            default:
+                finish();
+                break;
         }
-
-        Handler handler = new Handler();
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                drawer.closeDrawer(GravityCompat.START);
-            }
-        });
         return true;
     }
 
@@ -210,12 +217,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.menu_app_rating) {
-            startActivity(rateIntent());
-        } else if(id == R.id.menu_sugest) {
-            startActivity(Intent.createChooser(createMailIntent(), "Enviar sugerencia"));
-        } else if(id == R.id.menu_credits) {
-            showCreditsDialog();
+        switch (id) {
+            case R.id.menu_app_rating:
+                startActivity(rateIntent());
+                break;
+            case R.id.menu_sugest:
+                startActivity(Intent.createChooser(createMailIntent(), "Enviar sugerencia"));
+                break;
+            case R.id.menu_credits:
+                showCreditsDialog();
+                break;
         }
         return false;
     }
@@ -241,27 +252,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void showList(final int titleId, final int subtitleId) {
-        final String title = getString(titleId);
-        final String subtitle = (subtitleId == 0) ? "" : getString(subtitleId);
-
         int flags = (titleId == R.string.general_questions) ?
                 0 : AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS;
-        ((LayoutParams) toolbar.getLayoutParams()).setScrollFlags(flags);
-        int visibility = (titleId == R.string.general_questions) ?
-                View.GONE : View.VISIBLE;
 
-        final TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ((LayoutParams) toolbar.getLayoutParams()).setScrollFlags(flags);
+        int visibility = (titleId == R.string.general_questions) ? View.GONE : View.VISIBLE;
         tabLayout.setVisibility(visibility);
 
-        Handler h = new Handler();
-        h.post(new Runnable() {
+        viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager(), titleId, subtitleId));
+        tabLayout.setupWithViewPager(viewPager);
+        toolbar.setTitle(getString(titleId));
+        toolbar.setSubtitle((subtitleId == 0) ? "" : getString(subtitleId));
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                toolbar.setTitle(title);
-                toolbar.setSubtitle(subtitle);
-                viewPager.setAdapter(new SectionsAdapter(getSupportFragmentManager(), titleId, subtitleId));
-                tabLayout.setupWithViewPager(viewPager);
+                drawer.closeDrawer(GravityCompat.START);
             }
-        });
+        }, 30);
     }
 }

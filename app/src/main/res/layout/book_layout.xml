@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/min_padding"
+    app:cardCornerRadius="6dp">
+
+    <LinearLayout
+        android:id="@+id/item_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/selector"
+        tools:ignore="HardcodedText" >
+
+        <TextView
+            android:id="@+id/book_view"
+            style="@style/textView_style2"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@color/secondaryColor"
+            android:textColor="@color/primaryTextColor" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow>
+                <TextView
+                    android:text="Autor(es): "
+                    style="@style/bookLeft_style"/>
+
+                <TextView
+                    android:id="@+id/author_view"
+                    style="@style/bookright_style" />
+
+            </TableRow>
+            <TableRow>
+                <TextView
+                    android:text="Capítulos: "
+                    style="@style/bookLeft_style"/>
+
+                <TextView
+                    android:id="@+id/chapters_view"
+                    style="@style/bookright_style" />
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            style="@style/bookLeft_style"
+            android:text="Contenido: "
+            android:textStyle="bold"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/bcontent_view"
+            style="@style/bookright_style"
+            android:paddingStart="@dimen/item_margin"
+            android:paddingBottom="@dimen/item_margin"
+            android:textSize="15sp"
+            android:lineSpacingMultiplier="1.1"
+            tools:ignore="RtlSymmetry" />
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

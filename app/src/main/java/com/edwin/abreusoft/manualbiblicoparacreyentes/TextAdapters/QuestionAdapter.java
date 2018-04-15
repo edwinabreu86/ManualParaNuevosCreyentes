@@ -1,6 +1,6 @@
 package com.edwin.abreusoft.manualbiblicoparacreyentes.TextAdapters;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.edwin.abreusoft.manualbiblicoparacreyentes.Item;
+import com.edwin.abreusoft.manualbiblicoparacreyentes.Objects.Question;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.OptionsDialog;
 import com.edwin.abreusoft.manualbiblicoparacreyentes.R;
 
 import java.util.List;
 
-public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> {
+public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHolder> {
 
-    private final List<Item> itemsList;
-    private final Context ctx;
+    private final Activity activity;
+    private final List<Question> itemsList;
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         final LinearLayout itemHolder;
@@ -32,39 +32,32 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ViewHolder> 
         }
     }
 
-    public ItemsAdapter(Context ctx, List<Item> itemsList) {
-        this.ctx = ctx;
+    public QuestionAdapter(Activity activity, List<Question> itemsList) {
+        this.activity = activity;
         this.itemsList = itemsList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent, false);
+        View item = LayoutInflater.from(parent.getContext()).inflate(R.layout.question_layout, parent, false);
         return new ViewHolder(item);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        final Item item = itemsList.get(position);
-        final String text1 = item.getText1();
-        final String text2;
+        final Question item = itemsList.get(position);
+        final String question = item.getQuestion();
+        final String answer = item.getAnswer();
 
-        if(item.getText3() == null && item.getText4() == null) {
-            text2 = item.getText2();
-        } else {
-            text2 = "Autor(es): " + item.getText2() + "\n"
-                    + "Capítulos: " + item.getText3() + "\n"
-                    + "Contenido: " + item.getText4();
-        }
-        holder.titleView.setText(text1);
-        holder.contentView.setText(text2);
+        holder.titleView.setText(question);
+        holder.contentView.setText(answer);
 
-        final String[] text = {text1, text2};
+        final String[] text = {question, answer};
 
         holder.itemHolder.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                OptionsDialog.createOptionsDialog(ctx, text, false);
+                OptionsDialog.createOptionsDialog(activity, text);
                 return false;
             }
         });
